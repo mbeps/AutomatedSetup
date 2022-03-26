@@ -32,9 +32,20 @@ function install_codecs() {
 	sudo dnf group upgrade --with-optional Multimedia
 }
 
+#^ DEVELOPMENT
 function installJDK() {
     title "Instaling Java Development Environment"
     sudo rpm --import https://yum.corretto.aws/corretto.key 
     sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
     sudo yum install -y java-17-amazon-corretto-devel
+}
+
+function installAndSetupGit() {
+	title "Installing & Configuring Git"
+	echo "Installing Git"
+	sudo dnf install git -y
+	echo "Configuring Git"
+	git config --global user.name "Maruf Bepary"
+	git config --global user.email "bepary71@gmail.com"
+	git config --global core.autocrlf input
 }
