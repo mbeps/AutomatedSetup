@@ -54,7 +54,10 @@ function installNala() {
 	sudo apt install nala -y
 }
 
+#^ APPS
 function removeApps() {
 	title "Remove Native Apps"
 	sudo apt remove gedit -y
 }
+
+#^ MAIN
