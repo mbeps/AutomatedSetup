@@ -31,3 +31,13 @@ function installJDK() {
  sudo add-apt-repository 'deb https://apt.corretto.aws stable main'
   sudo apt-get update; sudo apt-get install -y java-17-amazon-corretto-jdk
 }
+
+function installAndSetupGit() {
+	title "Installing & Configuring Git"
+	echo "Installing Git"
+	sudo apt install git
+	echo "Configuring Git"
+	git config --global user.name "Maruf Bepary"
+	git config --global user.email "bepary71@gmail.com"
+	git config --global core.autocrlf input
+}
