@@ -48,3 +48,13 @@ function gnomePowerDialog() {
 	title "Disable Power Dialog for Gnome"
 	gsettings set org.gnome.SessionManager logout-prompt false
 }
+
+
+function themes() {
+	title "Themes"
+	cd ~
+	mkdir .themes
+	sudo flatpak override --filesystem=~/.themes
+}
+
+themes
