@@ -9,3 +9,11 @@ function updateAndUpgrade() {
 	sudo apt autoremove -y
 	sudo apt upgrade -y
 }
+
+#^ USEFULL
+function installMicrosoftFonts() {
+	title "Install Microsoft Fonts"
+	sudo add-apt-repository multiverse -y
+	sudo apt install ttf-mscorefonts-installer -y
+	sudo fc-cache -f -v
+}
