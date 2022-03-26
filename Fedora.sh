@@ -57,3 +57,8 @@ function installPostgres() {
     sudo postgresql-setup --initdb --unit postgresql
     sudo systemctl start postgresql
 }
+
+function removeApps() {
+    title "Remove Unnecessary Native Apps"
+    sudo dnf remove gedit -y
+}
