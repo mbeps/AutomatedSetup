@@ -44,4 +44,7 @@ function installFlatpakApps() {
 }
 
 #^ GNOME 
-setUserFolderDirectory
+function gnomePowerDialog() {
+	title "Disable Power Dialog for Gnome"
+	gsettings set org.gnome.SessionManager logout-prompt false
+}
