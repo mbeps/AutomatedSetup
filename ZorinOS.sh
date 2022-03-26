@@ -17,3 +17,9 @@ function installMicrosoftFonts() {
 	sudo apt install ttf-mscorefonts-installer -y
 	sudo fc-cache -f -v
 }
+
+function installMediaCodecs() {
+	title "Install Media Codecs"
+	sudo add-apt-repository multiverse -y
+	sudo apt install ubuntu-restricted-extras -y
+}
