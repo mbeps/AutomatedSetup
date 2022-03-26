@@ -31,3 +31,10 @@ function install_codecs() {
 	sudo dnf install lame\* --exclude=lame-devel
 	sudo dnf group upgrade --with-optional Multimedia
 }
+
+function installJDK() {
+    title "Instaling Java Development Environment"
+    sudo rpm --import https://yum.corretto.aws/corretto.key 
+    sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+    sudo yum install -y java-17-amazon-corretto-devel
+}
