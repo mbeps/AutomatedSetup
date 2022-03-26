@@ -58,6 +58,11 @@ function installPostgres() {
     sudo systemctl start postgresql
 }
 
+function installNativeApps() {
+    title "Installing Natively Packaged Apps"
+    sudo dnf install gnome-tweak-tool
+}
+
 function removeApps() {
     title "Remove Unnecessary Native Apps"
     sudo dnf remove gedit -y
