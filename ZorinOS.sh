@@ -41,3 +41,8 @@ function installAndSetupGit() {
 	git config --global user.email "bepary71@gmail.com"
 	git config --global core.autocrlf input
 }
+
+function installPostgres() {
+	title "Installing PostgreSQL"
+	sudo apt install postgresql postgresql-contrib -y
+}
