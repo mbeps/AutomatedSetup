@@ -6,6 +6,7 @@ function title() {
 function updateAndUpgrade() {
 	title "Update & Upgrade"
 	sudo dnf update -y
+    sudo dnf upgrade -y
 }
 
 function optimiseDNF() {
@@ -15,24 +16,24 @@ function optimiseDNF() {
 
 }
 
-function enable_rpm_fusion() {
+function enableRPMFusion() {
 	title "Enable RPM Fusion Respositories"
 	sudo dnf install \ https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm # Free
 	sudo dnf install \ https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm # Non Free
 }
 
-function enable_flathub() {
+function enableFlathub() {
     title "Enable FlatHub"
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 }
 
-function install_microsoft_fonts() {
+function installMicrosoftFonts() {
 	title "Installing Microsoft "
-	sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
+	sudo dnf install curl cabextract xorg-x11-font-utils fontconfig -y
 	sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 }
 
-function install_codecs() {
+function installMediaCodecs() {
 	title "Installing Media CODECs"
 	sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 	sudo dnf install lame\* --exclude=lame-devel
@@ -67,7 +68,7 @@ function installPostgres() {
 
 function installNativeApps() {
     title "Installing Natively Packaged Apps"
-    sudo dnf install gnome-tweak-tool
+    sudo dnf install gnome-tweak-tool -y
 }
 
 function removeApps() {
