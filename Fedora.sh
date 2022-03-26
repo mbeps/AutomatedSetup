@@ -7,3 +7,9 @@ function updateAndUpgrade() {
 	title "Update & Upgrade"
 	sudo dnf update -y
 }
+
+function enable_rpm_fusion() {
+	title "Enable RPM Fusion Respositories"
+	sudo dnf install \ https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm # Free
+	sudo dnf install \ https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm # Non Free
+}
