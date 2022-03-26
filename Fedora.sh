@@ -20,8 +20,14 @@ function enable_flathub() {
 }
 
 function install_microsoft_fonts() {
-	clear
-	echo "Installing Microsoft "
+	title "Installing Microsoft "
 	sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
 	sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+}
+
+function install_codecs() {
+	title "Installing Media CODECs"
+	sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+	sudo dnf install lame\* --exclude=lame-devel
+	sudo dnf group upgrade --with-optional Multimedia
 }
