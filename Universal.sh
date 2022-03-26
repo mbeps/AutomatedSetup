@@ -3,6 +3,16 @@ function title() {
 	echo $1
 }
 
+
+function setUserFolderDirectory() {
+    title "Set User Folder Directory"
+    xdg-user-dirs-update --set DOCUMENTS "$HOME/Google Drive/Documents"
+    xdg-user-dirs-update --set MUSIC "$HOME/Google Drive/Music"
+    xdg-user-dirs-update --set PICTURES "$HOME/Google Drive/Photos"
+    xdg-user-dirs-update --set VIDEOS "$HOME/Google Drive/Videos"
+}
+
+#^ APPS
 function installFlatpakApps() {
     title "Installing Flatpak Apps"
     flatpak install flathub it.mijorus.smile
@@ -32,3 +42,6 @@ function installFlatpakApps() {
     flatpak install flathub org.gnome.NetworkDisplays
 	flatpak install flathub org.gnome.TextEditor
 }
+
+#^ GNOME 
+setUserFolderDirectory
