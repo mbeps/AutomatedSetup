@@ -53,3 +53,8 @@ function installNala() {
 	wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
 	sudo apt install nala -y
 }
+
+function removeApps() {
+	title "Remove Native Apps"
+	sudo apt remove gedit -y
+}
