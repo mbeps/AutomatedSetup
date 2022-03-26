@@ -8,6 +8,13 @@ function updateAndUpgrade() {
 	sudo dnf update -y
 }
 
+function optimiseDNF() {
+    title "Opmise DNF"
+    echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
+    echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
+
+}
+
 function enable_rpm_fusion() {
 	title "Enable RPM Fusion Respositories"
 	sudo dnf install \ https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm # Free
