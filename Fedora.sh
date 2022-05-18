@@ -62,10 +62,23 @@ function installAndSetupGit() {
 	git config --global core.autocrlf input
 }
 
+function configureGithubSSH() {
+	title "Configuring SSH Keys for GitHub"
+	ssh-keygen -t ed25519 -C "bepary71@gmail.com"
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_ed25519
+	cat ~/.ssh/id_ed25519.pub
+}
+
 function installPostgres() {
 	title "Installing PostgreSQL"
 	sudo dnf install postgresql-server postgresql-contrib
 	sudo systemctl enable postgresql
 	sudo postgresql-setup --initdb --unit postgresql
 	sudo systemctl start postgresql
+}
+
+function installPip() {
+	title "Installing Pip"
+	sudo dnf install pip3 -y
 }
