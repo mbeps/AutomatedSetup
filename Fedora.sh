@@ -147,3 +147,7 @@ function installLibadwaitaGTK3PortTheme() {
 	dnf install adw-gtk3
 }
 
+function gnomePowerDialog() {
+	title "Disable Power Dialog for Gnome"
+	gsettings set org.gnome.SessionManager logout-prompt false
+}
