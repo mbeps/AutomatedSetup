@@ -6,25 +6,29 @@ function title() {
 function updateAndUpgrade() {
 	title "Update & Upgrade"
 	sudo dnf update -y
-    sudo dnf upgrade -y
+	sudo dnf upgrade -y
 }
 
 function optimiseDNF() {
-    title "Opmise DNF"
-    echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
-    echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
+	title "Opmise DNF"
+	echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
+	echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
 
 }
 
 function enableRPMFusion() {
 	title "Enable RPM Fusion Respositories"
-	sudo dnf install \ https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm # Free
-	sudo dnf install \ https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm # Non Free
+	sudo dnf install \
+		https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+	# Free
+	sudo dnf install \
+		https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+	# Non Free
 }
 
 function enableFlathub() {
-    title "Enable FlatHub"
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+	title "Enable FlatHub"
+	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 }
 
 function installMicrosoftFonts() {
@@ -35,17 +39,17 @@ function installMicrosoftFonts() {
 
 function installMediaCodecs() {
 	title "Installing Media CODECs"
-	sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
-	sudo dnf install lame\* --exclude=lame-devel
+	sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
+	sudo dnf install lame\* --exclude=lame-devel -y
 	sudo dnf group upgrade --with-optional Multimedia
 }
 
 #^ DEVELOPMENT
 function installJDK() {
-    title "Instaling Java Development Environment"
-    sudo rpm --import https://yum.corretto.aws/corretto.key 
-    sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
-    sudo yum install -y java-17-amazon-corretto-devel
+	title "Instaling Java Development Environment"
+	sudo rpm --import https://yum.corretto.aws/corretto.key -y
+	sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+	sudo yum install -y java-17-amazon-corretto-devel
 }
 
 function installAndSetupGit() {
@@ -58,20 +62,92 @@ function installAndSetupGit() {
 	git config --global core.autocrlf input
 }
 
+function configureGithubSSH() {
+	title "Configuring SSH Keys for GitHub"
+	ssh-keygen -t ed25519 -C "bepary71@gmail.com"
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_ed25519
+	cat ~/.ssh/id_ed25519.pub
+}
+
 function installPostgres() {
 	title "Installing PostgreSQL"
-	sudo dnf install postgresql-server postgresql-contrib -y
-    sudo systemctl enable postgresql
-    sudo postgresql-setup --initdb --unit postgresql
-    sudo systemctl start postgresql
+	sudo dnf install postgresql-server postgresql-contrib
+	sudo systemctl enable postgresql
+	sudo postgresql-setup --initdb --unit postgresql
+	sudo systemctl start postgresql
+}
+
+function installPip() {
+	title "Installing Pip"
+	sudo dnf install pip3 -y
+}
+
+#^ APPS
+function installFlathubAppsNonSystem() {
+	title "Installing Non-System Flathub Apps"
+	flatpak install flathub io.dbeaver.DBeaverCommunity
+	flatpak install flathub com.github.maoschanz.drawing
+	flatpak install flathub com.mattjakeman.ExtensionManager
+	flatpak install flathub com.github.johnfactotum.Foliate
+	flatpak install flathub de.haeckerfelix.Fragments
+	flatpak install flathub org.gnome.Geary
+	flatpak install flathub fr.free.Homebank
+	flatpak install flathub rest.insomnia.Insomnia
+	flatpak install flathub com.github.alexhuntley.Plots
+	flatpak install flathub com.github.flxzt.rnote
+	flatpak install flathub it.mijorus.smile
+	flatpak install flathub org.gnome.SoundRecorder
+	flatpak install flathub com.wps.Office
+}
+
+function installFlathubAppsSystem() {
+	title "Installing System Flathub Apps Alternatives"
+	flatpak install flathub org.gnome.Boxes
+	flatpak install flathub org.gnome.Calculator
+	flatpak install flathub org.gnome.Calendar
+	flatpak install flathub org.gnome.clocks
+	flatpak install flathub org.gnome.Connections
+	flatpak install flathub org.gnome.Contacts
+	flatpak install flathub org.gnome.baobab
+	flatpak install flathub org.gnome.eog
+	flatpak install flathub org.gnome.Maps
+	flatpak install flathub org.gnome.TextEditor
+	flatpak install flathub org.gnome.Totem
+	flatpanamek install flathub org.gnome.Weather
+}
+
+function removeNativeSystemApps() {
+	title "Remove Native System Apps for Flatpak Alternatives"
+
+	sudo dnf remove gnome-boxes -y
+	sudo dnf remove gnome-calculator -y
+	sudo dnf remove gnome-calendar -y
+	sudo dnf remove gnome-clocks -y
+	sudo dnf remove gnome-connections -y
+	sudo dnf remove gnome-contacts -y
+	sudo dnf remove gnome-connections -y
+	sudo dnf remove gnome-maps -y
+	sudo dnf remove gnome-text-editor -y
+	sudo dnf remove gnome-weather -y
+
+	sudo dnf autoremove -y
 }
 
 function installNativeApps() {
-    title "Installing Natively Packaged Apps"
-    sudo dnf install gnome-tweak-tool -y
+	title "Installing Required Native Apps"
+	sudo dnf install gnome-tweaks -y
 }
 
-function removeApps() {
-    title "Remove Unnecessary Native Apps"
-    sudo dnf remove gedit -y
+#^ THEMES
+function installLibadwaitaGTK3PortTheme() {
+	title "Installing Libadwaita GTK-3 Theme Port"
+	flatpak install org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
+	dnf copr enable nickavem/adw-gtk3
+	dnf install adw-gtk3
+}
+
+function gnomePowerDialog() {
+	title "Disable Power Dialog for Gnome"
+	gsettings set org.gnome.SessionManager logout-prompt false
 }
