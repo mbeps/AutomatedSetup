@@ -139,3 +139,11 @@ function installNativeApps() {
 	sudo dnf install gnome-tweaks -y
 }
 
+#^ THEMES
+function installLibadwaitaGTK3PortTheme() {
+	title "Installing Libadwaita GTK-3 Theme Port"
+	flatpak install org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
+	dnf copr enable nickavem/adw-gtk3
+	dnf install adw-gtk3
+}
+
