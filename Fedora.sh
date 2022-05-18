@@ -133,3 +133,9 @@ function removeNativeSystemApps() {
 
 	sudo dnf autoremove -y
 }
+
+function installNativeApps() {
+	title "Installing Required Native Apps"
+	sudo dnf install gnome-tweaks -y
+}
+
