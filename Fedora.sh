@@ -114,5 +114,22 @@ function installFlathubAppsSystem() {
 	flatpak install flathub org.gnome.Maps
 	flatpak install flathub org.gnome.TextEditor
 	flatpak install flathub org.gnome.Totem
-	flatpak install flathub org.gnome.Weather
+	flatpanamek install flathub org.gnome.Weather
+}
+
+function removeNativeSystemApps() {
+	title "Remove Native System Apps for Flatpak Alternatives"
+
+	sudo dnf remove gnome-boxes -y
+	sudo dnf remove gnome-calculator -y
+	sudo dnf remove gnome-calendar -y
+	sudo dnf remove gnome-clocks -y
+	sudo dnf remove gnome-connections -y
+	sudo dnf remove gnome-contacts -y
+	sudo dnf remove gnome-connections -y
+	sudo dnf remove gnome-maps -y
+	sudo dnf remove gnome-text-editor -y
+	sudo dnf remove gnome-weather -y
+
+	sudo dnf autoremove -y
 }
