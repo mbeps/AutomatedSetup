@@ -82,3 +82,21 @@ function installPip() {
 	title "Installing Pip"
 	sudo dnf install pip3 -y
 }
+
+#^ APPS
+function installFlathubAppsNonSystem() {
+	title "Installing Non-System Flathub Apps"
+	flatpak install flathub org.gnome.Boxes
+	flatpak install flathub org.gnome.Calculator
+	flatpak install flathub org.gnome.Calendar
+	flatpak install flathub org.gnome.clocks
+	flatpak install flathub org.gnome.Connections
+	flatpak install flathub org.gnome.Contacts
+	flatpak install flathub org.gnome.baobab
+	flatpak install flathub org.gnome.eog
+	flatpak install flathub org.gnome.Maps
+	flatpak install flathub org.gnome.TextEditor
+	flatpak install flathub org.gnome.Totem
+	flatpak install flathub org.gnome.Weather
+
+}
