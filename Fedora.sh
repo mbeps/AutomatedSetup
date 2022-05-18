@@ -86,6 +86,23 @@ function installPip() {
 #^ APPS
 function installFlathubAppsNonSystem() {
 	title "Installing Non-System Flathub Apps"
+	flatpak install flathub io.dbeaver.DBeaverCommunity
+	flatpak install flathub com.github.maoschanz.drawing
+	flatpak install flathub com.mattjakeman.ExtensionManager
+	flatpak install flathub com.github.johnfactotum.Foliate
+	flatpak install flathub de.haeckerfelix.Fragments
+	flatpak install flathub org.gnome.Geary
+	flatpak install flathub fr.free.Homebank
+	flatpak install flathub rest.insomnia.Insomnia
+	flatpak install flathub com.github.alexhuntley.Plots
+	flatpak install flathub com.github.flxzt.rnote
+	flatpak install flathub it.mijorus.smile
+	flatpak install flathub org.gnome.SoundRecorder
+	flatpak install flathub com.wps.Office
+}
+
+function installFlathubAppsSystem() {
+	title "Installing System Flathub Apps Alternatives"
 	flatpak install flathub org.gnome.Boxes
 	flatpak install flathub org.gnome.Calculator
 	flatpak install flathub org.gnome.Calendar
@@ -98,5 +115,4 @@ function installFlathubAppsNonSystem() {
 	flatpak install flathub org.gnome.TextEditor
 	flatpak install flathub org.gnome.Totem
 	flatpak install flathub org.gnome.Weather
-
 }
