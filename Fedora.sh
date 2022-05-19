@@ -147,6 +147,15 @@ function installLibadwaitaGTK3PortTheme() {
 	dnf install adw-gtk3
 }
 
+function applyThemeToFlatpaks() {
+	title "Applying Themes to Unsupported Flatpak Apps"
+	sudo flatpak override org.gnome.eog --env=GTK_THEME=adw-gtk3-dark # Image Viewer
+	sudo flatpak override org.gnome.Totem --env=GTK_THEME=adw-gtk3-dark # Videos
+	sudo flatpak override org.gnome.Boxes --env=GTK_THEME=adw-gtk3-dark # Boxes
+	sudo flatpak override org.gnome.Maps --env=GTK_THEME=adw-gtk3-dark # Maps
+	sudo flatpak override org.gnome.Connections --env=GTK_THEME=adw-gtk3-dark # Connections
+}
+
 function gnomePowerDialog() {
 	title "Disable Power Dialog for Gnome"
 	gsettings set org.gnome.SessionManager logout-prompt false
