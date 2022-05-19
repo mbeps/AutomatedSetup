@@ -85,58 +85,58 @@ function installPip() {
 
 #^ APPS
 function installFlathubAppsNonSystem() {
-	title "Installing Non-System Flathub Apps"
-	flatpak install flathub io.dbeaver.DBeaverCommunity
-	flatpak install flathub com.github.maoschanz.drawing
-	flatpak install flathub com.mattjakeman.ExtensionManager
-	flatpak install flathub com.github.johnfactotum.Foliate
-	flatpak install flathub de.haeckerfelix.Fragments
-	flatpak install flathub org.gnome.Geary
-	flatpak install flathub fr.free.Homebank
-	flatpak install flathub rest.insomnia.Insomnia
-	flatpak install flathub com.github.alexhuntley.Plots
-	flatpak install flathub com.github.flxzt.rnote
-	flatpak install flathub it.mijorus.smile
-	flatpak install flathub org.gnome.SoundRecorder
-	flatpak install flathub com.wps.Office
+	title "Installing Non-System Flathub Apps" -y
+	flatpak install flathub io.dbeaver.DBeaverCommunity -y # DBeaver - Database App
+	flatpak install flathub com.github.maoschanz.drawing -y # Drawing - Paint App
+	flatpak install flathub com.mattjakeman.ExtensionManager -y # Extensions Manager for Gnome
+	flatpak install flathub com.github.johnfactotum.Foliate -y # Foliate - eBook Reader
+	flatpak install flathub de.haeckerfelix.Fragments -y # Fragments - Torrent Client
+	flatpak install flathub org.gnome.Geary -y # Geary - Email Client
+	flatpak install flathub fr.free.Homebank -y # HomeBank - Personal Finance
+	flatpak install flathub rest.insomnia.Insomnia -y # Insomnia - API Tool
+	flatpak install flathub com.github.alexhuntley.Plots -y # Plots - Graphing Tool
+	flatpak install flathub com.github.flxzt.rnote -y # rNote - Whiteboard App
+	flatpak install flathub it.mijorus.smile -y # Smile - Emoji Picker
+	flatpak install flathub org.gnome.SoundRecorder -y # Sound Recorder
+	flatpak install flathub com.wps.Office -y # WPS Office
 }
 
 function installFlathubAppsSystem() {
-	title "Installing System Flathub Apps Alternatives"
-	flatpak install flathub org.gnome.Boxes
-	flatpak install flathub org.gnome.Calculator
-	flatpak install flathub org.gnome.Calendar
-	flatpak install flathub org.gnome.clocks
-	flatpak install flathub org.gnome.Connections
-	flatpak install flathub org.gnome.Contacts
-	flatpak install flathub org.gnome.baobab
-	flatpak install flathub org.gnome.eog
-	flatpak install flathub org.gnome.Maps
-	flatpak install flathub org.gnome.TextEditor
-	flatpak install flathub org.gnome.Totem
-	flatpanamek install flathub org.gnome.Weather
+	title "Installing System Flathub Apps Alternatives" -y
+	flatpak install flathub org.gnome.Boxes -y # Gnome Boxes - Virtualisation Tool
+	flatpak install flathub org.gnome.Calculator -y  # Gnome Boxes - Virtualisation Tool
+	flatpak install flathub org.gnome.Calendar -y # Calendar
+	flatpak install flathub org.gnome.clocks -y # Clocks
+	flatpak install flathub org.gnome.Connections -y # Connection - Remote Connection Tool
+	flatpak install flathub org.gnome.Contacts -y # Contacts
+	flatpak install flathub org.gnome.baobab -y # Disk Analyser
+	flatpak install flathub org.gnome.eog -y # Image Viewer
+	flatpak install flathub org.gnome.Maps -y # Maps
+	flatpak install flathub org.gnome.TextEditor -y # Text Editor
+	flatpak install flathub org.gnome.Totem -y # Videos
+	flatpanamek install flathub org.gnome.Weather -y # Weather
 }
 
 function removeNativeSystemApps() {
 	title "Remove Native System Apps for Flatpak Alternatives"
 
-	sudo dnf remove gnome-boxes -y
-	sudo dnf remove gnome-calculator -y
-	sudo dnf remove gnome-calendar -y
-	sudo dnf remove gnome-clocks -y
-	sudo dnf remove gnome-connections -y
-	sudo dnf remove gnome-contacts -y
-	sudo dnf remove gnome-connections -y
-	sudo dnf remove gnome-maps -y
-	sudo dnf remove gnome-text-editor -y
-	sudo dnf remove gnome-weather -y
+	sudo dnf remove gnome-boxes -y # Gnome Boxes - Virtualisation Tool
+	sudo dnf remove gnome-calculator -y  # Gnome Boxes - Virtualisation Tool
+	sudo dnf remove gnome-calendar -y # Calendar
+	sudo dnf remove gnome-clocks -y # Clocks
+	sudo dnf remove gnome-connections -y # Connection - Remote Connection Tool
+	sudo dnf remove gnome-contacts -y # Contacts
+	sudo dnf remove gnome-connections -y # Connection - Remote Connection Tool
+	sudo dnf remove gnome-maps -y # Maps
+	sudo dnf remove gnome-text-editor -y # Text Editor
+	sudo dnf remove gnome-weather -y # Weather
 
 	sudo dnf autoremove -y
 }
 
 function installNativeApps() {
 	title "Installing Required Native Apps"
-	sudo dnf install gnome-tweaks -y
+	sudo dnf install gnome-tweaks -y # Gnome Tweaks
 }
 
 #^ THEMES
