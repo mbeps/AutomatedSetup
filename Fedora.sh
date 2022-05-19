@@ -156,7 +156,9 @@ function applyThemeToFlatpaks() {
 	sudo flatpak override org.gnome.Connections --env=GTK_THEME=adw-gtk3-dark # Connections
 }
 
-function gnomePowerDialog() {
-	title "Disable Power Dialog for Gnome"
-	gsettings set org.gnome.SessionManager logout-prompt false
+function gnomeCustomisations() {
+	title "Tweaking Some Gnome Functionalities"
+	gsettings set org.gnome.SessionManager logout-prompt false # Disable Power Dialog
+	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close" # Enable Window Controls
+
 }
