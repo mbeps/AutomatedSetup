@@ -99,6 +99,10 @@ function installFlathubAppsNonSystem() {
 	flatpak install flathub it.mijorus.smile -y # Smile - Emoji Picker
 	flatpak install flathub org.gnome.SoundRecorder -y # Sound Recorder
 	flatpak install flathub com.wps.Office -y # WPS Office
+	flatpak install flathub org.gnome.FileRoller # FlatSeal - Flatpak Permission Manager
+	flatpak install flathub org.gnome.Music # Gnome Music
+	flatpak install flathub org.gnome.NetworkDisplays # Network Displays
+	flatpak install flathub org.gnome.gitg # Git GUI
 }
 
 function installFlathubAppsSystem() {
@@ -137,6 +141,8 @@ function removeNativeSystemApps() {
 function installNativeApps() {
 	title "Installing Required Native Apps"
 	sudo dnf install gnome-tweaks -y # Gnome Tweaks
+	sudo dnf install gnome-usage -y # Gnome Usage
+	sudo dnf install openssl -y # OpenSSL
 }
 
 #^ THEMES
