@@ -3,6 +3,7 @@ function title() {
 	echo $1
 }
 
+#^ PACKAGE MANAGEMENT
 function updateAndUpgrade() {
 	title "Update & Upgrade"
 	sudo dnf update -y
@@ -31,17 +32,20 @@ function enableFlathub() {
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 }
 
-function installMicrosoftFonts() {
-	title "Installing Microsoft "
-	sudo dnf install curl cabextract xorg-x11-font-utils fontconfig -y
-	sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-}
-
 function installMediaCodecs() {
 	title "Installing Media CODECs"
 	sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
 	sudo dnf install lame\* --exclude=lame-devel -y
 	sudo dnf group upgrade --with-optional Multimedia
+}
+
+
+function setUserFolderDirectory() {
+    title "Set User Folder Directory"
+    xdg-user-dirs-update --set DOCUMENTS "$HOME/Google Drive/Documents"
+    xdg-user-dirs-update --set MUSIC "$HOME/Google Drive/Music"
+    xdg-user-dirs-update --set PICTURES "$HOME/Google Drive/Photos"
+    xdg-user-dirs-update --set VIDEOS "$HOME/Google Drive/Videos"
 }
 
 #^ DEVELOPMENT
