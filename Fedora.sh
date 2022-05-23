@@ -3,6 +3,7 @@ function title() {
 	echo $1
 }
 
+#^ PACKAGE MANAGEMENT
 function updateAndUpgrade() {
 	title "Update & Upgrade"
 	sudo dnf update -y
@@ -31,17 +32,20 @@ function enableFlathub() {
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 }
 
-function installMicrosoftFonts() {
-	title "Installing Microsoft "
-	sudo dnf install curl cabextract xorg-x11-font-utils fontconfig -y
-	sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-}
-
 function installMediaCodecs() {
 	title "Installing Media CODECs"
 	sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
 	sudo dnf install lame\* --exclude=lame-devel -y
 	sudo dnf group upgrade --with-optional Multimedia
+}
+
+
+function setUserFolderDirectory() {
+    title "Set User Folder Directory"
+    xdg-user-dirs-update --set DOCUMENTS "$HOME/Google Drive/Documents"
+    xdg-user-dirs-update --set MUSIC "$HOME/Google Drive/Music"
+    xdg-user-dirs-update --set PICTURES "$HOME/Google Drive/Photos"
+    xdg-user-dirs-update --set VIDEOS "$HOME/Google Drive/Videos"
 }
 
 #^ DEVELOPMENT
@@ -86,63 +90,63 @@ function installPip() {
 #^ APPS
 function installFlathubAppsNonSystem() {
 	title "Installing Non-System Flathub Apps" -y
-	flatpak install flathub io.dbeaver.DBeaverCommunity -y # DBeaver - Database App
-	flatpak install flathub com.github.maoschanz.drawing -y # Drawing - Paint App
-	flatpak install flathub com.mattjakeman.ExtensionManager -y # Extensions Manager for Gnome
-	flatpak install flathub com.github.johnfactotum.Foliate -y # Foliate - eBook Reader
-	flatpak install flathub de.haeckerfelix.Fragments -y # Fragments - Torrent Client
-	flatpak install flathub org.gnome.Geary -y # Geary - Email Client
-	flatpak install flathub fr.free.Homebank -y # HomeBank - Personal Finance
-	flatpak install flathub rest.insomnia.Insomnia -y # Insomnia - API Tool
-	flatpak install flathub com.github.alexhuntley.Plots -y # Plots - Graphing Tool
-	flatpak install flathub com.github.flxzt.rnote -y # rNote - Whiteboard App
-	flatpak install flathub it.mijorus.smile -y # Smile - Emoji Picker
-	flatpak install flathub org.gnome.SoundRecorder -y # Sound Recorder
-	flatpak install flathub com.wps.Office -y # WPS Office
-	flatpak install flathub org.gnome.FileRoller # FlatSeal - Flatpak Permission Manager
-	flatpak install flathub org.gnome.Music # Gnome Music
-	flatpak install flathub org.gnome.NetworkDisplays # Network Displays
-	flatpak install flathub org.gnome.gitg # Git GUI
+	flatpak install flathub io.dbeaver.DBeaverCommunity -y 									# DBeaver - Database App
+	flatpak install flathub com.github.maoschanz.drawing -y 								# Drawing - Paint App
+	flatpak install flathub com.mattjakeman.ExtensionManager -y 							# Extensions Manager for Gnome
+	flatpak install flathub com.github.johnfactotum.Foliate -y 								# Foliate - eBook Reader
+	flatpak install flathub de.haeckerfelix.Fragments -y 									# Fragments - Torrent Client
+	flatpak install flathub org.gnome.Geary -y 												# Geary - Email Client
+	flatpak install flathub fr.free.Homebank -y 											# HomeBank - Personal Finance
+	flatpak install flathub rest.insomnia.Insomnia -y 										# Insomnia - API Tool
+	flatpak install flathub com.github.alexhuntley.Plots -y 								# Plots - Graphing Tool
+	flatpak install flathub com.github.flxzt.rnote -y 										# rNote - Whiteboard App
+	flatpak install flathub it.mijorus.smile -y 											# Smile - Emoji Picker
+	flatpak install flathub org.gnome.SoundRecorder -y 										# Sound Recorder
+	flatpak install flathub com.wps.Office -y 												# WPS Office
+	flatpak install flathub org.gnome.FileRoller 											# FlatSeal - Flatpak Permission Manager
+	flatpak install flathub org.gnome.Music 												# Gnome Music
+	flatpak install flathub org.gnome.NetworkDisplays 										# Network Displays
+	flatpak install flathub org.gnome.gitg 													# Git GUI
 }
 
 function installFlathubAppsSystem() {
 	title "Installing System Flathub Apps Alternatives" -y
-	flatpak install flathub org.gnome.Boxes -y # Gnome Boxes - Virtualisation Tool
-	flatpak install flathub org.gnome.Calculator -y  # Gnome Boxes - Virtualisation Tool
-	flatpak install flathub org.gnome.Calendar -y # Calendar
-	flatpak install flathub org.gnome.clocks -y # Clocks
-	flatpak install flathub org.gnome.Connections -y # Connection - Remote Connection Tool
-	flatpak install flathub org.gnome.Contacts -y # Contacts
-	flatpak install flathub org.gnome.baobab -y # Disk Analyser
-	flatpak install flathub org.gnome.eog -y # Image Viewer
-	flatpak install flathub org.gnome.Maps -y # Maps
-	flatpak install flathub org.gnome.TextEditor -y # Text Editor
-	flatpak install flathub org.gnome.Totem -y # Videos
-	flatpanamek install flathub org.gnome.Weather -y # Weather
+	flatpak install flathub org.gnome.Boxes -y 												# Gnome Boxes - Virtualisation Tool
+	flatpak install flathub org.gnome.Calculator -y  										# Gnome Boxes - Virtualisation Tool
+	flatpak install flathub org.gnome.Calendar -y 											# Calendar
+	flatpak install flathub org.gnome.clocks -y 											# Clocks
+	flatpak install flathub org.gnome.Connections -y 										# Connection - Remote Connection Tool
+	flatpak install flathub org.gnome.Contacts -y 											# Contacts
+	flatpak install flathub org.gnome.baobab -y 											# Disk Analyser
+	flatpak install flathub org.gnome.eog -y 												# Image Viewer
+	flatpak install flathub org.gnome.Maps -y 												# Maps
+	flatpak install flathub org.gnome.TextEditor -y 										# Text Editor
+	flatpak install flathub org.gnome.Totem -y 												# Videos
+	flatpanamek install flathub org.gnome.Weather -y 										# Weather
 }
 
 function removeNativeSystemApps() {
 	title "Remove Native System Apps for Flatpak Alternatives"
 
-	sudo dnf remove gnome-boxes -y # Gnome Boxes - Virtualisation Tool
-	sudo dnf remove gnome-calculator -y  # Gnome Boxes - Virtualisation Tool
-	sudo dnf remove gnome-calendar -y # Calendar
-	sudo dnf remove gnome-clocks -y # Clocks
-	sudo dnf remove gnome-connections -y # Connection - Remote Connection Tool
-	sudo dnf remove gnome-contacts -y # Contacts
-	sudo dnf remove gnome-connections -y # Connection - Remote Connection Tool
-	sudo dnf remove gnome-maps -y # Maps
-	sudo dnf remove gnome-text-editor -y # Text Editor
-	sudo dnf remove gnome-weather -y # Weather
+	sudo dnf remove gnome-boxes -y 															# Gnome Boxes - Virtualisation Tool
+	sudo dnf remove gnome-calculator -y  													# Gnome Boxes - Virtualisation Tool
+	sudo dnf remove gnome-calendar -y 														# Calendar
+	sudo dnf remove gnome-clocks -y 														# Clocks
+	sudo dnf remove gnome-connections -y 													# Connection - Remote Connection Tool
+	sudo dnf remove gnome-contacts -y 														# Contacts
+	sudo dnf remove gnome-connections -y 													# Connection - Remote Connection Tool
+	sudo dnf remove gnome-maps -y 															# Maps
+	sudo dnf remove gnome-text-editor -y 													# Text Editor
+	sudo dnf remove gnome-weather -y 														# Weather
 
 	sudo dnf autoremove -y
 }
 
 function installNativeApps() {
 	title "Installing Required Native Apps"
-	sudo dnf install gnome-tweaks -y # Gnome Tweaks
-	sudo dnf install gnome-usage -y # Gnome Usage
-	sudo dnf install openssl -y # OpenSSL
+	sudo dnf install gnome-tweaks -y 														# Gnome Tweaks
+	sudo dnf install gnome-usage -y 														# Gnome Usage
+	sudo dnf install openssl -y 															# OpenSSL
 }
 
 #^ THEMES
@@ -155,16 +159,16 @@ function installLibadwaitaGTK3PortTheme() {
 
 function applyThemeToFlatpaks() {
 	title "Applying Themes to Unsupported Flatpak Apps"
-	sudo flatpak override org.gnome.eog --env=GTK_THEME=adw-gtk3-dark # Image Viewer
-	sudo flatpak override org.gnome.Totem --env=GTK_THEME=adw-gtk3-dark # Videos
-	sudo flatpak override org.gnome.Boxes --env=GTK_THEME=adw-gtk3-dark # Boxes
-	sudo flatpak override org.gnome.Maps --env=GTK_THEME=adw-gtk3-dark # Maps
-	sudo flatpak override org.gnome.Connections --env=GTK_THEME=adw-gtk3-dark # Connections
+	sudo flatpak override org.gnome.eog --env=GTK_THEME=adw-gtk3-dark 						# Image Viewer
+	sudo flatpak override org.gnome.Totem --env=GTK_THEME=adw-gtk3-dark 					# Videos
+	sudo flatpak override org.gnome.Boxes --env=GTK_THEME=adw-gtk3-dark 					# Boxes
+	sudo flatpak override org.gnome.Maps --env=GTK_THEME=adw-gtk3-dark 						# Maps
+	sudo flatpak override org.gnome.Connections --env=GTK_THEME=adw-gtk3-dark 				# Connections
 }
 
 function gnomeCustomisations() {
 	title "Tweaking Some Gnome Functionalities"
-	gsettings set org.gnome.SessionManager logout-prompt false # Disable Power Dialog
+	gsettings set org.gnome.SessionManager logout-prompt false 								# Disable Power Dialog
 	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close" # Enable Window Controls
 
 }
