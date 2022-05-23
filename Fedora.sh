@@ -103,10 +103,11 @@ function installFlathubAppsNonSystem() {
 	flatpak install flathub it.mijorus.smile -y 											# Smile - Emoji Picker
 	flatpak install flathub org.gnome.SoundRecorder -y 										# Sound Recorder
 	flatpak install flathub com.wps.Office -y 												# WPS Office
-	flatpak install flathub org.gnome.FileRoller 											# FlatSeal - Flatpak Permission Manager
+	flatpak install flathub org.gnome.FileRoller 											# File Roller - Archive Manager
 	flatpak install flathub org.gnome.Music 												# Gnome Music
 	flatpak install flathub org.gnome.NetworkDisplays 										# Network Displays
 	flatpak install flathub org.gnome.gitg 													# Git GUI
+	flatpak install flathub com.github.tchx84.Flatseal 										# FlatSeal - Flatpak permission manager
 }
 
 function installFlathubAppsSystem() {
@@ -164,6 +165,7 @@ function applyThemeToFlatpaks() {
 	sudo flatpak override org.gnome.Boxes --env=GTK_THEME=adw-gtk3-dark 					# Boxes
 	sudo flatpak override org.gnome.Maps --env=GTK_THEME=adw-gtk3-dark 						# Maps
 	sudo flatpak override org.gnome.Connections --env=GTK_THEME=adw-gtk3-dark 				# Connections
+	sudo flatpak override org.gnome.FileRoller --env=GTK_THEME=adw-gtk3-dark 				# File Roller - Archive Manager
 }
 
 function gnomeCustomisations() {
