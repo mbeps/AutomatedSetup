@@ -247,8 +247,29 @@ function installNativeApps() {
 		)
 
 	for package in ${packages[@]}; do
-		echo "sudo dnf install $package -y"
+		sudo dnf install $package -y
 	done
+}
+
+function installInSync() {
+	# https://www.insynchq.com/downloads
+	title "Installing InSync"
+
+	sudo rpm --import https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
+
+	respository=(
+		"[insync]"
+		"name=insync repo"
+		"baseurl=http://yum.insync.io/fedora/\$releasever/"
+		"gpgcheck=1"
+		"gpgkey=https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key"
+		"enabled=1"
+		"metadata_expire=120m"
+	)
+	for line in ${respository[@]}; do
+		echo "$line" | sudo tee -a /etc/yum.repos.d/insync.repo
+	done
+	sudo yum install insync
 }
 
 #^ THEMES
