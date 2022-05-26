@@ -151,6 +151,25 @@ function installVSCode() {
 	sudo dnf install code
 }
 
+function installNodeViaPackageManager() {
+	sudo dnf module install nodejs:16 -y
+	sudo npm install --global yarn
+}
+
+function installNodeViaNVM() {
+	# https://heynode.com/tutorial/install-nodejs-locally-nvm/
+	curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.sh
+	bash install_nvm.sh
+	export NVM_DIR="$HOME/.nvm"
+	nvm install --lts
+}
+
+function installNode() {
+	title "Installing Node.JS, NPM and Yarn"
+
+	installNodeViaNVM
+}
+
 #^ APPS
 function installFlathubAppsNonSystem() {
 	title "Installing Non-System Flathub Apps"
