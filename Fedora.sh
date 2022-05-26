@@ -132,6 +132,25 @@ function installPip() {
 	sudo dnf install pip3 -y
 }
 
+function installVSCode() {
+	# https://www.linuxcapable.com/how-to-install-visual-studio-code-vs-code-on-fedora-34-35/
+	title "Installing Visual Studio Code"
+
+	respository=(
+		"[vscode]"
+		"name=Visual Studio Code"
+		"baseurl=https://packages.microsoft.com/yumrepos/vscode"
+		"enabled=1"
+		"gpgcheck=1"
+		"gpgkey=https://packages.microsoft.com/keys/microsoft.asc"
+	)
+	for line in ${respository[@]}; do
+		echo "$line" | sudo tee -a /etc/yum.repos.d/vscode.repo
+	done
+	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	sudo dnf install code
+}
+
 #^ APPS
 function installFlathubAppsNonSystem() {
 	title "Installing Non-System Flathub Apps"
