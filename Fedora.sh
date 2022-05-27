@@ -5,21 +5,21 @@ function title() {
 #^ DEPENDENCIES
 function installFlathubApps() {
 	apps=$1
-	for app in ${apps[@]}; do
+	for app in "${apps[@]}"; do
 		flatpak install flathub $app -y
 	done
 }
 
 function installNativeApps() {
 	packages=$1
-	for package in ${packages[@]}; do
+	for package in "${packages[@]}"; do
 		sudo dnf install $package -y
 	done
 }
 
 function removeNativeApps() {
 	packages=$1
-	for package in ${packages[@]}; do
+	for package in "${packages[@]}"; do
 		sudo dnf remove $package -y
 	done
 }
@@ -235,20 +235,17 @@ function removeNativeSystemApps() {
 		)
 
 	removeNativeApps "${packages[@]}"
-
 	sudo dnf autoremove -y
 }
 
-function installNativeApps() {
+function installNativeNonSystemApps() {
 	packages=(
 		"gnome-tweaks" 							# Gnome Tweaks
 		"gnome-usage" 							# Gnome Usage
 		"openssl"								# OpenSSL
 		)
 
-	for package in ${packages[@]}; do
-		sudo dnf install $package -y
-	done
+	installNativeApps "${packages[@]}"
 }
 
 function installInSync() {
