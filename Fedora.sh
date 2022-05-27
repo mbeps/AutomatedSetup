@@ -324,8 +324,9 @@ function setBash() {
 		"alias editor=\"flatpak run org.gnome.TextEditor\"" 
 		"alias postgres-stop=\"sudo systemctl stop postgresql\"" 
 		"alias postgres-start=\"sudo systemctl start postgresql\"" 
+		"alias git-sync=\"git pull && git push\"" 
 	)
 	for line in "${settings[@]}"; do
-		echo "$line" | sudo tee -a ~/.bashrc
+		echo "$line" | tee -a ~/.bashrc
 	done
 }
