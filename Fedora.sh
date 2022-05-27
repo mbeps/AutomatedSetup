@@ -311,3 +311,18 @@ function gnomeCustomisations() {
 	gsettings set org.gnome.SessionManager logout-prompt false 								# Disable Power Dialog
 	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close" # Enable Window Controls
 }
+
+#^ OTHER
+function setBash() {
+	title "Setting Up Bash"
+
+	settings=(
+		"export PS1='\[\e[0;1;91m\]\u\[\e[0;2;91m\]@\[\e[0;3;91m\]\h\[\e[0m\]:\[\e[0;2m\]/\[\e[0;38;5;39m\]\W\[\e[0;2m\]/\[\e[0;92m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2) \[\e[0m\]$ \[\e[0m\]'" 
+		"alias editor=\"flatpak run org.gnome.TextEditor\"" 
+		"alias postgres-stop=\"sudo systemctl stop postgresql\"" 
+		"alias postgres-start=\"sudo systemctl start postgresql\"" 
+	)
+	for line in "${settings[@]}"; do
+		echo "$line" | sudo tee -a ~/.bashrc
+	done
+}
