@@ -272,6 +272,13 @@ function installInSync() {
 	sudo yum install insync
 }
 
+function installMicrosoftEdge() {
+	title "Installing Microsoft Edge"
+
+	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	sudo dnf install microsoft-edge-stable
+}
+
 #^ THEMES
 function installLibadwaitaGTK3PortTheme() {
 	title "Installing Libadwaita GTK-3 Theme Port"
