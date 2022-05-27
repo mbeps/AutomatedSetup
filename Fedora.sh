@@ -65,29 +65,6 @@ function installMediaCodecs() {
 	sudo dnf group upgrade --with-optional Multimedia
 }
 
-
-function setUserFolderDirectory() {
-    title "Set User Folder Directory"
-
-	locations=(
-		"DOCUMENTS" 
-		"MUSIC" 
-		"PICTURES" 
-		"VIDEOS"
-		)
-	directories=(
-		"\"$HOME/Google Drive/Documents\""
-		"\"$HOME/Google Drive/Music\""
-		"\"$HOME/Google Drive/Photos\""
-		"\"$HOME/Google Drive/Videos\""
-		)
-	arrayLength=${#locations[@]}
-
-	for (( i=0; i<$arrayLength; i++ )); do
-		echo "xdg-user-dirs-update --set ${locations[$i]} ${directories[$i]}"
-	done
-}
-
 #^ DEVELOPMENT
 function installJDK() {
 	title "Instaling Java Development Environment"
@@ -111,7 +88,7 @@ function installAndSetupGit() {
 function configureGithubSSH() {
 	title "Configuring SSH Keys for GitHub"
 
-	ssh-keygen -t ed25519 -C "bepary71@gmail.com"
+	echo && echo && echo | ssh-keygen -t ed25519 -C "bepary71@gmail.com"
 	eval "$(ssh-agent -s)"
 	ssh-add ~/.ssh/id_ed25519
 	cat ~/.ssh/id_ed25519.pub
@@ -328,5 +305,27 @@ function setBash() {
 	)
 	for line in "${settings[@]}"; do
 		echo "$line" | tee -a ~/.bashrc
+	done
+}
+
+function setUserFolderDirectory() {
+    title "Set User Folder Directory"
+
+	locations=(
+		"DOCUMENTS" 
+		"MUSIC" 
+		"PICTURES" 
+		"VIDEOS"
+		)
+	directories=(
+		"\"$HOME/Google Drive/Documents\""
+		"\"$HOME/Google Drive/Music\""
+		"\"$HOME/Google Drive/Photos\""
+		"\"$HOME/Google Drive/Videos\""
+		)
+	arrayLength=${#locations[@]}
+
+	for (( i=0; i<$arrayLength; i++ )); do
+		echo "xdg-user-dirs-update --set ${locations[$i]} ${directories[$i]}"
 	done
 }
