@@ -2,6 +2,7 @@ function title() {
 	clear
 	echo $1
 }
+
 #^ DEPENDENCIES
 function installFlathubApps() {
 	apps=$1
@@ -32,41 +33,40 @@ function updateAndUpgrade() {
 	sudo dnf upgrade -y
 }
 
-function optimiseDNF() {
+function optimiseDNF() { 
 	title "Opmise DNF"
 
 	echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
 	echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
-
 }
 
-function enableRPMFusion() {
+function enableRPMFusion() { 
 	title "Enable RPM Fusion Respositories"
 
 	sudo dnf install \
-		https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+		https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
 	# Free
 	sudo dnf install \
-		https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+		https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 	# Non Free
 }
 
-function enableFlathub() {
+function enableFlathub() { 
 	title "Enable FlatHub"
 
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 }
 
-function installMediaCodecs() {
+function installMediaCodecs() { 
 	title "Installing Media CODECs"
 
 	sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
 	sudo dnf install lame\* --exclude=lame-devel -y
-	sudo dnf group upgrade --with-optional Multimedia
+	sudo dnf group upgrade --with-optional Multimedia -y
 }
 
 #^ DEVELOPMENT
-function installJDK() {
+function installJDK() { 
 	title "Instaling Java Development Environment"
 
 	sudo rpm --import https://yum.corretto.aws/corretto.key -y
@@ -74,7 +74,7 @@ function installJDK() {
 	sudo yum install -y java-17-amazon-corretto-devel
 }
 
-function installAndSetupGit() {
+function installAndSetupGit() { 
 	title "Installing & Configuring Git"
 
 	echo "Installing Git"
@@ -85,7 +85,7 @@ function installAndSetupGit() {
 	git config --global core.autocrlf input
 }
 
-function configureGithubSSH() {
+function configureGithubSSH() { 
 	title "Configuring SSH Keys for GitHub"
 
 	echo && echo && echo | ssh-keygen -t ed25519 -C "bepary71@gmail.com"
@@ -94,7 +94,7 @@ function configureGithubSSH() {
 	cat ~/.ssh/id_ed25519.pub
 }
 
-function installPostgres() {
+function installPostgres() { 
 	title "Installing PostgreSQL"
 
 	sudo dnf install postgresql-server postgresql-contrib -y
@@ -109,7 +109,7 @@ function installPip() {
 	sudo dnf install pip3 -y
 }
 
-function installVSCode() {
+function installVSCode() { 
 	# https://www.linuxcapable.com/how-to-install-visual-studio-code-vs-code-on-fedora-34-35/
 	title "Installing Visual Studio Code"
 
@@ -121,11 +121,11 @@ function installVSCode() {
 		"gpgcheck=1"
 		"gpgkey=https://packages.microsoft.com/keys/microsoft.asc"
 	)
-	for line in ${respository[@]}; do
+	for line in "${respository[@]}"; do
 		echo "$line" | sudo tee -a /etc/yum.repos.d/vscode.repo
 	done
 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-	sudo dnf install code
+	sudo dnf install code -y
 }
 
 function installNodeViaPackageManager() {
@@ -133,9 +133,9 @@ function installNodeViaPackageManager() {
 	sudo npm install --global yarn
 }
 
-function installNodeViaNVM() {
+function installNodeViaNVM() { 
 	# https://heynode.com/tutorial/install-nodejs-locally-nvm/
-	curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.sh
+	curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh -o install_nvm.sh
 	bash install_nvm.sh
 	export NVM_DIR="$HOME/.nvm"
 	nvm install --lts
@@ -148,7 +148,7 @@ function installNode() {
 }
 
 #^ APPS
-function installFlathubAppsNonSystem() {
+function installFlathubAppsNonSystem() { 
 	title "Installing Non-System Flathub Apps"
 	
 	apps=(
@@ -175,7 +175,7 @@ function installFlathubAppsNonSystem() {
 	installFlathubApps "${apps[@]}"
 }
 
-function installFlathubAppsSystem() {
+function installFlathubAppsSystem() { 
 	title "Installing System Flathub Apps Alternatives"
 	
 	apps=(
@@ -225,7 +225,7 @@ function installNativeNonSystemApps() {
 	installNativeApps "${packages[@]}"
 }
 
-function installInSync() {
+function installInSync() { 
 	# https://www.insynchq.com/downloads
 	title "Installing InSync"
 
@@ -240,35 +240,38 @@ function installInSync() {
 		"enabled=1"
 		"metadata_expire=120m"
 	)
-	for line in ${respository[@]}; do
+	for line in "${respository[@]}"; do
 		echo "$line" | sudo tee -a /etc/yum.repos.d/insync.repo
 	done
-	sudo yum install insync
+	sudo yum install insync -y
 }
 
-function installMicrosoftEdge() {
+function installMicrosoftEdge() { 
 	title "Installing Microsoft Edge"
 
+	sudo dnf install dnf-plugins-core -y
 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-	sudo dnf install microsoft-edge-stable
+	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/edge
+	sudo dnf update --refresh
+	sudo dnf install microsoft-edge-stable -y
 }
 
 #^ THEMES
-function installLibadwaitaGTK3PortTheme() {
+function installLibadwaitaGTK3PortTheme() { 
 	title "Installing Libadwaita GTK-3 Theme Port"
 
 	flatpak install org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark -y
-	dnf copr enable nickavem/adw-gtk3
-	dnf install adw-gtk3 -y
+	sudo dnf copr enable nickavem/adw-gtk3 -y
+	sudo dnf install adw-gtk3 -y
 }
 
-function applyThemeToNativeApps() {
+function applyThemeToNativeApps() { 
 	title "Applying Themes to Native Apps"
 
 	gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 }
 
-function applyThemeToFlatpaks() {
+function applyThemeToFlatpaks() { 
 	title "Applying Themes to Unsupported Flatpak Apps"
 	
 	apps=(
@@ -280,12 +283,12 @@ function applyThemeToFlatpaks() {
 		"org.gnome.FileRoller" 					# File Roller - Archive Manager
 		)
 
-	for app in ${apps[@]}; do
+	for app in "${apps[@]}"; do
 		sudo flatpak override $app --env=GTK_THEME=adw-gtk3-dark
 	done
 }
 
-function gnomeCustomisations() {
+function gnomeCustomisations() { 
 	title "Tweaking Some Gnome Functionalities"
 
 	gsettings set org.gnome.SessionManager logout-prompt false 								# Disable Power Dialog
@@ -293,7 +296,7 @@ function gnomeCustomisations() {
 }
 
 #^ OTHER
-function setBash() {
+function setBash() { 
 	title "Setting Up Bash"
 
 	settings=(
@@ -308,7 +311,7 @@ function setBash() {
 	done
 }
 
-function setUserFolderDirectory() {
+function setUserFolderDirectory() { 
     title "Set User Folder Directory"
 
 	locations=(
@@ -318,14 +321,14 @@ function setUserFolderDirectory() {
 		"VIDEOS"
 		)
 	directories=(
-		"\"$HOME/Google Drive/Documents\""
-		"\"$HOME/Google Drive/Music\""
-		"\"$HOME/Google Drive/Photos\""
-		"\"$HOME/Google Drive/Videos\""
+		"/home/maruf/Google Drive/Documents"
+		"/home/maruf/Google Drive/Music"
+		"/home/maruf/Google Drive/Photos"
+		"/home/maruf/Google Drive/Videos"
 		)
 	arrayLength=${#locations[@]}
 
 	for (( i=0; i<$arrayLength; i++ )); do
-		echo "xdg-user-dirs-update --set ${locations[$i]} ${directories[$i]}"
+		xdg-user-dirs-update --set ${locations[$i]} "${directories[$i]}"
 	done
 }
