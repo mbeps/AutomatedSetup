@@ -363,6 +363,7 @@ function gnomeCustomisations() {
 
 	gsettings set org.gnome.SessionManager logout-prompt false 								# Disable Power Dialog
 	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close" # Enable Window Controls
+	gsettings set org.gnome.desktop.interface show-battery-percentage true 					# Enable Battery Percentage
 }
 
 #^ OTHER
