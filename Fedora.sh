@@ -410,4 +410,29 @@ function setUserFolderDirectory() {
 	done
 }
 
+#^ MAIN
+optimiseDNF
 updateAndUpgrade
+enableRPMFusion
+enableFlathub
+installMediaCodecs
+
+installMicrosoftEdge
+installInSync
+removeNativeSystemApps
+installFlathubAppsSystem
+installFlathubAppsNonSystem
+installLibadwaitaGTK3PortTheme
+applyThemeToNativeApps
+applyThemeToFlatpaks
+gnomeCustomisations
+setBash
+setUserFolderDirectory
+
+installAndSetupGit
+installJDK
+installPostgres
+installPip
+installNode
+installVSCode
+configureGithubSSH
