@@ -89,6 +89,13 @@ function installMediaCodecs() {
 	sudo dnf group upgrade --with-optional Multimedia -y
 }
 
+# Install Cascadia Code Font from RPM repository. 
+function installCascadiaCodeFont() {
+	title "Installing Cascadia Code Font"
+
+	sudo dnf install cascadia-fonts-all -y
+}
+
 #^ DEVELOPMENT
 # Installs Java Development Kit (JDK) for Java development. 
 	# Source: https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/generic-linux-install.html
