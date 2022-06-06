@@ -154,6 +154,13 @@ function installPip() {
 	sudo dnf install python3-pip -y
 }
 
+# Installs Poetry Project Manager for Python. 
+function installPythonPoetry() {
+	title "Installing Poetry Project Manager for Python"
+
+	sudo dnf install poetry -y
+}
+
 # Installs Visual Studio Code. 
 	# Adds all the necessary keys and repositories. 
 	# Source: https://www.linuxcapable.com/how-to-install-visual-studio-code-vs-code-on-fedora-34-35/

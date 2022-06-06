@@ -41,6 +41,7 @@ function checksPython() {
 
     python3 --version
     pip3 --version
+    poetry --version
 }
 
 # Checks whether Git is installed by checking version and checks user configurations. 
