@@ -289,6 +289,7 @@ function installNativeNonSystemApps() {
 		"gnome-tweaks" 							# Gnome Tweaks
 		"gnome-usage" 							# Gnome Usage
 		"openssl"								# OpenSSL
+		"sshfs" 								# SSHFS
 		)
 
 	installNativeApps "${packages[@]}"
@@ -393,6 +394,7 @@ function setBash() {
 		"alias postgres-stop=\"sudo systemctl stop postgresql\"" 			# Stop Postgres
 		"alias postgres-start=\"sudo systemctl start postgresql\"" 			# Start Postgres
 		"alias git-sync=\"git pull && git push\"" 							# Git Pull and Push
+		"alias mount-uni=\"sshfs zjac268@linux.cim.rhul.ac.uk:/home/cim/ug/zjac268 \\\"/home/maruf/Remotes/Royal Holloway Linux Server/\\\"\"" # Mount University Drive
 	)
 	for line in "${settings[@]}"; do # Adding settings
 		echo "$line" | tee -a ~/.bashrc
@@ -425,6 +427,15 @@ function setUserFolderDirectory() {
 	done
 }
 
+# Mounts the user folder from Royal Holloway Linux Server into file system for easier access. 
+	# Will ask for password which is normally used as log in. 
+	# Source: https://youtu.be/fgEk9Q93FjE
+function mountUniServer() {
+	title "Mounting Royal Holloway Linux Server into File System"
+
+	sshfs zjac268@linux.cim.rhul.ac.uk:/home/cim/ug/zjac268 "/home/maruf/Remotes/Royal Holloway Linux Server/"
+}
+
 #^ MAIN
 optimiseDNF
 updateAndUpgrade
@@ -443,6 +454,7 @@ applyThemeToFlatpaks
 gnomeCustomisations
 setBash
 setUserFolderDirectory
+mountUniServer
 
 installAndSetupGit
 installJDK
