@@ -108,6 +108,14 @@ function installJDK() {
 	sudo yum install -y java-17-amazon-corretto-devel
 }
 
+# Installs Poetry project manager for Java. 
+function installMaven() {
+	title "Installing Maven Project Manager for Java"
+
+	package=("maven")
+	installNativeApps "${package[@]}"
+}
+
 # Installs Git version control system and sets up user configurations. 
 	# Sets up user name, email and end of line setting. 
 	# Source: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
@@ -466,6 +474,7 @@ mountUniServer
 
 installAndSetupGit
 installJDK
+installMaven
 installPostgres
 installPip
 installNode
