@@ -93,7 +93,8 @@ function installMediaCodecs() {
 function installCascadiaCodeFont() {
 	title "Installing Cascadia Code Font"
 
-	sudo dnf install cascadia-fonts-all -y
+	package=("cascadia-fonts-all")
+	installNativeApps "${package[@]}"
 }
 
 #^ DEVELOPMENT
@@ -114,7 +115,8 @@ function installAndSetupGit() {
 	title "Installing & Configuring Git"
 
 	echo "Installing Git"
-	sudo dnf install git -y
+	package=("git")
+	installNativeApps "${package[@]}"
 	
 	echo "Configuring Git"
 	git config --global user.name "Maruf Bepary"
@@ -140,7 +142,9 @@ function configureGithubSSH() {
 function installPostgres() { 
 	title "Installing PostgreSQL"
 
-	sudo dnf install postgresql-server postgresql-contrib -y
+	package=("postgresql-server" "postgresql-contrib")
+	installNativeApps "${package[@]}"
+
 	sudo systemctl enable postgresql
 	sudo postgresql-setup --initdb --unit postgresql
 	sudo systemctl start postgresql
@@ -151,7 +155,8 @@ function installPostgres() {
 function installPip() {
 	title "Installing Pip"
 
-	sudo dnf install python3-pip -y
+	package=("python3-pip")
+	installNativeApps "${package[@]}"
 }
 
 # Installs Poetry Project Manager for Python. 
@@ -180,7 +185,9 @@ function installVSCode() {
 		echo "$line" | sudo tee -a /etc/yum.repos.d/vscode.repo
 	done
 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc # Import GPG key
-	sudo dnf install code -y
+	
+	package=("code")
+	installNativeApps "${package[@]}"
 }
 
 # Installs Node.JS via built-in package manager. 
@@ -327,7 +334,8 @@ function installMicrosoftEdge() {
 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/edge
 	sudo dnf update --refresh
-	sudo dnf install microsoft-edge-stable -y
+	package=("microsoft-edge-stable")
+	installNativeApps "${package[@]}"
 }
 
 #^ THEMES
