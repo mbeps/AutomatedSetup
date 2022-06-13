@@ -397,6 +397,17 @@ function gnomeCustomisations() {
 	gsettings set org.gnome.desktop.interface show-battery-percentage true 					# Enable Battery Percentage
 }
 
+# Enables experimental support for fractional scaling. 
+	# Both Wayland and X11
+	# Source: https://www.linuxuprising.com/2019/04/how-to-enable-hidpi-fractional-scaling.html
+function gnomeFractionalScaling() {
+	title "Enabling Fractional Scaling"
+
+	gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']" 	# Wayland
+	# gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']" 	# X11
+	# gsettings reset org.gnome.mutter experimental-features 								# Reset
+}
+
 #^ OTHER
 # Adds some settings to bashrc. 
 	# Adds some aliases for quick commands.
@@ -468,6 +479,7 @@ installLibadwaitaGTK3PortTheme
 applyThemeToNativeApps
 applyThemeToFlatpaks
 gnomeCustomisations
+gnomeFractionalScaling
 setBash
 setUserFolderDirectory
 mountUniServer
