@@ -292,6 +292,7 @@ function removeNativeSystemApps() {
 		"gnome-maps" 							# Maps
 		"gnome-text-editor" 					# Text Editor
 		"gnome-weather" 						# Weather
+		"org.signal.Signal" 					# Signal
 		)
 
 	removeNativeApps "${packages[@]}"
