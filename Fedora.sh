@@ -171,7 +171,8 @@ function installPip() {
 function installPythonPoetry() {
 	title "Installing Poetry Project Manager for Python"
 
-	sudo dnf install poetry -y
+	package=("poetry")
+	installNativeApps "${package[@]}"
 }
 
 # Installs Visual Studio Code. 
@@ -356,7 +357,8 @@ function installLibadwaitaGTK3PortTheme() {
 
 	flatpak install org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark -y
 	sudo dnf copr enable nickavem/adw-gtk3 -y
-	sudo dnf install adw-gtk3 -y
+	package=("adw-gtk3")
+	installNativeApps "${package[@]}"
 }
 
 # Applies Libadwaita theme port to legacy apps. 
