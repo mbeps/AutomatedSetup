@@ -244,7 +244,7 @@ function installFlathubAppsNonSystem() {
 		"com.github.flxzt.rnote" 				# rNote - Whiteboard App
 		"it.mijorus.smile" 						# Smile - Emoji Picker
 		"org.gnome.SoundRecorder" 				# Sound Recorder
-		"com.wps.Office" 						# WPS Office
+		"org.onlyoffice.desktopeditors" 		# OnlyOffice
 		"org.gnome.FileRoller" 					# File Roller - Archive Manager
 		"org.gnome.Music" 						# Gnome Music
 		"org.gnome.NetworkDisplays" 			# Network Displays
