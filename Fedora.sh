@@ -47,13 +47,11 @@ function updateAndUpgrade() {
 }
 
 # Opmisises DNF package manager performance. 
-	# Chooses fastest server for downloads. 
 	# Increases the number of parallel downloads. 
 function optimiseDNF() { 
 	title "Opmise DNF"
 
-	echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf # Fastest server
-	echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf # Max download
+	echo 'max_parallel_downloads=20' | sudo tee -a /etc/dnf/dnf.conf # Max download
 }
 
 # Enables RPM Fusion repositories for added packages and apps. 
@@ -69,6 +67,7 @@ function enableRPMFusion() {
 	sudo dnf install \
 		https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 	# Non Free
+	sudo dnf groupupdate core -y # Make apps visible on Gnome Store
 }
 
 # Enables FlatHub repositories for Flatpaks for added apps. 
@@ -106,6 +105,14 @@ function installJDK() {
 	sudo rpm --import https://yum.corretto.aws/corretto.key -y
 	sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
 	sudo yum install -y java-17-amazon-corretto-devel
+}
+
+# Installs Poetry project manager for Java. 
+function installMaven() {
+	title "Installing Maven Project Manager for Java"
+
+	package=("maven")
+	installNativeApps "${package[@]}"
 }
 
 # Installs Git version control system and sets up user configurations. 
@@ -163,7 +170,8 @@ function installPip() {
 function installPythonPoetry() {
 	title "Installing Poetry Project Manager for Python"
 
-	sudo dnf install poetry -y
+	package=("poetry")
+	installNativeApps "${package[@]}"
 }
 
 # Installs Visual Studio Code. 
@@ -235,7 +243,7 @@ function installFlathubAppsNonSystem() {
 		"com.github.flxzt.rnote" 				# rNote - Whiteboard App
 		"it.mijorus.smile" 						# Smile - Emoji Picker
 		"org.gnome.SoundRecorder" 				# Sound Recorder
-		"com.wps.Office" 						# WPS Office
+		"org.onlyoffice.desktopeditors" 		# OnlyOffice
 		"org.gnome.FileRoller" 					# File Roller - Archive Manager
 		"org.gnome.Music" 						# Gnome Music
 		"org.gnome.NetworkDisplays" 			# Network Displays
@@ -283,6 +291,7 @@ function removeNativeSystemApps() {
 		"gnome-maps" 							# Maps
 		"gnome-text-editor" 					# Text Editor
 		"gnome-weather" 						# Weather
+		"org.signal.Signal" 					# Signal
 		)
 
 	removeNativeApps "${packages[@]}"
@@ -348,7 +357,8 @@ function installLibadwaitaGTK3PortTheme() {
 
 	flatpak install org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark -y
 	sudo dnf copr enable nickavem/adw-gtk3 -y
-	sudo dnf install adw-gtk3 -y
+	package=("adw-gtk3")
+	installNativeApps "${package[@]}"
 }
 
 # Applies Libadwaita theme port to legacy apps. 
@@ -387,6 +397,17 @@ function gnomeCustomisations() {
 	gsettings set org.gnome.SessionManager logout-prompt false 								# Disable Power Dialog
 	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close" # Enable Window Controls
 	gsettings set org.gnome.desktop.interface show-battery-percentage true 					# Enable Battery Percentage
+}
+
+# Enables experimental support for fractional scaling. 
+	# Both Wayland and X11
+	# Source: https://www.linuxuprising.com/2019/04/how-to-enable-hidpi-fractional-scaling.html
+function gnomeFractionalScaling() {
+	title "Enabling Fractional Scaling"
+
+	gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']" 	# Wayland
+	# gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']" 	# X11
+	# gsettings reset org.gnome.mutter experimental-features 								# Reset
 }
 
 #^ OTHER
@@ -460,12 +481,14 @@ installLibadwaitaGTK3PortTheme
 applyThemeToNativeApps
 applyThemeToFlatpaks
 gnomeCustomisations
+gnomeFractionalScaling
 setBash
 setUserFolderDirectory
 mountUniServer
 
 installAndSetupGit
 installJDK
+installMaven
 installPostgres
 installPip
 installNode
