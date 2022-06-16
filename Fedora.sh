@@ -47,7 +47,6 @@ function updateAndUpgrade() {
 }
 
 # Opmisises DNF package manager performance. 
-	# Chooses fastest server for downloads. 
 	# Increases the number of parallel downloads. 
 function optimiseDNF() { 
 	title "Opmise DNF"
@@ -68,6 +67,7 @@ function enableRPMFusion() {
 	sudo dnf install \
 		https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 	# Non Free
+	sudo dnf groupupdate core -y # Make apps visible on Gnome Store
 }
 
 # Enables FlatHub repositories for Flatpaks for added apps. 
