@@ -52,8 +52,7 @@ function updateAndUpgrade() {
 function optimiseDNF() { 
 	title "Opmise DNF"
 
-	echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf # Fastest server
-	echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf # Max download
+	echo 'max_parallel_downloads=20' | sudo tee -a /etc/dnf/dnf.conf # Max download
 }
 
 # Enables RPM Fusion repositories for added packages and apps. 
