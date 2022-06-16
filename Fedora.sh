@@ -412,6 +412,19 @@ function gnomeFractionalScaling() {
 }
 
 #^ OTHER
+# Installs required drivers which are not shipped by default. 
+	# Installs media drivers
+	# Source: https://www.reddit.com/r/intel/comments/l22le8/what_is_the_intelmediadriver/
+function installDrivers() {
+	title "Installing Required Drivers"
+
+	drivers=(
+		"libva-intel-driver"
+		"intel-media-driver"
+	)
+	installNativeApps "${drivers[@]}"
+}
+
 # Adds some settings to bashrc. 
 	# Adds some aliases for quick commands.
 	# Adds custom bash prompt.  
@@ -485,7 +498,8 @@ gnomeCustomisations
 gnomeFractionalScaling
 setBash
 setUserFolderDirectory
-mountUniServer
+# mountUniServer
+installDrivers
 
 installAndSetupGit
 installJDK
