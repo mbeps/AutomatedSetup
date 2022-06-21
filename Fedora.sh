@@ -243,12 +243,14 @@ function installFlathubAppsNonSystem() {
 		"com.github.flxzt.rnote" 				# rNote - Whiteboard App
 		"it.mijorus.smile" 						# Smile - Emoji Picker
 		"org.gnome.SoundRecorder" 				# Sound Recorder
-		"org.onlyoffice.desktopeditors" 		# OnlyOffice
+		"org.onlyoffice.desktopeditors" 		# OnlyOffice - Office Client
 		"org.gnome.FileRoller" 					# File Roller - Archive Manager
 		"org.gnome.Music" 						# Gnome Music
 		"org.gnome.NetworkDisplays" 			# Network Displays
 		"org.gnome.gitg" 						# Git GUI
 		"com.github.tchx84.Flatseal" 			# FlatSeal - Flatpak permission manager
+		"org.gnome.Todo" 						# Gnome To-Do
+		"com.github.rafostar.Clapper" 			# Clapper - Video Player
 		)
 
 	installFlathubApps "${apps[@]}"
@@ -382,6 +384,7 @@ function applyThemeToFlatpaks() {
 		"org.gnome.Connections" 				# Connection - Remote Connection Tool
 		"org.gnome.FileRoller" 					# File Roller - Archive Manager
 		"com.github.tchx84.Flatseal" 			# Flatseal - Flatpak Permission Manager
+		"io.github.celluloid_player.Celluloid" 	
 		)
 
 	for app in "${apps[@]}"; do
@@ -421,6 +424,7 @@ function installDrivers() {
 	drivers=(
 		"libva-intel-driver"
 		"intel-media-driver"
+		"gstreamer1-vaapi"
 	)
 	installNativeApps "${drivers[@]}"
 }
@@ -485,6 +489,7 @@ updateAndUpgrade
 enableRPMFusion
 enableFlathub
 installMediaCodecs
+installCascadiaCodeFont
 
 installMicrosoftEdge
 installInSync
