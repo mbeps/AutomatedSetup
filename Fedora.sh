@@ -483,13 +483,23 @@ function mountUniServer() {
 	sshfs zjac268@linux.cim.rhul.ac.uk:/home/cim/ug/zjac268 "/home/maruf/Remotes/Royal Holloway Linux Server/"
 }
 
+# Installs Microsoft Windows Proprietary fonts. 
+	# Copies fonts into the fonts folder. 
+function installWindowsFonts() {
+	title "Installing Windows Proprietary Fonts"
+
+	cp resources/fonts/windows /usr/share/fonts
+}
+
 #^ MAIN
 optimiseDNF
 updateAndUpgrade
 enableRPMFusion
 enableFlathub
 installMediaCodecs
+
 installCascadiaCodeFont
+installWindowsFonts
 
 installMicrosoftEdge
 installInSync
