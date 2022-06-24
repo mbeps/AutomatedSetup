@@ -491,6 +491,16 @@ function installWindowsFonts() {
 	cp resources/fonts/windows /usr/share/fonts
 }
 
+# Creates all the directories required for personal use. 
+	# Development, Remote and Wallpapers
+function createRequiredDirectories() {
+	title "Creating All Required Directories"
+
+	mkdir ~/Development
+	mkdir "$HOME/Remotes/Royal Holloway Linux Server"
+	mkdir Wallpapers
+}
+
 #^ MAIN
 optimiseDNF
 updateAndUpgrade
@@ -512,6 +522,7 @@ applyThemeToFlatpaks
 gnomeCustomisations
 gnomeFractionalScaling
 setBash
+createRequiredDirectories
 setUserFolderDirectory
 # mountUniServer
 installDrivers
