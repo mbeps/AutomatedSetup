@@ -423,6 +423,14 @@ function backup_keyboard_shortcuts() {
     dconf dump /org/gnome/mutter/wayland/keybindings/ >> resources/keyboard-shortcuts/dump_5
 }
 
+function restore_keyboard_shortcuits() {
+	cat ./resources/keyboard-shortcuts/dump_1 | dconf load /org/gnome/settings-daemon/plugins/media-keys/
+	cat ./resources/keyboard-shortcuts/dump_2 | dconf load /org/gnome/desktop/wm/keybindings/
+	cat ./resources/keyboard-shortcuts/dump_3 | dconf load /org/gnome/shell/keybindings/
+	cat ./resources/keyboard-shortcuts/dump_4 | dconf load /org/gnome/mutter/keybindings/
+	cat ./resources/keyboard-shortcuts/dump_5 | dconf load /org/gnome/mutter/wayland/keybindings/
+}
+
 #^ OTHER
 # Installs required drivers which are not shipped by default. 
 	# Installs media drivers
