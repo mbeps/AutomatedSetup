@@ -483,13 +483,33 @@ function mountUniServer() {
 	sshfs zjac268@linux.cim.rhul.ac.uk:/home/cim/ug/zjac268 "/home/maruf/Remotes/Royal Holloway Linux Server/"
 }
 
+# Installs Microsoft Windows Proprietary fonts. 
+	# Copies fonts into the fonts folder. 
+function installWindowsFonts() {
+	title "Installing Windows Proprietary Fonts"
+
+	cp resources/fonts/windows /usr/share/fonts
+}
+
+# Creates all the directories required for personal use. 
+	# Development, Remote and Wallpapers
+function createRequiredDirectories() {
+	title "Creating All Required Directories"
+
+	mkdir ~/Development
+	mkdir "$HOME/Remotes/Royal Holloway Linux Server"
+	mkdir Wallpapers
+}
+
 #^ MAIN
 optimiseDNF
 updateAndUpgrade
 enableRPMFusion
 enableFlathub
 installMediaCodecs
+
 installCascadiaCodeFont
+installWindowsFonts
 
 installMicrosoftEdge
 installInSync
@@ -502,6 +522,7 @@ applyThemeToFlatpaks
 gnomeCustomisations
 gnomeFractionalScaling
 setBash
+createRequiredDirectories
 setUserFolderDirectory
 # mountUniServer
 installDrivers
