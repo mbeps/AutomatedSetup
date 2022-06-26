@@ -15,5 +15,5 @@ function installCascadiaCodeFont() {
 function installWindowsFonts() {
 	title "Installing Windows Proprietary Fonts"
 
-	cp resources/fonts/windows /usr/share/fonts
+	cp ./resources/fonts/windows /usr/share/fonts
 }
