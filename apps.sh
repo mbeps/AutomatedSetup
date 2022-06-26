@@ -28,6 +28,8 @@ function installFlathubAppsNonSystem() {
 		"com.github.tchx84.Flatseal" 			# FlatSeal - Flatpak permission manager
 		"org.gnome.Todo" 						# Gnome To-Do
 		"com.github.rafostar.Clapper" 			# Clapper - Video Player
+		"io.posidon.Paper" 						# Paper - Notes
+		"me.dusansimic.DynamicWallpaper" 		# Dynamic Wallpaper
 		)
 
 	installFlathubApps "${apps[@]}"
