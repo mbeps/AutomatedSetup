@@ -414,6 +414,15 @@ function gnomeFractionalScaling() {
 	# gsettings reset org.gnome.mutter experimental-features 								# Reset
 }
 
+#^ KEYBOARD SHORTCUTS
+function backup_keyboard_shortcuts() {
+    dconf dump /org/gnome/settings-daemon/plugins/media-keys/ >> resources/keyboard-shortcuts/dump_1
+    dconf dump /org/gnome/desktop/wm/keybindings/ >> resources/keyboard-shortcuts/dump_2
+    dconf dump /org/gnome/shell/keybindings/ >> resources/keyboard-shortcuts/dump_3
+    dconf dump /org/gnome/mutter/keybindings/ >> resources/keyboard-shortcuts/dump_4
+    dconf dump /org/gnome/mutter/wayland/keybindings/ >> resources/keyboard-shortcuts/dump_5
+}
+
 #^ OTHER
 # Installs required drivers which are not shipped by default. 
 	# Installs media drivers
