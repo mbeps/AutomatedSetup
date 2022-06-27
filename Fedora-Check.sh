@@ -2,85 +2,85 @@
 	# Args:
 		# - $1: title to be printed. 
 function title() {
-    echo 
+	echo 
 	echo $1
 }
 
 # List all the installed Flatpak apps. 
 function flatpakInstalledApps() {
-    title "Installed Flatpak Apps"
+	title "Installed Flatpak Apps"
 
-    flatpak list --app
+	flatpak list --app
 }
 
 # List all the installed packages. 
 function nativeInstalledPackages() {
-    title "Installed Native Packages"
+	title "Installed Native Packages"
 
-    dnf list --installed
+	dnf list --installed
 }
 
 # Displays DNF configurations. 
 function checkDNFConfig() {
-    title "Checks DNF Configuration"
+	title "Checks DNF Configuration"
 
-    cat /etc/dnf/dnf.conf
+	cat /etc/dnf/dnf.conf
 }
 
 # Checks whether Java Development Kit is installed by checking versions. 
 function checkJava() {
-    title "Checks Java Version"
+	title "Checks Java Version"
 
-    java --version
-    javac --version
+	java --version
+	javac --version
 }
 
 # Checks whether Python and Pip is installed by checking versions. 
 function checksPython() {
-    title "Checks Python Version"
+	title "Checks Python Version"
 
-    python3 --version
-    pip3 --version
-    poetry --version
+	python3 --version
+	pip3 --version
+	poetry --version
 }
 
 # Checks whether Git is installed by checking version and checks user configurations. 
 function checkGit() {
-    title "Checks Git Version & Configurations"
+	title "Checks Git Version & Configurations"
 
-    git --version
-    git config --get user.name
-    git config --get user.email
+	git --version
+	git config --get user.name
+	git config --get user.email
 }
 
 # Checks whether SSH keys are present. 
 function checkGithubSSH() {
-    title "Checks Github SSH Keys"
+	title "Checks Github SSH Keys"
 
-    ls -al ~/.ssh
+	ls -al ~/.ssh
 }
 
 # Checks whether PostgreSQL is installed by checking version. 
 function checkPostgres() {
-    title "Checks PostgreSQL Version"
+	title "Checks PostgreSQL Version"
 
-    psql --version
+	psql --version
 }
 
 # Checks whther Visual Studio Code is installed by checking version. 
 function checkVSCode() {
-    title "Checks Visual Studio Code Version"
+	title "Checks Visual Studio Code Version"
 
-    code --version
+	code --version
 }
 
 # Checks whether Node.JS, NVM and Yarn are installed by checking version. 
 function checkNode() {
-    title "Checks Node.JS, NVM and Yarn"
+	title "Checks Node.JS, NVM and Yarn"
 
-    nvm --version
-    node --version
-    yarn --version
+	nvm --version
+	node --version
+	yarn --version
 }
 
 flatpakInstalledApps

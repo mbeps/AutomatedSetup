@@ -9,6 +9,7 @@ source "./miscellaneous.sh"
 source "./package_management.sh"
 source "./theme.sh" 
 source "./terminal_configuration.sh"
+source "./extensions.sh"
 
 optimiseDNF
 updateAndUpgrade
@@ -37,6 +38,10 @@ setUserFolderDirectory
 # mountUniServer
 installDrivers
 restore_terminal
+
+restore_extensions
+restore_extension_configuration
+enable_favourite_extensions
 
 installAndSetupGit
 installJDK

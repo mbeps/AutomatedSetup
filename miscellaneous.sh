@@ -28,7 +28,7 @@ function setBash() {
 	# Sync between computer and Google Drive. 
 	# Source: https://askubuntu.com/questions/67044/change-default-user-folders-path
 function setUserFolderDirectory() { 
-    title "Set User Folder Directory"
+	title "Set User Folder Directory"
 
 	locations=(
 		"DOCUMENTS" 
