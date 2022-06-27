@@ -1,0 +1,43 @@
+[legacy]
+theme-variant='dark'
+
+[legacy/profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '42833492-d379-4bb7-aed9-d13d2b82ad67', '90edfc86-119d-4811-a75f-8acaad666236', '964b6ff5-d8ea-4e63-8e8d-e64f7460a555', '5785da13-e852-4e10-ad28-68dff185613a']
+
+[legacy/profiles:/:42833492-d379-4bb7-aed9-d13d2b82ad67]
+cursor-shape='ibeam'
+custom-command='sudo -u postgres psql'
+font='Cascadia Code 14'
+use-custom-command=true
+use-system-font=false
+visible-name='PostgreSQL'
+
+[legacy/profiles:/:5785da13-e852-4e10-ad28-68dff185613a]
+cursor-shape='ibeam'
+custom-command='node'
+font='Cascadia Code 14'
+use-custom-command=true
+use-system-font=false
+visible-name='Node'
+
+[legacy/profiles:/:90edfc86-119d-4811-a75f-8acaad666236]
+cursor-shape='ibeam'
+custom-command='python3'
+font='Cascadia Code 14'
+use-custom-command=true
+use-system-font=false
+visible-name='Python'
+
+[legacy/profiles:/:964b6ff5-d8ea-4e63-8e8d-e64f7460a555]
+cursor-shape='ibeam'
+custom-command='ssh zjac268@linux.cim.rhul.ac.uk'
+font='Cascadia Code 14'
+use-custom-command=true
+use-system-font=false
+visible-name='Royal Hollway Server'
+
+[legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+cursor-shape='ibeam'
+font='Cascadia Code 14'
+use-system-font=false
+visible-name='Bash'

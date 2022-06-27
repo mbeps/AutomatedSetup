@@ -18,3 +18,12 @@ function reset_terminal() {
 
     dconf reset -f /org/gnome/terminal/
 }
+
+# Restores the terminal configurations from backed up dump file. 
+    # Dump saved in `./resources/terminal/`
+    # Source: https://askubuntu.com/questions/967517/backup-gnome-terminal
+function restore_terminal() {
+    title "Restores Gnome Terminal Configuration"
+
+    dconf load /org/gnome/terminal/ < ./resources/terminal/dump
+}
