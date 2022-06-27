@@ -3,29 +3,52 @@
 source "./dependencies.sh"
 
 # Installs all the extensions into `~/.local/share/gnome-shell/extensions/`
-    # Unzips th archive containing the extensions into the extensions folder. 
+	# Unzips th archive containing the extensions into the extensions folder. 
 function restore_extensions() {
    title "Restoring Extensions"
 
    unzip "./resources/extensions/extensions.zip" -d "$HOME/.local/share/gnome-shell/extensions/"
 }
 
-# Creates backup file for Gnome Shell Extensions.
-    # Saves dump file in `./resources/extensions/`
-    # Source: https://www.reddit.com/r/gnome/comments/afuw4h/moving_extensions_and_their_settings_to_new/
-function backup_extension_configuration() {
-    title "Backing Up Extensions Configuration"
+# Enables favaurite extensions to configure Gnome Shell ideally.
+    # Not all installed extensions are enabled.  
+function enable_favourite_extensions() {
+	title "Enabling Favourite Extensions"
 
-    dconf dump /org/gnome/shell/extensions/ > ./resources/extensions/extension-settings.dconf
+	extensions=(
+		"arcmenu@arcmenu.com"
+		"clipboard-indicator@tudmotu.com"
+		"dash-to-dock-cosmic-@halfmexicanhalfamazing@gmail.com"
+		"gestureImprovements@gestures"
+		"gsconnect@andyholmes.github.io"
+		"just-perfection-desktop@just-perfection"
+		"legacyschemeautoswitcher@joshimukul29.gmail.com"
+		"NotificationCounter@coolllsk"
+		"sound-output-device-chooser@kgshank.net"
+		"sound-percentage@maestroschan.fr"
+		"tiling-assistant@leleat-on-github"
+		"Vitals@CoreCoding.com"
+
+	)
+	enable_extensions "${extensions[@]}"
+}
+
+# Creates backup file for Gnome Shell Extensions.
+	# Saves dump file in `./resources/extensions/`
+	# Source: https://www.reddit.com/r/gnome/comments/afuw4h/moving_extensions_and_their_settings_to_new/
+function backup_extension_configuration() {
+	title "Backing Up Extensions Configuration"
+
+	dconf dump /org/gnome/shell/extensions/ > ./resources/extensions/extension-settings.dconf
 }
 
 # Restores the terminal configurations from backed up dump file. 
-    # Dump saved in `./resources/extensions/`
-    # Source: https://www.reddit.com/r/gnome/comments/afuw4h/moving_extensions_and_their_settings_to_new/
+	# Dump saved in `./resources/extensions/`
+	# Source: https://www.reddit.com/r/gnome/comments/afuw4h/moving_extensions_and_their_settings_to_new/
 function restore_extension_configuration() {
-    title "Restoring Up Extensions Configuration"
+	title "Restoring Up Extensions Configuration"
 
-    dconf load /org/gnome/shell/extensions/ < ./resources/extensions/extension-settings.dconf
+	dconf load /org/gnome/shell/extensions/ < ./resources/extensions/extension-settings.dconf
 }
 
 "$@"

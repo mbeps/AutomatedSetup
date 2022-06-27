@@ -39,4 +39,14 @@ function removeNativeApps() {
 	done
 }
 
-"$@"
+# Enables Gnome Shell extensions from a list.  
+	# Args:
+		# - $1: array of extensions
+function enable_extensions() {
+    title "Enabling Extensions"
+
+	extensions=$1
+	for extension in "${extensions[@]}"; do
+		gnome-extensions enable "$extension" 
+	done  
+}
