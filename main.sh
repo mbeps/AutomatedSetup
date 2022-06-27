@@ -8,6 +8,7 @@ source "./keyboard_shortcuts.sh"
 source "./miscellaneous.sh"
 source "./package_management.sh"
 source "./theme.sh" 
+source "./terminal_configuration.sh"
 
 optimiseDNF
 updateAndUpgrade
@@ -35,6 +36,7 @@ createRequiredDirectories
 setUserFolderDirectory
 # mountUniServer
 installDrivers
+restore_terminal
 
 installAndSetupGit
 installJDK
