@@ -25,3 +25,5 @@ function installMediaCodecs() {
 	sudo dnf install lame\* --exclude=lame-devel -y
 	sudo dnf group upgrade --with-optional Multimedia -y
 }
+
+"$@"

@@ -15,7 +15,7 @@ enableRPMFusion
 enableFlathub
 installMediaCodecs
 
-restore_keyboard_shortcuits
+restore_keyboard_shortcuts
 
 installCascadiaCodeFont
 installWindowsFonts
@@ -44,3 +44,6 @@ installPip
 installNode
 installVSCode
 configureGithubSSH
+
+
+"$@"

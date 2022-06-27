@@ -128,3 +128,5 @@ function installNode() {
 	installNodeViaNVM
 	npm install --global yarn
 }
+
+"$@"

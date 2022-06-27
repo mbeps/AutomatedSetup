@@ -65,3 +65,5 @@ function createRequiredDirectories() {
 	mkdir "$HOME/Remotes/Royal Holloway Linux Server"
 	mkdir Wallpapers
 }
+
+"$@"

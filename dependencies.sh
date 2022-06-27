@@ -38,3 +38,5 @@ function removeNativeApps() {
 		sudo dnf remove $package -y
 	done
 }
+
+"$@"

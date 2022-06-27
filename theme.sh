@@ -42,3 +42,5 @@ function applyThemeToFlatpaks() {
 		sudo flatpak override $app --env=GTK_THEME=adw-gtk3-dark
 	done
 }
+
+"$@"

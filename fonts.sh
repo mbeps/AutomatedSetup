@@ -17,3 +17,5 @@ function installWindowsFonts() {
 
 	cp ./resources/fonts/windows /usr/share/fonts
 }
+
+"$@"

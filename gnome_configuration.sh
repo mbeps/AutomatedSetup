@@ -23,3 +23,5 @@ function gnomeFractionalScaling() {
 	# gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']" 	# X11
 	# gsettings reset org.gnome.mutter experimental-features 								# Reset
 }
+
+"$@"

@@ -128,3 +128,5 @@ function installMicrosoftEdge() {
 	package=("microsoft-edge-stable")
 	installNativeApps "${package[@]}"
 }
+
+"$@"

@@ -93,3 +93,5 @@ checkGithubSSH
 checkPostgres
 checkNode
 checkVSCode
+
+"$@"
