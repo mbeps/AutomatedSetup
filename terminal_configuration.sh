@@ -10,3 +10,11 @@ function backup_terminal() {
 
     dconf dump /org/gnome/terminal/ > ./resources/terminal/dump
 }
+
+# Restores the terminal configurations to its default settings. 
+    # Source: https://askubuntu.com/questions/967517/backup-gnome-terminal
+function reset_terminal() {
+    title "Resetting Terminal Configuration to Defaults"
+
+    dconf reset -f /org/gnome/terminal/
+}
