@@ -43,7 +43,7 @@ function removeNativeApps() {
 	# Args:
 		# - $1: array of extensions
 function enable_extensions() {
-    title "Enabling Extensions"
+	title "Enabling Extensions"
 
 	extensions=$1
 	for extension in "${extensions[@]}"; do
