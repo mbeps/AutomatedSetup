@@ -11,11 +11,11 @@ function installCascadiaCodeFont() {
 }
 
 # Installs Microsoft Windows Proprietary fonts. 
-	# Copies fonts into the fonts folder. 
+	# Unzips fonts into the fonts folder. 
 function installWindowsFonts() {
 	title "Installing Windows Proprietary Fonts"
 
-	cp ./resources/fonts/windows /usr/share/fonts
+	unzip "./resources/fonts/windows/windows-fonts.zip" -d "/usr/share/fonts"
 }
 
 "$@"
