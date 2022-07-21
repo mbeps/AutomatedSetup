@@ -87,6 +87,7 @@ function install_native_system_apps() {
 		"gnome-usage" 							# Gnome Usage
 		"openssl"								# OpenSSL
 		"sshfs" 								# SSHFS
+		"tldr" 									# TLDR 
 		)
 
 	install_native_apps "${packages[@]}"
