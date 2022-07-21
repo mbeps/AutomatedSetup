@@ -10,6 +10,17 @@ function restore_extensions() {
    unzip "./resources/extensions/extensions.zip" -d "$HOME/.local/share/gnome-shell/extensions/"
 }
 
+# Backs up all the installed extensions from `~/.local/share/gnome-shell/extensions/`
+	# Creates a Zip archive of all extensions. 
+function backup_extensions() {
+	title "Backing Up Extensions"
+
+	cd "$HOME/.local/share/gnome-shell/extensions/"
+	zip -r "extensions.zip" .
+	cd -
+	mv "$HOME/.local/share/gnome-shell/extensions/extensions.zip" "./resources/extensions"
+}
+
 # Enables favaurite extensions to configure Gnome Shell ideally.
     # Not all installed extensions are enabled.  
 function enable_favourite_extensions() {
