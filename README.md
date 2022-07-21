@@ -20,4 +20,5 @@ This is an automated tool that automatically sets up Fedora. There is a fully au
 * `install_node_via_package_manager` - installs Node.JS 16 LTS via the native package manager 
 * `install_node_via_nvm` - installs Node.JS 16 LTS via the Node Version Manager (NVM)
 * `install_node` - installs Node.JS 16 LTS 
-* 
+* `install_drivers` - installs required drivers 
+* `install_media_codecs` - installs media CODECs 
