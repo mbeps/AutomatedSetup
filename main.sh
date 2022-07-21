@@ -17,6 +17,7 @@ function automated() {
 	enable_rpm_fusion
 	enable_flathub
 	install_media_codecs
+	install_drivers
 
 	restore_keyboard_shortcuts
 
@@ -37,7 +38,6 @@ function automated() {
 	create_required_directories
 	set_user_folder_directory
 	# mount_university_server
-	install_drivers
 	restore_terminal
 
 	restore_extensions
@@ -46,7 +46,7 @@ function automated() {
 
 	install_setup_git
 	install_jdk
-	installMaven
+	install_java_maven
 	install_postgres
 	install_python_pip
 	install_python_poetry
