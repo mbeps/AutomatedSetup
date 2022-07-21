@@ -11,46 +11,47 @@ source "./theme.sh"
 source "./terminal_configuration.sh"
 source "./extensions.sh"
 
-optimiseDNF
-updateAndUpgrade
-enableRPMFusion
-enableFlathub
-installMediaCodecs
+optimise_dnf
+update_upgrade
+enable_rpm_fusion
+enable_flathub
+install_media_codecs
 
 restore_keyboard_shortcuts
 
-installCascadiaCodeFont
-installWindowsFonts
+install_cascadia_code_font
+install_windows_fonts
 
-installMicrosoftEdge
-installInSync
-removeNativeSystemApps
-installFlathubAppsSystem
-installFlathubAppsNonSystem
-installLibadwaitaGTK3PortTheme
-applyThemeToNativeApps
-applyThemeToFlatpaks
-gnomeCustomisations
-gnomeFractionalScaling
-setBash
-createRequiredDirectories
-setUserFolderDirectory
-# mountUniServer
-installDrivers
+install_microsoft_edge
+install_insync
+remove_native_system_apps
+install_flathub_apps_system
+install_flathub_apps_non_system
+install_libadwaita_gtk3_port_theme
+apply_theme_to_native_apps
+apply_theme_to_flatpaks
+gnome_customisation
+gnome_fractional_scaling
+set_bash
+create_required_directories
+set_user_folder_directory
+# mount_university_server
+install_drivers
 restore_terminal
 
 restore_extensions
 restore_extension_configuration
 enable_favourite_extensions
 
-installAndSetupGit
-installJDK
+install_setup_git
+install_jdk
 installMaven
-installPostgres
-installPip
-installNode
-installVSCode
-configureGithubSSH
+install_postgres
+install_python_pip
+install_python_poetry
+install_node
+install_vscode
+configure_github_ssh
 
 
 "$@"

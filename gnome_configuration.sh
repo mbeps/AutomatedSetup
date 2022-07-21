@@ -5,7 +5,7 @@ source "./dependencies.sh"
 # Makes some tweaks for improving Gnome. 
 	# Disables power promps when shutting down, restarting, logging, etc. 
 	# Enables window controls such as minimise and maximise.  
-function gnomeCustomisations() { 
+function gnome_customisation() { 
 	title "Tweaking Some Gnome Functionalities"
 
 	gsettings set org.gnome.SessionManager logout-prompt false 								# Disable Power Dialog
@@ -16,7 +16,7 @@ function gnomeCustomisations() {
 # Enables experimental support for fractional scaling. 
 	# Both Wayland and X11
 	# Source: https://www.linuxuprising.com/2019/04/how-to-enable-hidpi-fractional-scaling.html
-function gnomeFractionalScaling() {
+function gnome_fractional_scaling() {
 	title "Enabling Fractional Scaling"
 
 	gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']" 	# Wayland

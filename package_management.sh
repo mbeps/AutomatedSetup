@@ -3,7 +3,7 @@
 source "./dependencies.sh"
 
 # Updates and upgrades packages in the system. 
-function updateAndUpgrade() {
+function update_upgrade() {
 	title "Update & Upgrade"
 
 	sudo dnf update -y
@@ -12,7 +12,7 @@ function updateAndUpgrade() {
 
 # Opmisises DNF package manager performance. 
 	# Increases the number of parallel downloads. 
-function optimiseDNF() { 
+function optimise_dnf() { 
 	title "Opmise DNF"
 
 	echo 'max_parallel_downloads=20' | sudo tee -a /etc/dnf/dnf.conf # Max download
@@ -22,7 +22,7 @@ function optimiseDNF() {
 	# Enables free (Open Source) catalogue. 
 	# Enables non-free (Closed Source / Proprietary) catalogue. 
 	# Source: https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/
-function enableRPMFusion() { 
+function enable_rpm_fusion() { 
 	title "Enable RPM Fusion Respositories"
 
 	sudo dnf install \
@@ -36,7 +36,7 @@ function enableRPMFusion() {
 
 # Enables FlatHub repositories for Flatpaks for added apps. 
 	# Source: https://flatpak.org/setup/Fedora
-function enableFlathub() { 
+function enable_flathub() { 
 	title "Enable FlatHub"
 
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

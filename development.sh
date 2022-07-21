@@ -5,12 +5,12 @@ source "./dependencies.sh"
 # Installs Git version control system and sets up user configurations. 
 	# Sets up user name, email and end of line setting. 
 	# Source: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
-function installAndSetupGit() { 
+function install_setup_git() { 
 	title "Installing & Configuring Git"
 
 	echo "Installing Git"
 	package=("git")
-	installNativeApps "${package[@]}"
+	install_native_apps "${package[@]}"
 	
 	echo "Configuring Git"
 	git config --global user.name "Maruf Bepary"
@@ -20,7 +20,7 @@ function installAndSetupGit() {
 
 # Configures SSK key for GitHub.
 	# Source: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-function configureGithubSSH() { 
+function configure_github_ssh() { 
 	title "Configuring SSH Keys for GitHub"
 
 	echo && echo && echo | ssh-keygen -t ed25519 -C "bepary71@gmail.com"
@@ -31,7 +31,7 @@ function configureGithubSSH() {
 
 # Installs Java Development Kit (JDK) for Java development. 
 	# Source: https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/generic-linux-install.html
-function installJDK() { 
+function install_jdk() { 
 	title "Instaling Java Development Environment"
 
 	sudo rpm --import https://yum.corretto.aws/corretto.key -y
@@ -40,22 +40,22 @@ function installJDK() {
 }
 
 # Installs Maven project manager for Java. 
-function installJavaMaven() {
+function install_java_maven() {
 	title "Installing Maven Project Manager for Java"
 
 	package=("maven")
-	installNativeApps "${package[@]}"
+	install_native_apps "${package[@]}"
 }
 
 # Installs PostgreSQL database. 
 	# Database will not be accessible via third-party Database Management Systems (DBMS). 
 	# On `/var/lib/pgsql/data/pg_hba.conf`, edit `host all all 127.0.0.1/32 ident` to `host all all 127.0.0.1/32 md5`
 	# Source: https://docs.fedoraproject.org/en-US/quick-docs/postgresql/
-function installPostgres() { 
+function install_postgres() { 
 	title "Installing PostgreSQL"
 
 	package=("postgresql-server" "postgresql-contrib")
-	installNativeApps "${package[@]}"
+	install_native_apps "${package[@]}"
 
 	sudo systemctl enable postgresql
 	sudo postgresql-setup --initdb --unit postgresql
@@ -64,25 +64,25 @@ function installPostgres() {
 
 # Installs Pip package manager for Python. 
 	# Source: https://www.osradar.com/install-pip-fedora-34/
-function installPip() {
+function install_python_pip() {
 	title "Installing Pip"
 
 	package=("python3-pip")
-	installNativeApps "${package[@]}"
+	install_native_apps "${package[@]}"
 }
 
 # Installs Poetry Project Manager for Python. 
-function installPythonPoetry() {
+function install_python_poetry() {
 	title "Installing Poetry Project Manager for Python"
 
 	package=("poetry")
-	installNativeApps "${package[@]}"
+	install_native_apps "${package[@]}"
 }
 
 # Installs Visual Studio Code. 
 	# Adds all the necessary keys and repositories. 
 	# Source: https://www.linuxcapable.com/how-to-install-visual-studio-code-vs-code-on-fedora-34-35/
-function installVSCode() { 
+function install_vscode() { 
 	# https://www.linuxcapable.com/how-to-install-visual-studio-code-vs-code-on-fedora-34-35/
 	title "Installing Visual Studio Code"
 
@@ -100,20 +100,20 @@ function installVSCode() {
 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc # Import GPG key
 	
 	package=("code")
-	installNativeApps "${package[@]}"
+	install_native_apps "${package[@]}"
 }
 
 # Installs Node.JS via built-in package manager. 
-	# This function is called by `installNode`. 
+	# This function is called by `install_node`. 
 	# Source: https://nodejs.org/en/download/package-manager/#centos-fedora-and-red-hat-enterprise-linux
-function installNodeViaPackageManager() {
+function install_node_via_package_manager() {
 	sudo dnf module install nodejs:16 -y
 }
 
 # Installs Node.JS via Node Version Manager (NVM). 
-	# This function is called by `installNode`. 
+	# This function is called by `install_node`. 
 	# Source: https://heynode.com/tutorial/install-nodejs-locally-nvm/
-function installNodeViaNVM() { 
+function install_node_via_nvm() { 
 	# https://heynode.com/tutorial/install-nodejs-locally-nvm/
 	curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh -o install_nvm.sh
 	bash install_nvm.sh
@@ -122,10 +122,10 @@ function installNodeViaNVM() {
 }
 
 # Installs Node.JS and Yarn. 
-function installNode() {
+function install_node() {
 	title "Installing Node.JS, NPM and Yarn"
 
-	installNodeViaNVM
+	install_node_via_nvm
 	npm install --global yarn
 }
 

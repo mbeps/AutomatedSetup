@@ -4,7 +4,7 @@ source "./dependencies.sh"
 
 # Installs Flatpak apps (from FlatHub) which were not part of the system. 
 	# Extra apps which were not preinstalled. 
-function installFlathubAppsNonSystem() { 
+function install_flathub_apps_non_system() { 
 	title "Installing Non-System Flathub Apps"
 	
 	apps=(
@@ -32,12 +32,12 @@ function installFlathubAppsNonSystem() {
 		"me.dusansimic.DynamicWallpaper" 		# Dynamic Wallpaper
 		)
 
-	installFlathubApps "${apps[@]}"
+	install_flathub_apps "${apps[@]}"
 }
 
 # Installs Flatpak apps (from FlatHub) as alternatives to some preinstalled native versions of the same apps. 
 	# Flatpak versions of the apps that were preinstalled. 
-function installFlathubAppsSystem() { 
+function install_flathub_apps_system() { 
 	title "Installing System Flathub Apps Alternatives"
 	
 	apps=(
@@ -55,11 +55,11 @@ function installFlathubAppsSystem() {
 		"org.gnome.Weather" 					# Weather
 		)
 
-	installFlathubApps "${apps[@]}"
+	install_flathub_apps "${apps[@]}"
 }
 
 # Removes some preinstalled native apps in favour of Flatpak versions of the same apps. 
-function removeNativeSystemApps() {
+function remove_native_system_apps() {
 	title "Remove Native System Apps for Flatpak Alternatives"
 
 	packages=(
@@ -75,13 +75,13 @@ function removeNativeSystemApps() {
 		"org.signal.Signal" 					# Signal
 		)
 
-	removeNativeApps "${packages[@]}"
+	remove_native_apps "${packages[@]}"
 	sudo dnf autoremove -y
 }
 
 # Installs some native apps that were not part of the system. 
 	# Flatpak versions not available. 
-function installNativeNonSystemApps() {
+function install_native_system_apps() {
 	packages=(
 		"gnome-tweaks" 							# Gnome Tweaks
 		"gnome-usage" 							# Gnome Usage
@@ -89,13 +89,13 @@ function installNativeNonSystemApps() {
 		"sshfs" 								# SSHFS
 		)
 
-	installNativeApps "${packages[@]}"
+	install_native_apps "${packages[@]}"
 }
 
 # Installs InSync for syncing Google Drive with main file system. 
 	# Adds all the necessary keys and repositories. 
 	# Source: https://www.insynchq.com/downloads
-function installInSync() { 
+function install_insync() { 
 	title "Installing InSync"
 
 	sudo rpm --import https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
@@ -118,7 +118,7 @@ function installInSync() {
 # Installs Microsoft Edge browser. 
 	# Adds all the necessary keys and repositories. 
 	# Source: https://www.linuxcapable.com/how-to-install-microsoft-edge-on-fedora-34-35/
-function installMicrosoftEdge() { 
+function install_microsoft_edge() { 
 	title "Installing Microsoft Edge"
 
 	sudo dnf install dnf-plugins-core -y
@@ -126,7 +126,7 @@ function installMicrosoftEdge() {
 	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/edge
 	sudo dnf update --refresh
 	package=("microsoft-edge-stable")
-	installNativeApps "${package[@]}"
+	install_native_apps "${package[@]}"
 }
 
 "$@"

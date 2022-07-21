@@ -12,7 +12,7 @@ function title() {
 # Installs FlatHub apps from a list. 
 	# Args:
 		# - $1: array of apps
-function installFlathubApps() {
+function install_flathub_apps() {
 	apps=$1
 	for app in "${apps[@]}"; do
 		flatpak install flathub $app -y
@@ -22,7 +22,7 @@ function installFlathubApps() {
 # Installs native apps and packages from a list. 
 	# Args:
 		# - $1: array of packages
-function installNativeApps() {
+function install_native_apps() {
 	packages=$1
 	for package in "${packages[@]}"; do
 		sudo dnf install $package -y
@@ -32,7 +32,7 @@ function installNativeApps() {
 # Removes native apps and packages from a list. 
 	# Args:
 		# - $1: array of apps
-function removeNativeApps() {
+function remove_native_apps() {
 	packages=$1
 	for package in "${packages[@]}"; do
 		sudo dnf remove $package -y
