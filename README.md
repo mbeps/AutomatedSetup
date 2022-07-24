@@ -57,3 +57,7 @@ This is an automated tool that automatically sets up Fedora. There is a fully au
 * `enable_rpm_fusion` - enables RPM Fusion repositories 
 * `enable_flathub` - enables full FlatHub repositories for Flatpaks
 
+`terminal_configuration.sh`
+* `backup_terminal` - backs up Gnome Terminal configurations
+* `restore_terminal` - restores Gnome Terminal configurations from back up
+* `reset_terminal` - resets Gnome Terminal to default configurations 
