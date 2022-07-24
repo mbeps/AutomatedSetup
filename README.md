@@ -43,3 +43,7 @@ This is an automated tool that automatically sets up Fedora. There is a fully au
 * `gnome_customization` - tweaks built-in settings to improve the Gnome experience
 * `gnome_fractional_scaling` - enables fractional scaling or Gnome
 
+`keyboard_shortcuts.sh`
+* `backup_keyboard_shortcuts` - backs up Gnome keyboard shortcuts
+* `restore_keyboard_shortcuts` - restores Gnome keyboard shortcuts from backup 
+
