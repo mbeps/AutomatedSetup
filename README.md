@@ -61,3 +61,9 @@ This is an automated tool that automatically sets up Fedora. There is a fully au
 * `backup_terminal` - backs up Gnome Terminal configurations
 * `restore_terminal` - restores Gnome Terminal configurations from back up
 * `reset_terminal` - resets Gnome Terminal to default configurations 
+
+`theme.sh`
+* `install_libadwaita_gtk3_port_theme` - installs the GTK-3 port for the new Libadwaita theme for more consistent design across apps
+* `apply_theme_to_native_apps` - applies the GTK-3 port of the Libadwaita theme to older natively packaged apps
+* `apply_theme_to_flatpaks` - applies the GTK-3 port of the Libadwaita theme to Flatpak apps
+
