@@ -39,3 +39,7 @@ This is an automated tool that automatically sets up Fedora. There is a fully au
 * `install_cascadia_code_font` - installs the Cascadia Code font
 * `install_windows_fonts` - installs Windows proprietary fonts
 
+`gnome_configuration.sh`
+* `gnome_customization` - tweaks built-in settings to improve the Gnome experience
+* `gnome_fractional_scaling` - enables fractional scaling or Gnome
+
