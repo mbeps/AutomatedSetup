@@ -1,4 +1,4 @@
-# Contains funtions to install and configure development environment. 
+# Contains functions to install and configure development environment. 
 
 source "./dependencies.sh"
 

@@ -1,4 +1,4 @@
-# Contains funtions to install various fonts.
+# Contains functions to install various fonts.
 
 source "./dependencies.sh"
 

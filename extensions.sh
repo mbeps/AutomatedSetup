@@ -1,4 +1,4 @@
-# Contains funtions to configure Gnome Shell Extensions. 
+# Contains functions to configure Gnome Shell Extensions. 
 
 source "./dependencies.sh"
 

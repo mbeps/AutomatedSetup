@@ -1,4 +1,4 @@
-# Contains funtions to backup and restore keyboard shortcuts.
+# Contains functions to backup and restore keyboard shortcuts.
 
 source "./dependencies.sh"
 

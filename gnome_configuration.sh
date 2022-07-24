@@ -1,4 +1,4 @@
-# Contains funtions to configure various Gnome settings. 
+# Contains functions to configure various Gnome settings. 
 
 source "./dependencies.sh"
 

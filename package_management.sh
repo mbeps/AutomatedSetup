@@ -1,4 +1,4 @@
-# Contains functions for package menegement for RPM and Flatpak. 
+# Contains functions for package manegement for RPM and Flatpak. 
 
 source "./dependencies.sh"
 

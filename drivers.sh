@@ -1,4 +1,4 @@
-# Contains funtions to install drivers and CODECs.
+# Contains functions to install drivers and CODECs.
 
 source "./dependencies.sh"
 
