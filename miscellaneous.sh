@@ -1,4 +1,4 @@
-# Contains funtions for various miscellaneous configurations. 
+# Contains functions for various miscellaneous configurations. 
 
 source "./dependencies.sh"
 

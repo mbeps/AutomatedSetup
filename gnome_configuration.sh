@@ -1,11 +1,11 @@
-# Contains funtions to configure various Gnome settings. 
+# Contains functions to configure various Gnome settings. 
 
 source "./dependencies.sh"
 
 # Makes some tweaks for improving Gnome. 
 	# Disables power promps when shutting down, restarting, logging, etc. 
 	# Enables window controls such as minimise and maximise.  
-function gnome_customisation() { 
+function gnome_customization() { 
 	title "Tweaking Some Gnome Functionalities"
 
 	gsettings set org.gnome.SessionManager logout-prompt false 								# Disable Power Dialog

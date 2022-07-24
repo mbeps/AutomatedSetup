@@ -1,4 +1,4 @@
-# Contains funtions to install and apply theme.
+# Contains functions to install and apply theme.
 
 source "./dependencies.sh"
 

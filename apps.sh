@@ -1,4 +1,4 @@
-# Contains funtions to install various apps from various sources.
+# Contains functions to install various apps from various sources.
 
 source "./dependencies.sh"
 

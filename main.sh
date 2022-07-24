@@ -32,7 +32,7 @@ function automated() {
 	install_libadwaita_gtk3_port_theme
 	apply_theme_to_native_apps
 	apply_theme_to_flatpaks
-	gnome_customisation
+	gnome_customization
 	gnome_fractional_scaling
 	set_bash
 	create_required_directories

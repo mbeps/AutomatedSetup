@@ -1,4 +1,4 @@
-# Contains funtions to configure Gnome Terminal. 
+# Contains functions to configure Gnome Terminal. 
 
 source "./dependencies.sh"
 
