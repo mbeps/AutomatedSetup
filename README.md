@@ -52,3 +52,8 @@ This is an automated tool that automatically sets up Fedora. There is a fully au
 * `set_user_folder_directory` - configures custom user folder locations to sync with Google Drive
 * `mount_university_server` - mounts university server into file system for easy access of files
 * `create_required_directories` - creates required directories 
+
+`package_management`
+* `enable_rpm_fusion` - enables RPM Fusion repositories 
+* `enable_flathub` - enables full FlatHub repositories for Flatpaks
+
