@@ -47,3 +47,8 @@ This is an automated tool that automatically sets up Fedora. There is a fully au
 * `backup_keyboard_shortcuts` - backs up Gnome keyboard shortcuts
 * `restore_keyboard_shortcuts` - restores Gnome keyboard shortcuts from backup 
 
+'miscellaneous.sh'
+* `set_bash` - adds custom configurations to the Bash shell such as aliases and theming
+* `set_user_folder_directory` - configures custom user folder locations to sync with Google Drive
+* `mount_university_server` - mounts university server into file system for easy access of files
+* `create_required_directories` - creates required directories 
