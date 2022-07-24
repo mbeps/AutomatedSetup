@@ -12,10 +12,12 @@ function install_cascadia_code_font() {
 
 # Installs Microsoft Windows Proprietary fonts. 
 	# Unzips fonts into the fonts folder. 
+	# Source: https://superuser.com/questions/336219/how-do-i-split-a-zip-file-into-multiple-segments#:~:text=Add%20a%20comment-,3%20Answers,-Sorted%20by%3A
 function install_windows_fonts() {
 	title "Installing Windows Proprietary Fonts"
 
-	unzip "./resources/fonts/windows/windows-fonts.zip" -d "/usr/share/fonts"
+	zip -F new.zip --out windows-fonts.zip # Reconstructs split archive
+	unzip "./resources/fonts/windows/windows-fonts.zip" -d "/usr/share/fonts" # Unzip
 }
 
 "$@"
