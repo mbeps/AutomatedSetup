@@ -1,7 +1,21 @@
 # About 
-This is an automated tool that automatically sets up Fedora. There is a fully automated set up which sets up all settings automatically or options can be called manually. 
+This is an automated tool that automatically sets up Fedora 36 on Gnome 42. There is a fully automated set up which sets up all settings automatically or options can be called manually. 
 
 # Usage
+* Run the [`main.sh`](main.sh) using your preferred shell. 
+   * Pass `automated` as an argument when running for a preset process
+   * Alternatively, you can set up the system by passing only specific options (list bellow)
+ * You can run specific files which will have limited options
+   * The names of the files are included bellow 
+
+```shell
+./main.sh [OPTIONS]
+```
+OR
+```shell
+bash ./main.sh [OPTIONS]
+```
+
 ## Apps
 > Contains functions to install various apps from various sources.
 [`apps.sh`](apps.sh)
