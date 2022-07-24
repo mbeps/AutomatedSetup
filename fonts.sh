@@ -16,7 +16,7 @@ function install_cascadia_code_font() {
 function install_windows_fonts() {
 	title "Installing Windows Proprietary Fonts"
 
-	zip -F new.zip --out windows-fonts.zip # Reconstructs split archive
+	zip -F "./resources/fonts/windows/new.zip" --out "./resources/fonts/windows/windows-fonts.zip" # Reconstructs split archive
 	unzip "./resources/fonts/windows/windows-fonts.zip" -d "/usr/share/fonts" # Unzip
 }
 
