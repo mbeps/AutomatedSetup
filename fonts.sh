@@ -17,7 +17,18 @@ function install_windows_fonts() {
 	title "Installing Windows Proprietary Fonts"
 
 	zip -F "./resources/fonts/windows/new.zip" --out "./resources/fonts/windows/windows-fonts.zip" # Reconstructs split archive
-	unzip "./resources/fonts/windows/windows-fonts.zip" -d "/usr/share/fonts" # Unzip
+	unzip "./resources/fonts/windows/windows-fonts.zip" -d "/usr/share/fonts/windows" # Unzip
+}
+
+# Backs up Windows fonts stored in `/usr/share/fonts/windows/`. 
+	# Creates a Zip archive. 
+function backup_windows_fonts() {
+	title "Backing Up Windows Fonts"
+
+	cd "/usr/share/fonts/windows"
+	sudo zip -r "backup.zip" .
+	cd -
+	sudo mv "/usr/share/fonts/windows/backup.zip" "./resources/fonts/windows"
 }
 
 "$@"
