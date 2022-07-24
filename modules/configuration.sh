@@ -19,3 +19,11 @@ function restore_configuration() { backup=$1; original=$2
 	cat "$backup" | dconf load "$original"
 	# dconf load "$backup" < "$original"
 }
+
+# Resets dconf configurations. 
+	# Args:
+		# - $1: name and location of configuration to be reset
+	# Source: https://askubuntu.com/questions/967517/backup-gnome-terminal
+function reset_configuration() { target=$1
+	dconf reset -f "$target"
+}
