@@ -31,4 +31,15 @@ function backup_windows_fonts() {
 	sudo mv "/usr/share/fonts/windows/backup.zip" "./resources/fonts/windows"
 }
 
+# Trims backup archive and removes original archive. 
+	# Backup archive trimmed into 90M due to size limitations on GitHub. 
+function trim_fonts_backup() {
+	title "Trimming Fonts Backup Archive"
+
+	location="./resources/fonts/windows/backup.zip"
+	destination="./resources/fonts/windows/new.zip"
+	split_archive $location $destination
+	rm "./resources/fonts/windows/backup.zip"
+}
+
 "$@"

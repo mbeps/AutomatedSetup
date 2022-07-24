@@ -50,3 +50,17 @@ function enable_extensions() {
 		gnome-extensions enable "$extension" 
 	done  
 }
+
+# Takes an archive and splits into 90M. 
+	# This is due to size contraints on GitHub. 
+		# Args:
+			# - $1: location of the archive to be split
+			# - $2: location where splitted archive is to be saved
+	# Source: https://superuser.com/questions/336219/how-do-i-split-a-zip-file-into-multiple-segments#:~:text=Add%20a%20comment-,3%20Answers,-Sorted%20by%3A
+function split_archive() {
+	title "Spltting Archive"
+
+	location=$1
+	destination=$2
+	zip $location --out $destination -s 90m
+}
