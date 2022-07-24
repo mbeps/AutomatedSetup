@@ -34,3 +34,8 @@ This is an automated tool that automatically sets up Fedora. There is a fully au
 * `enable_favourite_extensions` - enables Gnome extensions to improve the Gnome experience
 * `backup_extension_configuration` - backs up settings and configurations for Gnome extensions
 * `restore_extension_configuration` - restores settings and configurations for Gnome extensions
+
+`fonts.sh` 
+* `install_cascadia_code_font` - installs the Cascadia Code font
+* `install_windows_fonts` - installs Windows proprietary fonts
+
