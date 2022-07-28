@@ -50,7 +50,9 @@ function enable_favourite_extensions() {
 function backup_extension_configuration() {
 	title "Backing Up Extensions Configuration"
 
-	dconf dump /org/gnome/shell/extensions/ > ./resources/extensions/extension-settings.dconf
+	original="/org/gnome/shell/extensions/"
+	backup="./resources/extensions/extension-settings.dconf"
+	backup_configuration "$original" "$backup"
 }
 
 # Restores the terminal configurations from backed up dump file. 
@@ -59,7 +61,9 @@ function backup_extension_configuration() {
 function restore_extension_configuration() {
 	title "Restoring Up Extensions Configuration"
 
-	dconf load /org/gnome/shell/extensions/ < ./resources/extensions/extension-settings.dconf
+	backup="/org/gnome/shell/extensions/"
+	original="./resources/extensions/extension-settings.dconf"
+	restore_configuration "$backup" "$original"
 }
 
 "$@"
