@@ -2,6 +2,15 @@
 
 source "./dependencies.sh"
 
+#^ VARIABLES
+#^ Locations
+local_font_location="/usr/share/fonts/windows"
+backup_location="./resources/fonts/windows/"
+#^ Archives
+reconstructed_archive="windows-fonts.zip"
+decomposed_archive="new.zip"
+backup_archive="backup.zip"
+
 # Install Cascadia Code Font from RPM repository. 
 function install_cascadia_code_font() {
 	title "Installing Cascadia Code Font"
@@ -16,8 +25,11 @@ function install_cascadia_code_font() {
 function install_windows_fonts() {
 	title "Installing Windows Proprietary Fonts"
 
-	zip -F "./resources/fonts/windows/new.zip" --out "./resources/fonts/windows/windows-fonts.zip" # Reconstructs split archive
-	unzip "./resources/fonts/windows/windows-fonts.zip" -d "/usr/share/fonts/windows" # Unzip
+	decomposed_backup_location=$backup_location$decomposed_archive # Backup of split archive 
+	reconstructed_backup_location=$backup_location$reconstructed_archive
+
+	zip -F $decomposed_backup_location --out $reconstructed_backup_location # Reconstructs split archive
+	uncompress_archive $reconstructed_backup_location $local_font_location
 }
 
 # Backs up Windows fonts stored in `/usr/share/fonts/windows/`. 
@@ -25,10 +37,11 @@ function install_windows_fonts() {
 function backup_windows_fonts() {
 	title "Backing Up Windows Fonts"
 
-	cd "/usr/share/fonts/windows"
-	sudo zip -r "backup.zip" .
+	cd $local_font_location
+	sudo zip -r $backup_archive .
 	cd -
-	sudo mv "/usr/share/fonts/windows/backup.zip" "./resources/fonts/windows"
+	backup=$local_font_location$backup_archive # Backup archive stored in local font location
+	sudo mv $backup $backup_location
 }
 
 # Trims backup archive and removes original archive. 
@@ -36,10 +49,11 @@ function backup_windows_fonts() {
 function trim_fonts_backup() {
 	title "Trimming Fonts Backup Archive"
 
-	location="./resources/fonts/windows/backup.zip"
-	destination="./resources/fonts/windows/new.zip"
-	split_archive $location $destination
-	rm "./resources/fonts/windows/backup.zip"
+	target=$backup_location$backup_archive
+	destination=$backup_location$decomposed_archive
+
+	split_archive $target $destination
+	rm $target
 }
 
 "$@"
