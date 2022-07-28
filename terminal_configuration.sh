@@ -2,13 +2,16 @@
 
 source "./dependencies.sh"
 
+original="/org/gnome/terminal/"
+backup="./resources/terminal/dump"
+
 # Creates backup file for Gnome Terminal.
 	# Saves dump file in `./resources/terminal/`
 	# Source: https://askubuntu.com/questions/967517/backup-gnome-terminal
 function backup_terminal() {
 	title "Backing Up Gnome Terminal Configurations"
 
-	dconf dump /org/gnome/terminal/ > ./resources/terminal/dump
+	backup_configuration $backup $original
 }
 
 # Restores the terminal configurations to its default settings. 
@@ -16,7 +19,7 @@ function backup_terminal() {
 function reset_terminal() {
 	title "Resetting Gnome Terminal Configuration to Defaults"
 
-	dconf reset -f /org/gnome/terminal/
+	dconf reset -f $original
 }
 
 # Restores the terminal configurations from backed up dump file. 
@@ -25,7 +28,7 @@ function reset_terminal() {
 function restore_terminal() {
 	title "Restores Gnome Terminal Configuration"
 
-	dconf load /org/gnome/terminal/ < ./resources/terminal/dump
+	restore_configuration $original $backup
 }
 
 "$@"

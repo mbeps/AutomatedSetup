@@ -2,6 +2,21 @@
 
 source "./dependencies.sh"
 
+	backups=(
+		"/org/gnome/settings-daemon/plugins/media-keys/"
+		"/org/gnome/desktop/wm/keybindings/"
+		"/org/gnome/shell/keybindings/"
+		"/org/gnome/mutter/keybindings/"
+		"/org/gnome/mutter/wayland/keybindings/"
+	)
+	originals=(
+		"./resources/keyboard-shortcuts/dump_1"
+		"./resources/keyboard-shortcuts/dump_2"
+		"./resources/keyboard-shortcuts/dump_3"
+		"./resources/keyboard-shortcuts/dump_4"
+		"./resources/keyboard-shortcuts/dump_5"
+	)
+
 # Creates backup files for various keyboard shortcuts. 
 	# Compiles shortcuts from various locations. 
 	# Saves dump files in `./resources/keyboard-shortcuts/`
@@ -9,11 +24,7 @@ source "./dependencies.sh"
 function backup_keyboard_shortcuts() {
 	title "Backing Up Keyboard Shortcuts"
 
-	dconf dump /org/gnome/settings-daemon/plugins/media-keys/ >> ./resources/keyboard-shortcuts/dump_1
-	dconf dump /org/gnome/desktop/wm/keybindings/ >> ./resources/keyboard-shortcuts/dump_2
-	dconf dump /org/gnome/shell/keybindings/ >> ./resources/keyboard-shortcuts/dump_3
-	dconf dump /org/gnome/mutter/keybindings/ >> ./resources/keyboard-shortcuts/dump_4
-	dconf dump /org/gnome/mutter/wayland/keybindings/ >> ./resources/keyboard-shortcuts/dump_5
+	backup_configurations "${backups[@]}" "${originals[@]}"
 }
 
 # Restores keyboard shortcuts from dump files. 
@@ -22,11 +33,7 @@ function backup_keyboard_shortcuts() {
 function restore_keyboard_shortcuts() {
 	title "Restoring Keyboard Shortcuts"
 
-	cat ./resources/keyboard-shortcuts/dump_1 | dconf load /org/gnome/settings-daemon/plugins/media-keys/
-	cat ./resources/keyboard-shortcuts/dump_2 | dconf load /org/gnome/desktop/wm/keybindings/
-	cat ./resources/keyboard-shortcuts/dump_3 | dconf load /org/gnome/shell/keybindings/
-	cat ./resources/keyboard-shortcuts/dump_4 | dconf load /org/gnome/mutter/keybindings/
-	cat ./resources/keyboard-shortcuts/dump_5 | dconf load /org/gnome/mutter/wayland/keybindings/
+	restore_configurations "${backups[@]}" "${originals[@]}"
 }
 
 "$@"
