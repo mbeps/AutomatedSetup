@@ -13,8 +13,10 @@ function install_setup_git() {
 	install_native_apps "${package[@]}"
 	
 	echo "Configuring Git"
-	git config --global user.name "Maruf Bepary"
-	git config --global user.email "bepary71@gmail.com"
+	name="Maruf Bepary"
+	email="bepary71@gmail.com"
+	git config --global user.name $name
+	git config --global user.email $email
 	git config --global core.autocrlf input
 }
 
@@ -23,7 +25,8 @@ function install_setup_git() {
 function configure_github_ssh() { 
 	title "Configuring SSH Keys for GitHub"
 
-	echo && echo && echo | ssh-keygen -t ed25519 -C "bepary71@gmail.com"
+	email="bepary71@gmail.com"
+	echo && echo && echo | ssh-keygen -t ed25519 -C $email
 	eval "$(ssh-agent -s)"
 	ssh-add ~/.ssh/id_ed25519
 	cat ~/.ssh/id_ed25519.pub
