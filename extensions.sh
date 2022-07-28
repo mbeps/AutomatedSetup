@@ -5,9 +5,11 @@ source "./dependencies.sh"
 # Installs all the extensions into `~/.local/share/gnome-shell/extensions/`
 	# Unzips th archive containing the extensions into the extensions folder. 
 function restore_extensions() {
-   title "Restoring Extensions"
+	title "Restoring Extensions"
 
-   unzip "./resources/extensions/extensions.zip" -d "$HOME/.local/share/gnome-shell/extensions/"
+	archive="./resources/extensions/extensions.zip"
+	destination="$HOME/.local/share/gnome-shell/extensions/"
+	uncompress_archive "$archive" "$destination"
 }
 
 # Backs up all the installed extensions from `~/.local/share/gnome-shell/extensions/`
@@ -15,10 +17,14 @@ function restore_extensions() {
 function backup_extensions() {
 	title "Backing Up Extensions"
 
-	cd "$HOME/.local/share/gnome-shell/extensions/"
-	zip -r "extensions.zip" .
+	extensions_location="$HOME/.local/share/gnome-shell/extensions/"
+	archive_name="extensions.zip"
+	save_location="./resources/extensions"
+
+	cd "$extensions_location"
+	zip -r $archive_name .
 	cd -
-	mv "$HOME/.local/share/gnome-shell/extensions/extensions.zip" "./resources/extensions"
+	mv "$extensions_location$archive_name" "$save_location"
 }
 
 # Enables favaurite extensions to configure Gnome Shell ideally.
