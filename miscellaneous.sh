@@ -45,7 +45,7 @@ function set_user_folder_directory() {
 	arrayLength=${#locations[@]}
 
 	for (( i=0; i<$arrayLength; i++ )); do
-		xdg-user-dirs-update --set ${locations[$i]} "${directories[$i]}"
+		xdg-user-dirs-update --set "${locations[$i]}" "${directories[$i]}"
 	done
 }
 
@@ -55,7 +55,9 @@ function set_user_folder_directory() {
 function mount_university_server() {
 	title "Mounting Royal Holloway Linux Server into File System"
 
-	sshfs zjac268@linux.cim.rhul.ac.uk:/home/cim/ug/zjac268 "/home/maruf/Remotes/Royal Holloway Linux Server/"
+	remote="zjac268@linux.cim.rhul.ac.uk:/home/cim/ug/zjac268"
+	mount_location="/home/maruf/Remotes/Royal Holloway Linux Server/"
+	sshfs $remote "$mount_location"
 }
 
 # Creates all the directories required for personal use. 
