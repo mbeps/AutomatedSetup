@@ -21,12 +21,27 @@ menu-separator-color='rgba(255,255,255,0.1)'
 pinned-app-list=@as []
 power-options=[(0, true), (1, true), (2, true), (3, true), (4, true), (5, false), (6, false)]
 prefs-visible-page=0
-recently-installed-apps=['kdiskmark.desktop', 'io.bassi.Amberol.desktop', 'com.github.fabiocolacio.marker.desktop', 'org.standardnotes.standardnotes.desktop', 'net.cozic.joplin_desktop.desktop', 'org.gnome.GTG.desktop', 'sa.sy.bluerecorder.desktop', 'com.raggesilver.BlackBox.desktop', 'io.github.seadve.Kooha.desktop', 'com.github.xournalpp.xournalpp.desktop']
+recently-installed-apps=['kdiskmark.desktop', 'io.bassi.Amberol.desktop', 'com.github.fabiocolacio.marker.desktop', 'org.standardnotes.standardnotes.desktop', 'net.cozic.joplin_desktop.desktop', 'org.gnome.GTG.desktop', 'sa.sy.bluerecorder.desktop', 'com.raggesilver.BlackBox.desktop', 'io.github.seadve.Kooha.desktop', 'com.github.xournalpp.xournalpp.desktop', 'io.github.mpobaschnig.Vaults.desktop', 'io.github.mhogomchungu.sirikali.desktop']
 show-activities-button=true
 
 [avatar]
+avatar-shadow=false
+avatar-shadow-user-name=false
+horizontal-mode=true
+name-style-dark=false
 show-buttons=false
-show-media-center=true
+show-media-center=false
+show-system-name=false
+show-top-image=false
+system-name-position=1
+top-image='/home/maruf/Downloads/IMG_20220808_182158_2-01.jpeg'
+
+[blur-my-shell/applications]
+customize=false
+
+[blur-my-shell/dash-to-dock]
+blur=false
+override-background=false
 
 [clipboard-indicator]
 confirm-clear=false
@@ -53,7 +68,7 @@ show-trash=false
 animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
 appicon-margin=2
 appicon-padding=8
-available-monitors=[1, 0]
+available-monitors=[0]
 click-action='TOGGLE-SHOWPREVIEW'
 dot-style-focused='DASHES'
 dot-style-unfocused='DOTS'
@@ -81,9 +96,17 @@ trans-use-dynamic-opacity=true
 tray-padding=-1
 window-preview-title-position='TOP'
 
+[emoji-selector]
+emojisize=20
+nbcols=14
+recently-used=['😂', '❤️', '😍', '😭', '😊', '😒', '😘', '😩', '🤔', '☺️', '👌', '😔', '😏', '😁']
+skin-tone=5
+
 [gestureImprovements]
+default-overview-gesture-direction=true
+follow-natural-scroll=true
 forward-back-application-keyboard-shortcuts={'firefox.desktop': (1, false), 'org.chromium.Chromium.desktop': (1, false), 'org.gnome.gThumb.desktop': (2, false), 'org.gnome.eog.desktop': (3, false), 'org.gnome.Photos.desktop': (3, false), 'shotwell.desktop': (3, false), 'com.spotify.Client.desktop': (4, false), 'code.desktop': (5, false), 'code-insiders.desktop': (5, false), 'org.gnome.Terminal.desktop': (5, false), 'com.gexperts.Tilix.desktop': (5, false), 'org.gnome.TextEditor.desktop': (5, false), 'microsoft-edge.desktop': (0, false)}
-pinch-3-finger-gesture='NONE'
+pinch-3-finger-gesture='CLOSE_WINDOW'
 pinch-4-finger-gesture='NONE'
 
 [gsconnect]
@@ -95,7 +118,7 @@ show-indicators=true
 [gsconnect/device/75aef515c3d514dd]
 certificate-pem='-----BEGIN CERTIFICATE-----\nMIIC9zCCAd+gAwIBAgIBATANBgkqhkiG9w0BAQsFADA/MRkwFwYDVQQDDBA3NWFl\nZjUxNWMzZDUxNGRkMRQwEgYDVQQLDAtLREUgQ29ubmVjdDEMMAoGA1UECgwDS0RF\nMB4XDTIxMDIxMzAwMDAwMFoXDTMxMDIxMzAwMDAwMFowPzEZMBcGA1UEAwwQNzVh\nZWY1MTVjM2Q1MTRkZDEUMBIGA1UECwwLS0RFIENvbm5lY3QxDDAKBgNVBAoMA0tE\nRTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMI1lKS0h6WxDmjH/nw4\nfD6qz4ZMSrcPx1k5ioXlMFsQRHbDUx41ydT4d7VxAWGMhjHh+PIC2LNGTRhmdIwQ\nJDGrIsARoO5zlv1S/qgPGJuRX87YztGGr8xswZ9mhhA74+oa8nuKLse5CPlFNqyk\nXB+WiZ761PumAUjMtU+Xc1ZLBCzA2wobHyQjGC7wbBiNZOKqvUINQzJIOd2xGLoB\nxzZCKXDudqwKxhY6wGh+94jQAEfNO1ip7NHZkJO0P+4CoptOhSAV252w8JELeZLT\nEc1Fe7iDaspDX5M+oJdguo9AIXn+ZhmFdZjehhzIvnzO22er3NgONAXzbi5MchFq\nIc8CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEABjRndbM+1JuMG9wwFh9WMLPbL433\nIIj4L9rSkiMMS6QFxluJxR4WkkOM+SzxliyY8HzTVKMNmJwja0jsWKUOMG8GTjeW\nDSOITOSRd8lVT0820vSUfHf6maF9Akm0/J5Ih6yKgnr9Bup0cGaL7cJum1dJFDGN\nAGWXQL51lr4LxcApJLad8OxngyrBms78a5hbQ8TiJFcQK1zz+8EPll4m9ikQkbTj\n4fxzc1xbx+p3n/6NcSPHBy5bkAdESY202aCmxFrMROR7lANBN3pEmzAzGzQcbcPg\nXntvZH7zckbUNGJZFKO27fO5CGscgWmWNO45qp7IztJZPRrBYATvUuDuGw==\n-----END CERTIFICATE-----\n'
 incoming-capabilities=['kdeconnect.battery', 'kdeconnect.battery.request', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report.request', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.photo.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
-last-connection='lan://192.168.0.12:1716'
+last-connection='lan://192.168.11.102:1716'
 name='[PHONE] Maruf - OnePlus'
 outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.battery.request', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.photo', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
 paired=true
@@ -132,6 +155,14 @@ power-icon=true
 top-panel-position=0
 weather=false
 workspace-switcher-should-show=true
+
+[material-you-theme]
+dark-mode=true
+
+[rounded-window-corners]
+custom-rounded-corner-settings=@a{sv} {}
+global-rounded-corner-settings={'padding': <{'left': <uint32 1>, 'right': <uint32 1>, 'top': <uint32 1>, 'bottom': <uint32 1>}>, 'keep_rounded_corners': <{'maximized': <false>, 'fullscreen': <false>}>, 'border_radius': <uint32 12>, 'smoothing': <0.5>}
+settings-version=uint32 5
 
 [shell-configurator]
 appgrid-columns=8
@@ -181,6 +212,8 @@ workspace-wraparound-switching=false
 [sound-output-device-chooser]
 expand-volume-menu=false
 integrate-with-slider=true
+show-input-devices=true
+show-input-slider=true
 show-profiles=false
 
 [unlock-dialog-background]
