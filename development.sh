@@ -130,4 +130,21 @@ function install_node() {
 	npm install --global yarn
 }
 
+# Installs Docker. 
+	# Adds the necessary repository. 
+	# Source: https://developer.fedoraproject.org/tools/docker/docker-installation.html
+function install_docker() {
+	title "Installing Docker"
+
+	package=("dnf-plugins-core")
+	install_native_apps "${package[@]}"
+	sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+	packages=(
+		"docker-ce" 
+		"docker-ce-cli "
+		"containerd.io"
+	)
+	install_native_apps "${packages[@]}"
+}
+
 "$@"
