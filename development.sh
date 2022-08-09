@@ -77,6 +77,7 @@ function install_python_poetry() {
 
 	package=("poetry")
 	install_native_apps "${package[@]}"
+	poetry config virtualenvs.in-project true
 }
 
 # Installs Visual Studio Code. 
