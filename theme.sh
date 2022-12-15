@@ -35,7 +35,6 @@ function apply_theme_to_flatpaks() {
 		"org.gnome.Connections" 				# Connection - Remote Connection Tool
 		"org.gnome.FileRoller" 					# File Roller - Archive Manager
 		"com.github.tchx84.Flatseal" 			# Flatseal - Flatpak Permission Manager
-		"io.github.celluloid_player.Celluloid" 	
 		)
 
 	for app in "${apps[@]}"; do

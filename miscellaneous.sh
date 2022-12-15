@@ -58,6 +58,7 @@ function create_required_directories() {
 
 # Adds templates for file types in the right click menu
 function add_templates() { 
+	title "Adding File Templates"
 	cp "resources/Templates" "/home/maruf//Templates"
 }
 
