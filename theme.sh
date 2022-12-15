@@ -42,4 +42,12 @@ function apply_theme_to_flatpaks() {
 	done
 }
 
+# Applies Gnome theme to Firefox. 
+	# Source: https://github.com/rafaelmardojai/firefox-gnome-theme
+function firefox_gnome_theme() { 
+	title "Applying Firefox Gnome Theme"
+
+	curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
+}
+
 "$@"
