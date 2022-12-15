@@ -22,3 +22,22 @@ name='Emoji'
 binding='<Control><Alt>t'
 command='gnome-terminal'
 name='Terminal'
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
+logout=['<Shift><Control>Delete']
+volume-step=5
+
+[custom-keybindings/custom0]
+binding='<Super>period'
+command='/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=smile it.mijorus.smile'
+name='Emoji'
+
+[custom-keybindings/custom1]
+binding='<Control><Alt>t'
+command='gnome-terminal'
+name='Terminal'
+
+[custom-keybindings/custom2]
+binding='<Control><Alt>Delete'
+command='gnome-usage'
+name='Gnome Usage'

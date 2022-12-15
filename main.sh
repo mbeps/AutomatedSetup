@@ -55,7 +55,23 @@ function automated() {
 	configure_github_ssh
 }
 
+function automated_wsl() {
+	optimise_dnf
+	update_upgrade
+	enable_rpm_fusion
+	enable_flathub
 
+	set_bash
+	install_setup_git
+	install_jdk
+	install_java_maven
+	install_postgres
+	install_python_pip
+	install_python_poetry
+	install_node
+	install_vscode
+	configure_github_ssh
+}
 
 
 "$@"

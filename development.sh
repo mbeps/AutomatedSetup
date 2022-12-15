@@ -75,9 +75,8 @@ function install_python_pip() {
 function install_python_poetry() {
 	title "Installing Poetry Project Manager for Python"
 
-	package=("poetry")
-	install_native_apps "${package[@]}"
-	poetry config virtualenvs.in-project true
+	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+	# poetry config virtualenvs.in-project true
 }
 
 # Installs Visual Studio Code. 
@@ -143,8 +142,23 @@ function install_docker() {
 		"docker-ce" 
 		"docker-ce-cli "
 		"containerd.io"
+		"docker-desktop-4.11.0-x86_64.rpm"
 	)
 	install_native_apps "${packages[@]}"
 }
 
+# Installs FlatHub apps required for development. 
+function install_flathub_apps_development() { 
+	title "Installing Non-System Flathub Apps"
+	
+	apps=(
+		"io.dbeaver.DBeaverCommunity" 			# DBeaver - Database App
+		"rest.insomnia.Insomnia" 				# Insomnia - API Tool
+		"org.gnome.gitg" 						# Git GUI
+		)
+
+	install_flathub_apps "${apps[@]}"
+}
+
 "$@"
+

@@ -8,14 +8,12 @@ function install_flathub_apps_non_system() {
 	title "Installing Non-System Flathub Apps"
 	
 	apps=(
-		"io.dbeaver.DBeaverCommunity" 			# DBeaver - Database App
 		"com.github.maoschanz.drawing" 			# Drawing - Paint App
 		"com.mattjakeman.ExtensionManager" 		# Extensions Manager for Gnome
 		"com.github.johnfactotum.Foliate" 		# Foliate - eBook Reader
 		"de.haeckerfelix.Fragments" 			# Fragments - Torrent Client
 		"org.gnome.Geary" 						# Geary - Email Client
 		"fr.free.Homebank" 						# HomeBank - Personal Finance
-		"rest.insomnia.Insomnia" 				# Insomnia - API Tool
 		"com.github.alexhuntley.Plots" 			# Plots - Graphing Tool
 		"com.github.flxzt.rnote" 				# rNote - Whiteboard App
 		"it.mijorus.smile" 						# Smile - Emoji Picker
@@ -24,7 +22,6 @@ function install_flathub_apps_non_system() {
 		"org.gnome.FileRoller" 					# File Roller - Archive Manager
 		"org.gnome.Music" 						# Gnome Music
 		"org.gnome.NetworkDisplays" 			# Network Displays
-		"org.gnome.gitg" 						# Git GUI
 		"com.github.tchx84.Flatseal" 			# FlatSeal - Flatpak permission manager
 		"org.gnome.Todo" 						# Gnome To-Do
 		"com.github.rafostar.Clapper" 			# Clapper - Video Player
