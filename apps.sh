@@ -25,8 +25,14 @@ function install_flathub_apps_non_system() {
 		"com.github.tchx84.Flatseal" 			# FlatSeal - Flatpak permission manager
 		"org.gnome.Todo" 						# Gnome To-Do
 		"com.github.rafostar.Clapper" 			# Clapper - Video Player
-		"io.posidon.Paper" 						# Paper - Notes
 		"me.dusansimic.DynamicWallpaper" 		# Dynamic Wallpaper
+		"appeditor"								# AppEditor
+		"com.bitwarden.desktop"					# Bitwarden
+		"com.github.neithern.g4music"			# G4Music - Music Player
+		"org.pulseaudio.pavucontrol"			# Volume Control
+		"org.signal.Signal" 					# Signal
+		"io.github.fsobolev.TimeSwitch"			# Time Switch - System Timer
+
 		)
 
 	install_flathub_apps "${apps[@]}"
@@ -38,7 +44,6 @@ function install_flathub_apps_system() {
 	title "Installing System Flathub Apps Alternatives"
 	
 	apps=(
-		"org.gnome.Boxes" 						# Gnome Boxes - Virtualisation Tool
 		"org.gnome.Calculator" 					# Calculator
 		"org.gnome.Calendar" 					# Calendar
 		"org.gnome.clocks" 						# Clocks
@@ -69,7 +74,6 @@ function remove_native_system_apps() {
 		"gnome-maps" 							# Maps
 		"gnome-text-editor" 					# Text Editor
 		"gnome-weather" 						# Weather
-		"org.signal.Signal" 					# Signal
 		)
 
 	remove_native_apps "${packages[@]}"
