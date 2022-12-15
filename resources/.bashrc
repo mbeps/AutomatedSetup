@@ -35,6 +35,11 @@ export PS1='\[\e[0;1;91m\]\u\[\e[0;2;91m\]@\[\e[0;3;91m\]\h\[\e[0m\]:\[\e[0;2m\]
 # ALIASES
 alias editor="flatpak run org.gnome.TextEditor"
 alias files="nautilus"
+alias hardware-info="sudo lshw"
+alias python3="/usr/bin/python3"
+alias python="/usr/bin/python3"
+alias pip3="/usr/bin/pip3"
+alias pyenv="$HOME/.pyenv"
 # PostreSQL
 alias postgres-stop="sudo systemctl stop postgresql"
 alias postgres-start="sudo systemctl start postgresql"
@@ -50,8 +55,8 @@ alias git-sync="git pull && git push"
 # Mounting External Remote File Systems
 alias mount-uni="sshfs zjac268@linux.cim.rhul.ac.uk:/home/cim/ug/zjac268 \"/home/maruf/Remotes/Royal Holloway Linux Server/\""
 # Gnome Layouts
-alias layout-windows="gnome-extensions disable dash-to-dock-cosmic-@halfmexicanhalfamazing@gmail.com && gnome-extensions disable Vitals@CoreCoding.com && gnome-extensions enable dash-to-panel@jderose9.github.com"
-alias layout-personal="gnome-extensions enable dash-to-dock-cosmic-@halfmexicanhalfamazing@gmail.com && gnome-extensions enable Vitals@CoreCoding.com && gnome-extensions disable dash-to-panel@jderose9.github.com"
+alias layout-windows="gnome-extensions disable dash-to-dock@micxgx.gmail.com && gnome-extensions disable Vitals@CoreCoding.com && gnome-extensions enable dash-to-panel@jderose9.github.com"
+alias layout-personal="gnome-extensions enable dash-to-dock@micxgx.gmail.com && gnome-extensions enable Vitals@CoreCoding.com && gnome-extensions disable dash-to-panel@jderose9.github.com"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -67,4 +72,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
