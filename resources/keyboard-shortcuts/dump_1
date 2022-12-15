@@ -41,3 +41,47 @@ name='Terminal'
 binding='<Control><Alt>Delete'
 command='gnome-usage'
 name='Gnome Usage'
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/']
+logout=['<Shift><Control>Delete']
+volume-step=5
+
+[custom-keybindings/custom0]
+binding='<Super>period'
+command='/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=smile it.mijorus.smile'
+name='Emoji'
+
+[custom-keybindings/custom1]
+binding='<Control><Alt>t'
+command='gnome-terminal'
+name='Terminal'
+
+[custom-keybindings/custom2]
+binding='<Control><Alt>Delete'
+command='gnome-usage'
+name='Gnome Usage'
+
+[custom-keybindings/custom3]
+binding='<Shift><Super>r'
+command='/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=kooha io.github.seadve.Kooha'
+name='Screen Recorder'
+
+[custom-keybindings/custom4]
+binding='<Shift><Super>greater'
+command='/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=smile it.mijorus.smile'
+name='Emoji Pannel'
+
+[custom-keybindings/custom5]
+binding='<Alt><Super>period'
+command='/usr/bin/gnome-characters'
+name='Characters'
+
+[custom-keybindings/custom6]
+binding='<Shift><Super>v'
+command='/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=pavucontrol org.pulseaudio.pavucontrol'
+name='Volume Control'
+
+[custom-keybindings/custom7]
+binding='Tools'
+command='/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=pavucontrol org.pulseaudio.pavucontrol'
+name='Volume Manager'
