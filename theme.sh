@@ -35,12 +35,19 @@ function apply_theme_to_flatpaks() {
 		"org.gnome.Connections" 				# Connection - Remote Connection Tool
 		"org.gnome.FileRoller" 					# File Roller - Archive Manager
 		"com.github.tchx84.Flatseal" 			# Flatseal - Flatpak Permission Manager
-		"io.github.celluloid_player.Celluloid" 	
 		)
 
 	for app in "${apps[@]}"; do
 		sudo flatpak override $app --env=GTK_THEME=adw-gtk3-dark
 	done
+}
+
+# Applies Gnome theme to Firefox. 
+	# Source: https://github.com/rafaelmardojai/firefox-gnome-theme
+function firefox_gnome_theme() { 
+	title "Applying Firefox Gnome Theme"
+
+	curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
 }
 
 "$@"

@@ -24,4 +24,18 @@ function gnome_fractional_scaling() {
 	# gsettings reset org.gnome.mutter experimental-features 								# Reset
 }
 
+# Backs up general Gnome configurations. 
+function backup_general_configuration() { 
+	dconf dump /org/gnome/mutter/draggable-border-width/ >> ./resources/general-gnome-settings/draggable-border-width
+	dconf dump /org/gnome/terminal/legacy/ >> ./resources/general-gnome-settings/terminal
+	dconf dump /org/gnome/software/ >> ./resources/general-gnome-settings/gnome-software
+}
+
+# Restores general Gnome configurations from dconf files. 
+function restore_general_configuration() { 
+	cat ./resources/general-gnome-settings/draggable-border-width | dconf load /org/gnome/mutter/draggable-border-width/
+	cat ./resources/general-gnome-settings/terminal | dconf load /org/gnome/terminal/legacy/
+	cat ./resources/general-gnome-settings/gnome-software | dconf load /org/gnome/software/
+}
+
 "$@"

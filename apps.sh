@@ -8,14 +8,12 @@ function install_flathub_apps_non_system() {
 	title "Installing Non-System Flathub Apps"
 	
 	apps=(
-		"io.dbeaver.DBeaverCommunity" 			# DBeaver - Database App
 		"com.github.maoschanz.drawing" 			# Drawing - Paint App
 		"com.mattjakeman.ExtensionManager" 		# Extensions Manager for Gnome
 		"com.github.johnfactotum.Foliate" 		# Foliate - eBook Reader
 		"de.haeckerfelix.Fragments" 			# Fragments - Torrent Client
 		"org.gnome.Geary" 						# Geary - Email Client
 		"fr.free.Homebank" 						# HomeBank - Personal Finance
-		"rest.insomnia.Insomnia" 				# Insomnia - API Tool
 		"com.github.alexhuntley.Plots" 			# Plots - Graphing Tool
 		"com.github.flxzt.rnote" 				# rNote - Whiteboard App
 		"it.mijorus.smile" 						# Smile - Emoji Picker
@@ -24,12 +22,17 @@ function install_flathub_apps_non_system() {
 		"org.gnome.FileRoller" 					# File Roller - Archive Manager
 		"org.gnome.Music" 						# Gnome Music
 		"org.gnome.NetworkDisplays" 			# Network Displays
-		"org.gnome.gitg" 						# Git GUI
 		"com.github.tchx84.Flatseal" 			# FlatSeal - Flatpak permission manager
 		"org.gnome.Todo" 						# Gnome To-Do
 		"com.github.rafostar.Clapper" 			# Clapper - Video Player
-		"io.posidon.Paper" 						# Paper - Notes
 		"me.dusansimic.DynamicWallpaper" 		# Dynamic Wallpaper
+		"appeditor"								# AppEditor
+		"com.bitwarden.desktop"					# Bitwarden
+		"com.github.neithern.g4music"			# G4Music - Music Player
+		"org.pulseaudio.pavucontrol"			# Volume Control
+		"org.signal.Signal" 					# Signal
+		"io.github.fsobolev.TimeSwitch"			# Time Switch - System Timer
+
 		)
 
 	install_flathub_apps "${apps[@]}"
@@ -41,7 +44,6 @@ function install_flathub_apps_system() {
 	title "Installing System Flathub Apps Alternatives"
 	
 	apps=(
-		"org.gnome.Boxes" 						# Gnome Boxes - Virtualisation Tool
 		"org.gnome.Calculator" 					# Calculator
 		"org.gnome.Calendar" 					# Calendar
 		"org.gnome.clocks" 						# Clocks
@@ -72,7 +74,6 @@ function remove_native_system_apps() {
 		"gnome-maps" 							# Maps
 		"gnome-text-editor" 					# Text Editor
 		"gnome-weather" 						# Weather
-		"org.signal.Signal" 					# Signal
 		)
 
 	remove_native_apps "${packages[@]}"

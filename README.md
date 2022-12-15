@@ -41,6 +41,7 @@ bash ./main.sh [OPTIONS]
 * `install_node_via_package_manager` - installs Node.JS 16 LTS via the native package manager 
 * `install_node_via_nvm` - installs Node.JS 16 LTS via the Node Version Manager (NVM)
 * `install_node` - installs Node.JS 16 LTS 
+* `install_docker` - installs Docker and all its required components
 
 ## Drivers
 > Contains functions to install drivers and CODECs.

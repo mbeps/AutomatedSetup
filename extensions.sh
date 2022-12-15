@@ -27,19 +27,21 @@ function enable_favourite_extensions() {
 	title "Enabling Favourite Extensions"
 
 	extensions=(
-		"arcmenu@arcmenu.com"
-		"clipboard-indicator@tudmotu.com"
-		"dash-to-dock-cosmic-@halfmexicanhalfamazing@gmail.com"
+		"arcmenu@arcmenu.com",
+		"bluetooth-quick-connect@bjarosze.gmail.com"
+		"dash-to-dock@micxgx.gmail.com"
+		"emoji-selector@maestroschan.fr"
+		"expandable-notifications@kaan.g.inam.org"
 		"gestureImprovements@gestures"
+		"gnome-clipboard@b00f.github.io"
+		"gnome-fuzzy-app-search@gnome-shell-extensions.Czarlie.gitlab.com"
 		"gsconnect@andyholmes.github.io"
-		"just-perfection-desktop@just-perfection"
 		"legacyschemeautoswitcher@joshimukul29.gmail.com"
 		"NotificationCounter@coolllsk"
-		"sound-output-device-chooser@kgshank.net"
-		"sound-percentage@maestroschan.fr"
+		"quick-settings-tweaks@qwreey"
 		"tiling-assistant@leleat-on-github"
 		"Vitals@CoreCoding.com"
-
+		"widgets@aylur"
 	)
 	enable_extensions "${extensions[@]}"
 }

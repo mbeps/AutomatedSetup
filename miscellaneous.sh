@@ -8,26 +8,7 @@ source "./dependencies.sh"
 function set_bash() { 
 	title "Setting Up Bash"
 
-	settings=(
-		"export PS1='\[\e[0;1;91m\]\u\[\e[0;2;91m\]@\[\e[0;3;91m\]\h\[\e[0m\]:\[\e[0;2m\]/\[\e[0;38;5;39m\]\W\[\e[0;2m\]/\[\e[0;92m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2) \[\e[0m\]$ \[\e[0m\]'"  					 # Custom Bash Prompt 
-		"alias editor=\"flatpak run org.gnome.TextEditor\"" 				# Sets Gnome Editor 
-
-		"alias postgres-stop=\"sudo systemctl stop postgresql\"" 			# Stop Postgres
-		"alias postgres-start=\"sudo systemctl start postgresql\"" 			# Start Postgres
-
-		"alias postgres-stop=\"sudo systemctl stop docker\"" 			# Stop Docker
-		"alias postgres-start=\"sudo systemctl start docker\"" 			# Start Docker
-
-		"alias git-sync=\"git pull && git push\"" 							# Git Pull and Push
-		
-		"alias mount-uni=\"sshfs zjac268@linux.cim.rhul.ac.uk:/home/cim/ug/zjac268 \\\"/home/maruf/Remotes/Royal Holloway Linux Server/\\\"\"" # Mount University Drive
-		
-		"alias layout-windows=\"gnome-extensions disable dash-to-dock-cosmic-@halfmexicanhalfamazing@gmail.com && gnome-extensions disable Vitals@CoreCoding.com && gnome-extensions enable dash-to-panel@jderose9.github.com\""
-		"alias layout-personal=\"gnome-extensions enable dash-to-dock-cosmic-@halfmexicanhalfamazing@gmail.com && gnome-extensions enable Vitals@CoreCoding.com && gnome-extensions disable dash-to-panel@jderose9.github.com\""
-	)
-	for line in "${settings[@]}"; do # Adding settings
-		echo "$line" | tee -a ~/.bashrc
-	done
+	cp "./resources/.bashrc" "/home/maruf/.bashrc"
 }
 
 # Sets custom user folders. 
@@ -73,6 +54,12 @@ function create_required_directories() {
 	mkdir ~/Development
 	mkdir "$HOME/Remotes/Royal Holloway Linux Server"
 	mkdir Wallpapers
+}
+
+# Adds templates for file types in the right click menu
+function add_templates() { 
+	title "Adding File Templates"
+	cp "resources/Templates" "/home/maruf//Templates"
 }
 
 "$@"
