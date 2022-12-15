@@ -75,4 +75,9 @@ function create_required_directories() {
 	mkdir Wallpapers
 }
 
+# Adds templates for file types in the right click menu
+function add_templates() { 
+	cp "resources/Templates" "/home/maruf//Templates"
+}
+
 "$@"
