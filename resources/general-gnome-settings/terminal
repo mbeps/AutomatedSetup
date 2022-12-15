@@ -1,0 +1,52 @@
+[/]
+new-terminal-mode='tab'
+theme-variant='dark'
+
+[profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '42833492-d379-4bb7-aed9-d13d2b82ad67', '90edfc86-119d-4811-a75f-8acaad666236', '964b6ff5-d8ea-4e63-8e8d-e64f7460a555', '5785da13-e852-4e10-ad28-68dff185613a', 'ea07b94b-3fe3-4f06-b935-e50792a2f5fb']
+
+[profiles:/:42833492-d379-4bb7-aed9-d13d2b82ad67]
+cursor-shape='ibeam'
+custom-command='sudo -u postgres psql'
+font='Cascadia Code 14'
+use-custom-command=true
+use-system-font=false
+visible-name='PostgreSQL'
+
+[profiles:/:5785da13-e852-4e10-ad28-68dff185613a]
+cursor-shape='ibeam'
+custom-command='node'
+font='Cascadia Code 14'
+use-custom-command=true
+use-system-font=false
+visible-name='Node'
+
+[profiles:/:90edfc86-119d-4811-a75f-8acaad666236]
+cursor-shape='ibeam'
+custom-command='python3'
+font='Cascadia Code 14'
+use-custom-command=true
+use-system-font=false
+visible-name='Python'
+
+[profiles:/:964b6ff5-d8ea-4e63-8e8d-e64f7460a555]
+cursor-shape='ibeam'
+custom-command='ssh zjac268@linux.cim.rhul.ac.uk'
+font='Cascadia Code 14'
+use-custom-command=true
+use-system-font=false
+visible-name='Royal Hollway Server'
+
+[profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+cursor-shape='ibeam'
+font='Cascadia Code 14'
+use-system-font=false
+visible-name='Bash'
+
+[profiles:/:ea07b94b-3fe3-4f06-b935-e50792a2f5fb]
+cursor-shape='ibeam'
+custom-command='sudo mysql -u root -p'
+font='Cascadia Code 14'
+use-custom-command=true
+use-system-font=false
+visible-name='MySQL'
