@@ -31,7 +31,7 @@ bash ./main.sh [OPTIONS]
 > Contains functions to install and configure development environment. 
 [`development.sh`](development.sh)
 * `install_setup_git` - installs and sets up Git version control system with correct name, email and end of line character
-* `configure_github_ssh` - configures GitHub SSH to create required key to link to GitHub account
+* `configure_git_ssh` - configures GitHub SSH to create required key to link to GitHub account
 * `install_jdk` - installs Java Development Kit (JDK)
 * `install_java_maven` - installs Maven project manager for Java
 * `install_postgres` - installs PostgreSQL database
