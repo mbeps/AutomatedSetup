@@ -58,7 +58,7 @@ function enable_extensions() {
 			# - $2: location where splitted archive is to be saved
 	# Source: https://superuser.com/questions/336219/how-do-i-split-a-zip-file-into-multiple-segments#:~:text=Add%20a%20comment-,3%20Answers,-Sorted%20by%3A
 function split_archive() {
-	title "Spltting Archive"
+	title "Splitting Archive"
 
 	location=$1
 	destination=$2
