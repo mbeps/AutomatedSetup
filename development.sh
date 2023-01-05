@@ -7,10 +7,6 @@ source "./dependencies.sh"
 	# Source: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 function install_setup_git() { 
 	title "Installing & Configuring Git"
-
-	echo "Installing Git"
-	package=("git")
-	install_native_apps "${package[@]}"
 	
 	echo "Configuring Git"
 	git config --global user.name "Maruf Bepary"
