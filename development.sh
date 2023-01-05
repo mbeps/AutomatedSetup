@@ -121,15 +121,8 @@ function install_node() {
 function install_docker() {
 	title "Installing Docker"
 
-	package=("dnf-plugins-core")
-	install_native_apps "${package[@]}"
-	sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-	packages=(
-		"docker-ce" 
-		"docker-ce-cli"
-		"containerd.io"
-	)
-	install_native_apps "${packages[@]}"
+	curl -fsSL https://get.docker.com -o get-docker.sh
+	sudo sh get-docker.sh
 }
 
 # Installs FlatHub apps required for development. 
