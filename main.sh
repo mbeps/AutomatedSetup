@@ -29,7 +29,7 @@ function automated_normal() {
 	enable_favourite_extensions
 
 	install_cascadia_code_font
-	install_windows_fonts
+	# install_windows_fonts
 
 	gnome_customization
 	gnome_fractional_scaling
