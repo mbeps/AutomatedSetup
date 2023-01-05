@@ -98,21 +98,12 @@ function install_vscode() {
 	install_native_apps "${package[@]}"
 }
 
-# Installs Node.JS via built-in package manager. 
-	# This function is called by `install_node`. 
-	# Source: https://nodejs.org/en/download/package-manager/#centos-fedora-and-red-hat-enterprise-linux
-function install_node_via_package_manager() {
-	sudo dnf module install nodejs:16 -y
-}
-
 # Installs Node.JS via Node Version Manager (NVM). 
 	# This function is called by `install_node`. 
 	# Source: https://heynode.com/tutorial/install-nodejs-locally-nvm/
 function install_node_via_nvm() { 
 	# https://heynode.com/tutorial/install-nodejs-locally-nvm/
-	curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh -o install_nvm.sh
-	bash install_nvm.sh
-	export NVM_DIR="$HOME/.nvm"
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 	nvm install --lts
 }
 
