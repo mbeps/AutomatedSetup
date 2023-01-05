@@ -47,17 +47,17 @@ function automated_normal() {
 	firefox_gnome_theme
 }
 
-function automated_deve() { 
+function automated_dev() { 
 	automated_normal
 
 	install_setup_git
 	install_postgres
-	install_mysql
+	# install_mysql
 	install_python_pip
-	install_python_poetry
+	# install_python_poetry
 	install_vscode
-	install_node
-	install_docker
+	# install_node
+	# install_docker
 	install_flathub_apps_development
 	configure_github_ssh
 }
