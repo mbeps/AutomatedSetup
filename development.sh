@@ -16,7 +16,7 @@ function install_setup_git() {
 
 # Configures SSK key for GitHub.
 	# Source: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-function configure_github_ssh() { 
+function configure_git_ssh() { 
 	title "Configuring SSH Keys for GitHub"
 
 	echo && echo && echo | ssh-keygen -t ed25519 -C "bepary71@gmail.com"

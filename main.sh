@@ -59,7 +59,7 @@ function automated_dev() {
 	# install_node
 	# install_docker
 	install_flathub_apps_development
-	configure_github_ssh
+	configure_git_ssh
 }
 
 function automated_wsl_dev() {
@@ -78,7 +78,7 @@ function automated_wsl_dev() {
 	install_node
 	install_docker
 	install_flathub_apps_development
-	configure_github_ssh
+	configure_git_ssh
 }
 
 
