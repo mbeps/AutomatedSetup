@@ -16,3 +16,15 @@ packaging-format-preference=['flatpak']
 security-timestamp=int64 0
 show-ratings=true
 update-notification-timestamp=int64 1671105256
+[/]
+check-timestamp=int64 1672234285
+first-run=false
+install-timestamp=int64 1672234785
+online-updates-timestamp=int64 1672234453
+update-notification-timestamp=int64 1672234868
+[/]
+check-timestamp=int64 1673020740
+first-run=false
+install-timestamp=int64 1672923664
+online-updates-timestamp=int64 1672923542
+update-notification-timestamp=int64 1673020746
