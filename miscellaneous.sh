@@ -8,7 +8,8 @@ source "./dependencies.sh"
 function set_bash() { 
 	title "Setting Up Bash"
 
-	cp "./resources/.bashrc" "/home/maruf/.bashrc"
+	rm "$HOME/.bashrc" # remove old `.bashrc` file
+	cp "./resources/Bash/"* "$HOME" # Add new `.bashrc` file and aliases file
 }
 
 # Sets custom user folders. 
@@ -59,7 +60,7 @@ function create_required_directories() {
 # Adds templates for file types in the right click menu
 function add_templates() { 
 	title "Adding File Templates"
-	cp "resources/Templates" "/home/maruf//Templates"
+	cp "./resources/Templates/"* "$HOME/Templates"
 }
 
 "$@"

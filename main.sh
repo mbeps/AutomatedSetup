@@ -23,6 +23,7 @@ function automated_normal() {
 	install_native_system_apps
 	install_flathub_apps_non_system
 	install_flathub_apps_system
+	remove_preinstalled_flatpaks
 
 	restore_extensions
 	restore_extension_configuration
@@ -50,16 +51,18 @@ function automated_normal() {
 function automated_dev() { 
 	automated_normal
 
+	restore_terminal
 	install_setup_git
 	install_postgres
 	# install_mysql
 	install_python_pip
-	# install_python_poetry
+	install_python_poetry
+	install_pyenv
 	install_vscode
-	# install_node
-	# install_docker
+	install_node
+	install_docker
 	install_flathub_apps_development
-	configure_github_ssh
+	configure_git_ssh
 }
 
 function automated_wsl_dev() {
@@ -78,7 +81,7 @@ function automated_wsl_dev() {
 	install_node
 	install_docker
 	install_flathub_apps_development
-	configure_github_ssh
+	configure_git_ssh
 }
 
 

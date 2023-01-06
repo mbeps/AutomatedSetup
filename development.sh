@@ -16,7 +16,7 @@ function install_setup_git() {
 
 # Configures SSK key for GitHub.
 	# Source: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-function configure_github_ssh() { 
+function configure_git_ssh() { 
 	title "Configuring SSH Keys for GitHub"
 
 	echo && echo && echo | ssh-keygen -t ed25519 -C "bepary71@gmail.com"
@@ -80,8 +80,17 @@ function install_python_pip() {
 function install_python_poetry() {
 	title "Installing Poetry Project Manager for Python"
 
-	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-	# poetry config virtualenvs.in-project true
+	curl -sSL https://install.python-poetry.org | python3 -
+	poetry config virtualenvs.prefer-active-python true
+}
+
+# Installs PyEnv for Python version management. 
+	# Required Bash configuration added in custom `.bashrc` in this project
+	# Source: https://github.com/pyenv/pyenv#automatic-installer
+function install_pyenv() { 
+	title "Installing PyEnv for Python"
+
+	curl https://pyenv.run | bash
 }
 
 # Installs Visual Studio Code. 
@@ -98,21 +107,12 @@ function install_vscode() {
 	install_native_apps "${package[@]}"
 }
 
-# Installs Node.JS via built-in package manager. 
-	# This function is called by `install_node`. 
-	# Source: https://nodejs.org/en/download/package-manager/#centos-fedora-and-red-hat-enterprise-linux
-function install_node_via_package_manager() {
-	sudo dnf module install nodejs:16 -y
-}
-
 # Installs Node.JS via Node Version Manager (NVM). 
 	# This function is called by `install_node`. 
 	# Source: https://heynode.com/tutorial/install-nodejs-locally-nvm/
 function install_node_via_nvm() { 
 	# https://heynode.com/tutorial/install-nodejs-locally-nvm/
-	curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh -o install_nvm.sh
-	bash install_nvm.sh
-	export NVM_DIR="$HOME/.nvm"
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 	nvm install --lts
 }
 
@@ -130,15 +130,8 @@ function install_node() {
 function install_docker() {
 	title "Installing Docker"
 
-	package=("dnf-plugins-core")
-	install_native_apps "${package[@]}"
-	sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-	packages=(
-		"docker-ce" 
-		"docker-ce-cli"
-		"containerd.io"
-	)
-	install_native_apps "${packages[@]}"
+	curl -fsSL https://get.docker.com -o get-docker.sh
+	sudo sh get-docker.sh
 }
 
 # Installs FlatHub apps required for development. 

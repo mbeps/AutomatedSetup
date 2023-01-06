@@ -26,7 +26,6 @@ function install_flathub_apps_non_system() {
 		"org.gnome.Todo" 						# Gnome To-Do
 		"com.github.rafostar.Clapper" 			# Clapper - Video Player
 		"me.dusansimic.DynamicWallpaper" 		# Dynamic Wallpaper
-		"appeditor"								# AppEditor
 		"com.bitwarden.desktop"					# Bitwarden
 		"com.github.neithern.g4music"			# G4Music - Music Player
 		"org.pulseaudio.pavucontrol"			# Volume Control
@@ -60,6 +59,13 @@ function install_flathub_apps_system() {
 	install_flathub_apps "${apps[@]}"
 }
 
+# Removing preinstalled Flatpak apps. 
+function remove_preinstalled_flatpaks() { 
+	title "Removing Preinstalled Flatpak"
+
+	flatpak remove org.fedoraproject.MediaWriter -y
+}
+
 # Removes some preinstalled native apps in favour of Flatpak versions of the same apps. 
 function remove_native_system_apps() {
 	title "Remove Native System Apps for Flatpak Alternatives"
@@ -74,6 +80,7 @@ function remove_native_system_apps() {
 		"gnome-maps" 							# Maps
 		"gnome-text-editor" 					# Text Editor
 		"gnome-weather" 						# Weather
+		"rhythmbox"								# Rhythmbox Music
 		)
 
 	remove_native_apps "${packages[@]}"
@@ -89,6 +96,7 @@ function install_native_system_apps() {
 		"openssl"								# OpenSSL
 		"sshfs" 								# SSHFS
 		"tldr" 									# TLDR 
+		"appeditor"								# AppEditor
 		)
 
 	install_native_apps "${packages[@]}"
