@@ -8,7 +8,8 @@ source "./dependencies.sh"
 function set_bash() { 
 	title "Setting Up Bash"
 
-	cp "./resources/.bashrc" "/home/maruf/.bashrc"
+	rm "$HOME/.bashrc" # remove old `.bashrc` file
+	cp "./resources/Bash/"* "$HOME" # Add new `.bashrc` file and aliases file
 }
 
 # Sets custom user folders. 
