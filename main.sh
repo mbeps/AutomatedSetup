@@ -23,6 +23,7 @@ function automated_normal() {
 	install_native_system_apps
 	install_flathub_apps_non_system
 	install_flathub_apps_system
+	remove_preinstalled_flatpaks
 
 	restore_extensions
 	restore_extension_configuration

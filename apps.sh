@@ -60,6 +60,13 @@ function install_flathub_apps_system() {
 	install_flathub_apps "${apps[@]}"
 }
 
+# Removing preinstalled Flatpak apps. 
+function remove_preinstalled_flatpaks() { 
+	title "Removing Preinstalled Flatpak"
+
+	flatpak remove org.fedoraproject.MediaWriter -y
+}
+
 # Removes some preinstalled native apps in favour of Flatpak versions of the same apps. 
 function remove_native_system_apps() {
 	title "Remove Native System Apps for Flatpak Alternatives"
@@ -74,6 +81,7 @@ function remove_native_system_apps() {
 		"gnome-maps" 							# Maps
 		"gnome-text-editor" 					# Text Editor
 		"gnome-weather" 						# Weather
+		"rhythmbox"								# Rhythmbox Music
 		)
 
 	remove_native_apps "${packages[@]}"
