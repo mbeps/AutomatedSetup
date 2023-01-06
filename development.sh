@@ -84,6 +84,15 @@ function install_python_poetry() {
 	poetry config virtualenvs.prefer-active-python true
 }
 
+# Installs PyEnv for Python version management. 
+	# Required Bash configuration added in custom `.bashrc` in this project
+	# Source: https://github.com/pyenv/pyenv#automatic-installer
+function install_pyenv() { 
+	title "Installing PyEnv for Python"
+
+	curl https://pyenv.run | bash
+}
+
 # Installs Visual Studio Code. 
 	# Adds all the necessary keys and repositories. 
 	# Source: https://www.linuxcapable.com/how-to-install-visual-studio-code-vs-code-on-fedora-34-35/

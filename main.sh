@@ -56,6 +56,7 @@ function automated_dev() {
 	# install_mysql
 	install_python_pip
 	install_python_poetry
+	install_pyenv
 	install_vscode
 	install_node
 	install_docker
