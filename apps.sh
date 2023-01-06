@@ -26,7 +26,6 @@ function install_flathub_apps_non_system() {
 		"org.gnome.Todo" 						# Gnome To-Do
 		"com.github.rafostar.Clapper" 			# Clapper - Video Player
 		"me.dusansimic.DynamicWallpaper" 		# Dynamic Wallpaper
-		"appeditor"								# AppEditor
 		"com.bitwarden.desktop"					# Bitwarden
 		"com.github.neithern.g4music"			# G4Music - Music Player
 		"org.pulseaudio.pavucontrol"			# Volume Control
@@ -97,6 +96,7 @@ function install_native_system_apps() {
 		"openssl"								# OpenSSL
 		"sshfs" 								# SSHFS
 		"tldr" 									# TLDR 
+		"appeditor"								# AppEditor
 		)
 
 	install_native_apps "${packages[@]}"
