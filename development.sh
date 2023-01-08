@@ -90,6 +90,7 @@ function install_python_poetry() {
 function install_pyenv() { 
 	title "Installing PyEnv for Python"
 
+	sudo dnf install -y git make gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel
 	curl https://pyenv.run | bash
 }
 
