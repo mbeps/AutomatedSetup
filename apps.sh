@@ -131,10 +131,8 @@ function install_insync() {
 function install_microsoft_edge() { 
 	title "Installing Microsoft Edge"
 
-	sudo dnf install dnf-plugins-core -y
 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/edge
-	sudo dnf update --refresh
+	sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 	package=("microsoft-edge-stable")
 	install_native_apps "${package[@]}"
 }
