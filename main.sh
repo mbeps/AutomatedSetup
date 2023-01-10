@@ -24,6 +24,8 @@ function automated_normal() {
 	install_flathub_apps_non_system
 	install_flathub_apps_system
 	remove_preinstalled_flatpaks
+	install_insync
+	install_microsoft_edge
 
 	restore_extensions
 	restore_extension_configuration
