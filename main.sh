@@ -63,6 +63,7 @@ function automated_dev() {
 	install_vscode
 	install_node
 	install_docker
+	install_jdk
 	install_flathub_apps_development
 	configure_git_ssh
 }
