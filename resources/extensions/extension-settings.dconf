@@ -10,6 +10,14 @@ size-l2=16.0
 text-l1='Activate Fedora'
 text-l2='Go to Settings to activate Fedora.'
 
+[always-show-titles-in-overview]
+app-icon-position='Bottom'
+do-not-show-app-icon-when-fullscreen=false
+hide-background=false
+hide-icon-for-video-player=false
+show-app-icon=true
+window-active-size-inc=10
+
 [arcmenu]
 application-shortcuts-list=[['Settings', '', 'org.gnome.Settings.desktop']]
 button-item-icon-size='Default'
@@ -36,8 +44,9 @@ menu-width-adjustment=0
 pinned-app-list=@as []
 power-options=[(0, true), (1, true), (2, true), (3, true), (4, true), (5, false), (6, false)]
 prefs-visible-page=0
-recently-installed-apps=['kdiskmark.desktop', 'io.bassi.Amberol.desktop', 'org.standardnotes.standardnotes.desktop', 'net.cozic.joplin_desktop.desktop', 'org.gnome.GTG.desktop', 'sa.sy.bluerecorder.desktop', 'com.raggesilver.BlackBox.desktop', 'com.github.xournalpp.xournalpp.desktop', 'io.github.mpobaschnig.Vaults.desktop', 'io.github.mhogomchungu.sirikali.desktop', 'appeditor-local-application-1.desktop', 'docker-desktop.desktop', 'msedge-efglnfabphcjfpmnghoignilgaoiodjn-Default.desktop', 'org.gnome.gedit.desktop', 'FFPWA-01GC7S041D4B3NR22RPT7VEVBE.desktop', 'info.febvre.Komikku.desktop', 'pavucontrol.desktop', 'com.github.wwmm.easyeffects.desktop', 'calf.desktop', 'org.gnome.Firmware.desktop', 'insync.desktop', 'msedge-agimnkijcaahngcdmfeangaknmldooml-Default.desktop', 'msedge-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop', 'msedge-aghbiahbpaijignceidepookljebhfak-Default.desktop', 'msedge-nfoelejpajdgdjldhnpaobkadhhhlmha-Default.desktop', 'msedge-eilembjdkfgodjkcjnpgpaenohkicgjd-Default.desktop', 'msedge-ncmjhecbjeaamljdfahankockkkdmedg-Default.desktop', 'msedge-pnkcfpnngfokcnnijgkllghjlhkailce-Default.desktop', 'msedge-lgnggepjiihbfdbedefdhcffnmhcahbm-Default.desktop', 'msedge-jgeocpdicgmkeemopbanhokmhcgcflmi-Default.desktop', 'msedge-maonlnecdeecdljpahhnnlmhbmalehlm-Default.desktop', 'msedge-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop', 'msedge-magkoliahgffibhgfkmoealggombgknl-Default.desktop', 'msedge-ikpmlgdcejalmjnfbahhijemkcgljabf-Default.desktop', 'msedge-faolnafnngnfdaknnbpnkhgohbobgegn-Profile_1.desktop', 'msedge-kpkcfpljaaamaajaaoallbcjicipmbef-Profile_1.desktop', 'msedge-fcbmdinajlimphljamjnaooegpbilimf-Profile_1.desktop', 'timeshift-gtk.desktop']
+recently-installed-apps=['kdiskmark.desktop', 'io.bassi.Amberol.desktop', 'org.standardnotes.standardnotes.desktop', 'net.cozic.joplin_desktop.desktop', 'org.gnome.GTG.desktop', 'sa.sy.bluerecorder.desktop', 'com.raggesilver.BlackBox.desktop', 'com.github.xournalpp.xournalpp.desktop', 'io.github.mpobaschnig.Vaults.desktop', 'io.github.mhogomchungu.sirikali.desktop', 'appeditor-local-application-1.desktop', 'docker-desktop.desktop', 'msedge-efglnfabphcjfpmnghoignilgaoiodjn-Default.desktop', 'org.gnome.gedit.desktop', 'FFPWA-01GC7S041D4B3NR22RPT7VEVBE.desktop', 'info.febvre.Komikku.desktop', 'pavucontrol.desktop', 'com.github.wwmm.easyeffects.desktop', 'calf.desktop', 'org.gnome.Firmware.desktop', 'msedge-magkoliahgffibhgfkmoealggombgknl-Default.desktop', 'msedge-fcbmdinajlimphljamjnaooegpbilimf-Profile_1.desktop', 'msedge-efmjfjelnicpmdcmfikempdhlmainjcb-Default.desktop', 'com.wps.Office.wps.desktop', 'com.wps.Office.wpp.desktop', 'com.wps.Office.et.desktop', 'com.wps.Office.pdf.desktop', 'com.wps.Office.prometheus.desktop', 'com.google.Chrome.desktop', 'com.microsoft.Edge.desktop', 'microsoft-edge-dev.desktop', 'com.github.tenderowl.frog.desktop', 'com.hunterwittenborn.Celeste.desktop']
 right-panel-width=350
+search-entry-border-radius=(true, 25)
 show-activities-button=true
 
 [avatar]
@@ -69,28 +78,52 @@ dash-button-label=''
 dash-layout=2
 dash-link-names=['reddit', 'youtube', 'gmail', 'twitter', 'github']
 dash-link-urls=['https://www.reddit.com/', 'https://www.youtube.com/', 'https://www.gmail.com/', 'https://twitter.com/', 'https://www.github.com/']
+dash-links-names=['reddit', 'youtube', 'gmail', 'twitter', 'github']
+dash-links-urls=['https://www.reddit.com/', 'https://www.youtube.com/', 'https://www.gmail.com/', 'https://twitter.com/', 'https://www.github.com/']
 dash-shortcut=['<Super>d']
 date-menu-custom-menu=false
 date-menu-hide-notifications=false
+date-menu-hide-stock-mpris=true
 date-menu-hide-user=false
+date-menu-indicator-position=1
 date-menu-mirror=false
 date-menu-mod=false
 date-menu-remove-padding=false
-date-menu-tweaks=false
+date-menu-show-clocks=true
+date-menu-show-events=true
+date-menu-show-media=false
+date-menu-show-system-levels=false
+date-menu-show-user=false
+date-menu-show-weather=false
+date-menu-tweaks=true
 media-player=false
 media-player-controls-position=2
+media-player-cover-height=70
+media-player-cover-width=70
+media-player-enable-controls=false
+media-player-enable-track=false
 media-player-hide-controls=false
 media-player-hide-track=true
 media-player-layout=0
+media-player-style=1
 notification-indicator=false
 notification-indicator-position=1
 power-menu-label-position=1
 power-menu-layout=1
 power-menu-style=0
+quick-settings-adjust-roundness=true
+quick-settings-media-cover-roundness=14
+quick-settings-media-cover-width=70
+quick-settings-media-show-loop-shuffle=false
+quick-settings-media-show-volume=true
+quick-settings-media-style=1
 quick-settings-menu-width=400
+quick-settings-show-airplane=false
 quick-settings-show-notifications=false
 quick-settings-show-system-levels=false
-quick-settings-tweaks=false
+quick-settings-show-wired=false
+quick-settings-style=2
+quick-settings-tweaks=true
 quick-toggles=false
 quick-toggles-style=1
 workspace-indicator=false
@@ -129,6 +162,12 @@ confirm-clear=false
 display-mode=0
 history-size=30
 toggle-menu=['<Super>v']
+
+[custom-accent-colors]
+accent-color='red'
+theme-flatpak=true
+theme-gtk3=true
+theme-shell=true
 
 [custom-hot-corners-extended/misc]
 show-osd-monitor-indexes=false
@@ -176,7 +215,7 @@ show-mounts=false
 show-trash=false
 
 [dash-to-dock]
-apply-custom-theme=false
+apply-custom-theme=true
 autohide=true
 background-opacity=1.0
 click-action='previews'
@@ -201,12 +240,17 @@ show-trash=false
 transparency-mode='DEFAULT'
 
 [dash-to-panel]
+animate-appicon-hover=true
+animate-appicon-hover-animation-convexity={'RIPPLE': 2.0, 'PLANK': 1.0, 'SIMPLE': 0.0}
 animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
+animate-appicon-hover-animation-travel={'SIMPLE': 0.10000000000000001, 'RIPPLE': 0.40000000000000002, 'PLANK': 0.0}
+animate-appicon-hover-animation-type='SIMPLE'
+animate-appicon-hover-animation-zoom={'SIMPLE': 1.5, 'RIPPLE': 1.25, 'PLANK': 2.0}
 appicon-margin=2
 appicon-padding=8
-available-monitors=[0]
+available-monitors=[0, 1]
 click-action='TOGGLE-SHOWPREVIEW'
-dot-style-focused='DASHES'
+dot-style-focused='SEGMENTED'
 dot-style-unfocused='DOTS'
 hotkeys-overlay-combo='TEMPORARILY'
 intellihide=false
@@ -214,11 +258,12 @@ isolate-monitors=true
 isolate-workspaces=true
 leftbox-padding=-1
 panel-anchors='{"0":"MIDDLE","1":"MIDDLE"}'
-panel-element-positions='{"0":[{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"1":[{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
+panel-element-positions='{"0":[{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"1":[{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
 panel-element-positions-monitors-sync=false
 panel-lengths='{"0":100,"1":100}'
 panel-sizes='{"0":48,"1":48}'
 primary-monitor=0
+progress-show-count=true
 show-appmenu=false
 show-apps-icon-file=''
 show-window-previews=false
@@ -234,10 +279,17 @@ trans-use-dynamic-opacity=true
 tray-padding=-1
 window-preview-title-position='TOP'
 
+[display-brightness-ddcutil]
+ddcutil-sleep-multiplier=40.0
+decrease-brightness-shortcut=['<Control>XF86MonBrightnessDown']
+increase-brightness-shortcut=['<Control>XF86MonBrightnessUp']
+position-system-menu=3.0
+step-change-keyboard=2.0
+
 [emoji-selector]
 emojisize=20
 nbcols=14
-recently-used=['🤡', '😂', '👀', '👍', '🎪', '❤️', '😍', '😭', '😊', '😒', '😘', '😩', '🤔', '☺️']
+recently-used=['🤡', '😹', '😂', '🧢', '👀', '👍', '🎪', '❤️', '😍', '😭', '😊', '😒', '😘', '😩']
 skin-tone=5
 
 [gestureImprovements]
@@ -251,18 +303,18 @@ pinch-4-finger-gesture='NONE'
 history-size=uint32 50
 
 [gsconnect]
-devices=['75aef515c3d514dd', '945b88e9933d8ef2']
+devices=['945b88e9933d8ef2']
+enabled=true
 id='f3c8920f-922f-4aa0-bb8f-0619f158cbca'
 name='Maruf-Fedora-PC'
-show-indicators=true
+show-indicators=false
 
 [gsconnect/device/75aef515c3d514dd]
-certificate-pem='-----BEGIN CERTIFICATE-----\nMIIC9zCCAd+gAwIBAgIBATANBgkqhkiG9w0BAQsFADA/MRkwFwYDVQQDDBA3NWFl\nZjUxNWMzZDUxNGRkMRQwEgYDVQQLDAtLREUgQ29ubmVjdDEMMAoGA1UECgwDS0RF\nMB4XDTIxMDIxMzAwMDAwMFoXDTMxMDIxMzAwMDAwMFowPzEZMBcGA1UEAwwQNzVh\nZWY1MTVjM2Q1MTRkZDEUMBIGA1UECwwLS0RFIENvbm5lY3QxDDAKBgNVBAoMA0tE\nRTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMI1lKS0h6WxDmjH/nw4\nfD6qz4ZMSrcPx1k5ioXlMFsQRHbDUx41ydT4d7VxAWGMhjHh+PIC2LNGTRhmdIwQ\nJDGrIsARoO5zlv1S/qgPGJuRX87YztGGr8xswZ9mhhA74+oa8nuKLse5CPlFNqyk\nXB+WiZ761PumAUjMtU+Xc1ZLBCzA2wobHyQjGC7wbBiNZOKqvUINQzJIOd2xGLoB\nxzZCKXDudqwKxhY6wGh+94jQAEfNO1ip7NHZkJO0P+4CoptOhSAV252w8JELeZLT\nEc1Fe7iDaspDX5M+oJdguo9AIXn+ZhmFdZjehhzIvnzO22er3NgONAXzbi5MchFq\nIc8CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEABjRndbM+1JuMG9wwFh9WMLPbL433\nIIj4L9rSkiMMS6QFxluJxR4WkkOM+SzxliyY8HzTVKMNmJwja0jsWKUOMG8GTjeW\nDSOITOSRd8lVT0820vSUfHf6maF9Akm0/J5Ih6yKgnr9Bup0cGaL7cJum1dJFDGN\nAGWXQL51lr4LxcApJLad8OxngyrBms78a5hbQ8TiJFcQK1zz+8EPll4m9ikQkbTj\n4fxzc1xbx+p3n/6NcSPHBy5bkAdESY202aCmxFrMROR7lANBN3pEmzAzGzQcbcPg\nXntvZH7zckbUNGJZFKO27fO5CGscgWmWNO45qp7IztJZPRrBYATvUuDuGw==\n-----END CERTIFICATE-----\n'
 incoming-capabilities=['kdeconnect.battery', 'kdeconnect.battery.request', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report.request', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.photo.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
 last-connection='lan://192.168.5.109:1716'
 name='[PHONE] Maruf - OnePlus'
 outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.battery.request', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.photo', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
-paired=true
+paired=false
 supported-plugins=['battery', 'clipboard', 'connectivity_report', 'contacts', 'findmyphone', 'mousepad', 'mpris', 'notification', 'photo', 'ping', 'presenter', 'runcommand', 'sftp', 'share', 'sms', 'systemvolume', 'telephony']
 type='phone'
 
@@ -289,7 +341,7 @@ type='phone'
 custom-battery-notification-value=uint32 80
 
 [gsconnect/device/945b88e9933d8ef2/plugin/notification]
-applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Evolution Alarm Notify":{"iconName":"appointment-soon","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Geary":{"iconName":"org.gnome.Geary","enabled":true},"Colour":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Archive Manager":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Terminal":{"iconName":"org.gnome.Terminal","enabled":true}}'
+applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Evolution Alarm Notify":{"iconName":"appointment-soon","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Geary":{"iconName":"org.gnome.Geary","enabled":true},"Colour":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Archive Manager":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Terminal":{"iconName":"org.gnome.Terminal","enabled":true},"Mail":{"iconName":"org.gnome.Geary","enabled":true},"Insync":{"iconName":"insync","enabled":true},"Timeshift":{"iconName":"timeshift","enabled":true},"Characters":{"iconName":"org.gnome.Characters","enabled":true},"notify-send":{"iconName":"","enabled":true}}'
 
 [gsconnect/device/945b88e9933d8ef2/plugin/share]
 receive-directory='/home/maruf/Downloads'
@@ -329,26 +381,45 @@ workspace-switcher-should-show=true
 [material-you-theme]
 dark-mode=true
 
+[multi-monitors-add-on]
+available-indicators=['tiling-assistant@leleat-on-github', 'EmojisMenu', 'clipboardIndicator', 'ArcMenu', '/org/gnome/Shell/Extensions/GSConnect/Device/945b88e9933d8ef2', 'vitalsMenu']
+show-indicator=false
+
+[nightthemeswitcher/commands]
+enabled=false
+
 [nightthemeswitcher/gtk-variants]
-night='Adwaita-dark'
+day='adw-gtk3'
+enabled=true
+night='adw-gtk3-dark'
 
 [nightthemeswitcher/shell-variants]
-day='Colloid-light'
+day='Default-light'
 enabled=true
-night=''
+night='Custom-Accent-Colors'
 
 [nightthemeswitcher/time]
-nightthemeswitcher-ondemand-keybinding=['<Shift><Super>t']
+location=(51.503863039884813, 0.18678220000000001)
+manual-schedule=true
+nightthemeswitcher-ondemand-keybinding=['']
 ondemand-button-placement='panel'
+sunrise=0.0
+sunset=0.016666666666666666
 time-source='nightlight'
 transition=true
+
+[quick-settings-avatar]
+avatar-nobackground=false
+avatar-position=1
+avatar-realname=true
 
 [quick-settings-tweaks]
 datemenu-remove-notifications=false
 input-always-show=false
 input-show-selected=false
-list-buttons='[{"name":"Clutter_Actor","label":null,"visible":true},{"name":"SystemItem","label":null,"visible":true},{"name":"OutputStreamSlider","label":null,"visible":false},{"name":"InputStreamSlider","label":null,"visible":false},{"name":"BrightnessItem","label":null,"visible":false},{"name":"NMWiredToggle","label":null,"visible":true},{"name":"NMWirelessToggle","label":null,"visible":true},{"name":"NMModemToggle","label":null,"visible":true},{"name":"NMBluetoothToggle","label":null,"visible":true},{"name":"NMVpnToggle","label":null,"visible":true},{"name":"BluetoothToggleMenu","label":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","label":"Balanced","visible":true},{"name":"NightLightToggle","label":"Night Light","visible":true},{"name":"DarkModeToggle","label":"Dark Mode","visible":true},{"name":"RfkillToggle","label":"Airplane Mode","visible":true},{"name":"RotationToggle","label":"Auto Rotate","visible":false},{"name":"ServiceToggle","label":"GSConnect","visible":true},{"name":"DndQuickToogle","label":"Do Not Disturb","visible":true},{"name":"MediaSection","label":null,"visible":false},{"name":"St_BoxLayout","label":null,"visible":true}]'
+list-buttons="[{\"name\":\"SystemItem\",\"label\":null,\"visible\":true},{\"name\":\"OutputStreamSlider\",\"label\":null,\"visible\":true},{\"name\":\"InputStreamSlider\",\"label\":null,\"visible\":false},{\"name\":\"BrightnessItem\",\"label\":null,\"visible\":true},{\"name\":\"NightLightSlider\",\"label\":null,\"visible\":true},{\"name\":\"NMWiredToggle\",\"label\":\"Wired\",\"visible\":false},{\"name\":\"NMModemToggle\",\"label\":null,\"visible\":false},{\"name\":\"NMBluetoothToggle\",\"label\":\"Maruf's Phone\",\"visible\":true},{\"name\":\"NightLightToggle\",\"label\":\"Night Light\",\"visible\":true},{\"name\":\"DarkModeToggle\",\"label\":\"Dark Mode\",\"visible\":true},{\"name\":\"RfkillToggle\",\"label\":\"Aeroplane Mode\",\"visible\":true},{\"name\":\"NightLightSlider\",\"label\":null,\"visible\":true},{\"name\":\"Clutter_Actor\",\"label\":null,\"visible\":true},{\"name\":\"NMWirelessToggle\",\"label\":\"Bepary Nova\",\"visible\":true},{\"name\":\"NMVpnToggle\",\"label\":\"Spain\",\"visible\":true},{\"name\":\"BluetoothToggleMenu\",\"label\":\"Bluetooth\",\"visible\":true},{\"name\":\"PowerProfilesToggle\",\"label\":\"Balanced\",\"visible\":true},{\"name\":\"RotationToggle\",\"label\":\"Auto Rotate\",\"visible\":true},{\"name\":\"ServiceToggle\",\"label\":\"GSConnect\",\"visible\":true},{\"name\":\"MultiMediaBox\",\"label\":null,\"visible\":true},{\"name\":\"MultiMediaBox\",\"label\":null,\"visible\":true},{\"name\":\"DndQuickToogle\",\"label\":\"Do Not Disturb\",\"visible\":true}]"
 media-control-compact-mode=true
+media-control-enabled=false
 notifications-enabled=false
 notifications-hide-when-no-notifications=false
 notifications-integrated=false
@@ -356,7 +427,12 @@ notifications-position='bottom'
 notifications-use-native-controls=true
 output-show-selected=false
 user-removed-buttons=['DndQuickToogle', 'NMWiredToggle']
+volume-mixer-check-description=true
+volume-mixer-enabled=false
+volume-mixer-filtered-apps=['/^.*speech-dispatcher.*$/', 'speech-dispatcher-dummy', 'speech-dispatcher-espeak-ng-mbrola']
 volume-mixer-position='bottom'
+volume-mixer-show-description=false
+volume-mixer-use-regex=true
 
 [rounded-window-corners]
 black-list=['com.github.donadigo.appeditor']
@@ -369,6 +445,9 @@ settings-version=uint32 5
 skip-libadwaita-app=true
 skip-libhandy-app=true
 unfocused-shadow={'vertical_offset': 2, 'horizontal_offset': 0, 'blur_offset': 12, 'spread_radius': -1, 'opacity': 65}
+
+[screen-rotate]
+flip-rotation-direction=false
 
 [search-light]
 background-color=(0.18666666746139526, 0.18666666746139526, 0.18666666746139526, 1.0)
@@ -439,7 +518,7 @@ show-profiles=false
 disabled-task-lists=@as []
 hide-empty-completed-task-lists=true
 hide-header-for-singular-task-lists=false
-last-active='2671c4732bb5ccd432b7451c3285bce1237c3490'
+last-active='808a226876cede1d965af7b1c709578e0f3eebef'
 
 [tiling-assistant]
 activate-layout0=@as []
@@ -477,7 +556,7 @@ picture-uri='/run/user/1000/gvfs/google-drive:host=gmail.com,user=bepary71/0ADT7
 picture-uri-dark='/run/user/1000/gvfs/google-drive:host=gmail.com,user=bepary71/0ADT7Iiwm3NkNUk9PVA/1iaTkotyHrt21SWj4xy14CBJ4KVefplXa/1iaid3GAEyrY9IG8p6_7c8UHa7sfDsd4c/1XxZ2xuLxLISDiBTfPJ6ltSwJLrnfKyLl/13JtDkctOEROujTfbIXoSvAjgBOLWQG7r'
 
 [user-theme]
-name=''
+name='Custom-Accent-Colors'
 
 [vitals]
 fixed-widths=true
