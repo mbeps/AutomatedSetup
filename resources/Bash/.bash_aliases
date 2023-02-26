@@ -17,4 +17,5 @@ alias mount-uni="sshfs zjac268@linux.cim.rhul.ac.uk:/home/cim/ug/zjac268 \"/home
 # Gnome Layouts
 alias layout-windows="gnome-extensions disable dash-to-dock@micxgx.gmail.com && gnome-extensions disable Vitals@CoreCoding.com && gnome-extensions enable dash-to-panel@jderose9.github.com"
 alias layout-personal="gnome-extensions enable dash-to-dock@micxgx.gmail.com && gnome-extensions enable Vitals@CoreCoding.com && gnome-extensions disable dash-to-panel@jderose9.github.com"
-
+alias reset-store="killall gnome-software && rm -rf ~/.cache/gnome-software"
+alias update="sudo dnf update -y && flatpak update -y && curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash"
