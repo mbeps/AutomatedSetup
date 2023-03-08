@@ -50,4 +50,11 @@ function firefox_gnome_theme() {
 	curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
 }
 
+# Imports themes
+function restore_themes() { 
+	title "Importing Themes"
+
+	unzip "./resources/themes/"* -d "$HOME/.themes/"
+}
+
 "$@"
