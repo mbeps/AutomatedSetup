@@ -11,6 +11,7 @@ text-l1='Activate Fedora'
 text-l2='Go to Settings to activate Fedora.'
 
 [always-show-titles-in-overview]
+always-show-window-closebuttons=true
 app-icon-position='Bottom'
 do-not-show-app-icon-when-fullscreen=false
 hide-background=false
@@ -44,7 +45,7 @@ menu-width-adjustment=0
 pinned-app-list=@as []
 power-options=[(0, true), (1, true), (2, true), (3, true), (4, true), (5, false), (6, false)]
 prefs-visible-page=0
-recently-installed-apps=['kdiskmark.desktop', 'io.bassi.Amberol.desktop', 'org.standardnotes.standardnotes.desktop', 'net.cozic.joplin_desktop.desktop', 'org.gnome.GTG.desktop', 'sa.sy.bluerecorder.desktop', 'com.raggesilver.BlackBox.desktop', 'com.github.xournalpp.xournalpp.desktop', 'io.github.mpobaschnig.Vaults.desktop', 'io.github.mhogomchungu.sirikali.desktop', 'appeditor-local-application-1.desktop', 'docker-desktop.desktop', 'msedge-efglnfabphcjfpmnghoignilgaoiodjn-Default.desktop', 'org.gnome.gedit.desktop', 'FFPWA-01GC7S041D4B3NR22RPT7VEVBE.desktop', 'info.febvre.Komikku.desktop', 'pavucontrol.desktop', 'com.github.wwmm.easyeffects.desktop', 'calf.desktop', 'org.gnome.Firmware.desktop', 'msedge-magkoliahgffibhgfkmoealggombgknl-Default.desktop', 'msedge-fcbmdinajlimphljamjnaooegpbilimf-Profile_1.desktop', 'msedge-efmjfjelnicpmdcmfikempdhlmainjcb-Default.desktop', 'com.wps.Office.wps.desktop', 'com.wps.Office.wpp.desktop', 'com.wps.Office.et.desktop', 'com.wps.Office.pdf.desktop', 'com.wps.Office.prometheus.desktop', 'com.google.Chrome.desktop', 'com.microsoft.Edge.desktop', 'microsoft-edge-dev.desktop', 'com.github.tenderowl.frog.desktop', 'com.hunterwittenborn.Celeste.desktop']
+recently-installed-apps=['kdiskmark.desktop', 'io.bassi.Amberol.desktop', 'org.standardnotes.standardnotes.desktop', 'net.cozic.joplin_desktop.desktop', 'org.gnome.GTG.desktop', 'sa.sy.bluerecorder.desktop', 'com.raggesilver.BlackBox.desktop', 'com.github.xournalpp.xournalpp.desktop', 'io.github.mpobaschnig.Vaults.desktop', 'io.github.mhogomchungu.sirikali.desktop', 'appeditor-local-application-1.desktop', 'docker-desktop.desktop', 'msedge-efglnfabphcjfpmnghoignilgaoiodjn-Default.desktop', 'org.gnome.gedit.desktop', 'FFPWA-01GC7S041D4B3NR22RPT7VEVBE.desktop', 'info.febvre.Komikku.desktop', 'pavucontrol.desktop', 'com.github.wwmm.easyeffects.desktop', 'calf.desktop', 'org.gnome.Firmware.desktop', 'msedge-magkoliahgffibhgfkmoealggombgknl-Default.desktop', 'msedge-fcbmdinajlimphljamjnaooegpbilimf-Profile_1.desktop', 'msedge-efmjfjelnicpmdcmfikempdhlmainjcb-Default.desktop', 'com.wps.Office.wps.desktop', 'com.wps.Office.wpp.desktop', 'com.wps.Office.et.desktop', 'com.wps.Office.pdf.desktop', 'com.wps.Office.prometheus.desktop', 'com.google.Chrome.desktop', 'microsoft-edge-dev.desktop', 'com.github.tenderowl.frog.desktop', 'com.hunterwittenborn.Celeste.desktop', 'me.iepure.devtoolbox.desktop', 'io.github.fabrialberio.pinapp.desktop', 'com.github.marhkb.Pods.desktop', 'org.gnome.Podcasts.desktop', 'org.gnome.World.Secrets.desktop', 'eu.ithz.umftpd.desktop', 'ca.desrt.dconf-editor.desktop', 'com.github.finefindus.eyedropper.desktop']
 right-panel-width=350
 search-entry-border-radius=(true, 25)
 show-activities-button=true
@@ -112,6 +113,7 @@ power-menu-label-position=1
 power-menu-layout=1
 power-menu-style=0
 quick-settings-adjust-roundness=true
+quick-settings-app-volume-mixer-show-description=true
 quick-settings-media-cover-roundness=14
 quick-settings-media-cover-width=70
 quick-settings-media-show-loop-shuffle=false
@@ -119,6 +121,7 @@ quick-settings-media-show-volume=true
 quick-settings-media-style=1
 quick-settings-menu-width=400
 quick-settings-show-airplane=false
+quick-settings-show-app-volume-mixer=true
 quick-settings-show-notifications=false
 quick-settings-show-system-levels=false
 quick-settings-show-wired=false
@@ -170,7 +173,7 @@ theme-gtk3=true
 theme-shell=true
 
 [custom-hot-corners-extended/misc]
-show-osd-monitor-indexes=false
+show-osd-monitor-indexes=true
 supported-active-extensions=@as []
 
 [custom-hot-corners-extended/monitor-0-bottom-left-6]
@@ -289,7 +292,7 @@ step-change-keyboard=2.0
 [emoji-selector]
 emojisize=20
 nbcols=14
-recently-used=['🤡', '😹', '😂', '🧢', '👀', '👍', '🎪', '❤️', '😍', '😭', '😊', '😒', '😘', '😩']
+recently-used=['😂', '😹', '🤡', '🧢', '👀', '👍', '🎪', '❤️', '😍', '😭', '😊', '😒', '😘', '😩']
 skin-tone=5
 
 [gestureImprovements]
@@ -404,9 +407,50 @@ manual-schedule=true
 nightthemeswitcher-ondemand-keybinding=['']
 ondemand-button-placement='panel'
 sunrise=0.0
-sunset=0.016666666666666666
+sunset=0.0
 time-source='nightlight'
 transition=true
+
+[pano]
+active-item-border-color='rgb(40,92,175)'
+global-shortcut=['<Super>v']
+history-length=50
+hovered-item-border-color='rgb(53,132,228)'
+incognito-shortcut=['<Alt><Super>v']
+play-audio-on-copy=false
+send-notification-on-copy=false
+sync-primary=true
+window-background-color='rgb(36,36,36)'
+window-height=320
+
+[pano/code-item]
+body-bg-color='rgb(53,53,53)'
+body-font-family='Cascadia Code PL'
+body-font-size=12
+header-bg-color='rgb(54,54,54)'
+
+[pano/color-item]
+header-bg-color='rgb(53,53,53)'
+
+[pano/file-item]
+body-bg-color='rgb(54,54,54)'
+body-color='rgb(250,250,250)'
+header-bg-color='rgb(54,54,54)'
+
+[pano/image-item]
+body-bg-color='rgb(53,53,53)'
+header-bg-color='rgb(53,53,53)'
+
+[pano/link-item]
+metadata-bg-color='rgb(54,54,54)'
+
+[pano/text-item]
+body-bg-color='rgb(54,54,54)'
+body-color='rgb(255,255,255)'
+body-font-family='Cascadia Code PL'
+body-font-size=14
+char-length=600
+header-bg-color='rgb(53,53,53)'
 
 [quick-settings-avatar]
 avatar-nobackground=false
@@ -435,7 +479,7 @@ volume-mixer-show-description=false
 volume-mixer-use-regex=true
 
 [rounded-window-corners]
-black-list=['com.github.donadigo.appeditor']
+black-list=['com.github.donadigo.appeditor', 'microsoft-edge', 'DesktopEditors']
 border-color=(0.17666666209697723, 0.17666666209697723, 0.17666666209697723, 1.0)
 border-width=1
 custom-rounded-corner-settings=@a{sv} {}
