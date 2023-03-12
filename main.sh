@@ -48,6 +48,7 @@ function automated_normal() {
 	install_libadwaita_gtk3_port_theme
 	apply_theme_to_native_apps
 	firefox_gnome_theme
+	restore_themes
 }
 
 function automated_dev() { 
