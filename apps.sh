@@ -54,6 +54,9 @@ function install_flathub_apps_system() {
 		"org.gnome.TextEditor" 					# Text Editor
 		"org.gnome.Totem" 						# Videos
 		"org.gnome.Weather" 					# Weather
+		"org.libreoffice.LibreOffice" # LibreOffice
+		"io.github.fabrialberio.pinapp" # PinApp - edit apps 
+		"org.nickvision.tubeconverter" # Tube Converter - video downloader
 		)
 
 	install_flathub_apps "${apps[@]}"
@@ -81,6 +84,13 @@ function remove_native_system_apps() {
 		"gnome-text-editor" 					# Text Editor
 		"gnome-weather" 						# Weather
 		"rhythmbox"								# Rhythmbox Music
+		# LibreOffice
+		"libreoffice"
+		"libreoffice-calc" 
+		"libreoffice-core"
+		"libreoffice-draw"
+		"libreoffice-writer"
+		"libreoffice-impress"
 		)
 
 	remove_native_apps "${packages[@]}"
@@ -96,7 +106,6 @@ function install_native_system_apps() {
 		"openssl"								# OpenSSL
 		"sshfs" 								# SSHFS
 		"tldr" 									# TLDR 
-		"appeditor"								# AppEditor
 		)
 
 	install_native_apps "${packages[@]}"
