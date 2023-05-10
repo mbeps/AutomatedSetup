@@ -9,7 +9,8 @@ function set_bash() {
 	title "Setting Up Bash"
 
 	rm "$HOME/.bashrc" # remove old `.bashrc` file
-	cp "./resources/Bash/"* "$HOME" # Add new `.bashrc` file and aliases file
+	cp "./resources/Bash/.bashrc" "$HOME" # Add new `.bashrc` file and aliases file
+	cp "./resources/Bash/.bash_aliases" "$HOME" # Add new `.bashrc` file and aliases file
 }
 
 # Sets custom user folders. 

@@ -11,6 +11,10 @@ function gnome_customization() {
 	gsettings set org.gnome.SessionManager logout-prompt false 								# Disable Power Dialog
 	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close" # Enable Window Controls
 	gsettings set org.gnome.desktop.interface show-battery-percentage true 					# Enable Battery Percentage
+	gsettings set org.gnome.desktop.wm.preferences action-middle-click-titlebar 'minimize'		# Middle click title bar to minimise
+	gsettings set org.gnome.shell.app-switcher current-workspace-only true		# Show apps from current workspace only
+	gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'			# Disable mouse acceleration
+	gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true 			# Enable tap to click on touchpad
 }
 
 # Enables experimental support for fractional scaling. 

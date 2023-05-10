@@ -4,59 +4,43 @@ source "./dependencies.sh"
 
 # Installs Flatpak apps (from FlatHub) which were not part of the system. 
 	# Extra apps which were not preinstalled. 
-function install_flathub_apps_non_system() { 
+function install_flathub_apps() { 
 	title "Installing Non-System Flathub Apps"
 	
 	apps=(
-		"com.github.maoschanz.drawing" 			# Drawing - Paint App
-		"com.mattjakeman.ExtensionManager" 		# Extensions Manager for Gnome
-		"com.github.johnfactotum.Foliate" 		# Foliate - eBook Reader
-		"de.haeckerfelix.Fragments" 			# Fragments - Torrent Client
-		"org.gnome.Geary" 						# Geary - Email Client
-		"fr.free.Homebank" 						# HomeBank - Personal Finance
-		"com.github.alexhuntley.Plots" 			# Plots - Graphing Tool
-		"com.github.flxzt.rnote" 				# rNote - Whiteboard App
-		"it.mijorus.smile" 						# Smile - Emoji Picker
-		"org.gnome.SoundRecorder" 				# Sound Recorder
-		"org.onlyoffice.desktopeditors" 		# OnlyOffice - Office Client
-		"org.gnome.FileRoller" 					# File Roller - Archive Manager
-		"org.gnome.Music" 						# Gnome Music
-		"org.gnome.NetworkDisplays" 			# Network Displays
-		"com.github.tchx84.Flatseal" 			# FlatSeal - Flatpak permission manager
-		"org.gnome.Todo" 						# Gnome To-Do
-		"com.github.rafostar.Clapper" 			# Clapper - Video Player
-		"me.dusansimic.DynamicWallpaper" 		# Dynamic Wallpaper
-		"com.bitwarden.desktop"					# Bitwarden
-		"com.github.neithern.g4music"			# G4Music - Music Player
-		"org.pulseaudio.pavucontrol"			# Volume Control
-		"org.signal.Signal" 					# Signal
-		"io.github.fsobolev.TimeSwitch"			# Time Switch - System Timer
-
-		)
-
-	install_flathub_apps "${apps[@]}"
-}
-
-# Installs Flatpak apps (from FlatHub) as alternatives to some preinstalled native versions of the same apps. 
-	# Flatpak versions of the apps that were preinstalled. 
-function install_flathub_apps_system() { 
-	title "Installing System Flathub Apps Alternatives"
-	
-	apps=(
-		"org.gnome.Calculator" 					# Calculator
-		"org.gnome.Calendar" 					# Calendar
-		"org.gnome.clocks" 						# Clocks
-		"org.gnome.Connections" 				# Connection - Remote Connection Tool
-		"org.gnome.Contacts" 					# Contacts
-		"org.gnome.baobab" 						# Disk Analyser
-		"org.gnome.eog" 						# Image Viewer
-		"org.gnome.Maps" 						# Maps
-		"org.gnome.TextEditor" 					# Text Editor
-		"org.gnome.Totem" 						# Videos
-		"org.gnome.Weather" 					# Weather
-		"org.libreoffice.LibreOffice" # LibreOffice
-		"io.github.fabrialberio.pinapp" # PinApp - edit apps 
-		"org.nickvision.tubeconverter" # Tube Converter - video downloader
+		"com.github.alexhuntley.Plots"
+		"com.github.flxzt.rnote"
+		"com.github.johnfactotum.Foliate"
+		"com.github.maoschanz.drawing"
+		"com.github.neithern.g4music"
+		"com.github.rafostar.Clapper"
+		"com.github.tchx84.Flatseal"
+		"com.mattjakeman.ExtensionManager"
+		"com.microsoft.Edge"
+		"com.usebottles.bottles"
+		"de.haeckerfelix.Fragments"
+		"de.schmidhuberj.Flare"
+		"fr.free.Homebank"
+		"io.dbeaver.DBeaverCommunity"
+		"io.github.fsobolev.TimeSwitch"
+		"io.github.hakandundar34coding.system-monitoring-center"
+		"it.mijorus.smile"
+		"me.dusansimic.DynamicWallpaper"
+		"org.gnome.Boxes"
+		"org.gnome.Calculator"
+		"org.gnome.Calendar"
+		"org.gnome.Cheese"
+		"org.gnome.Connections"
+		"org.gnome.Contacts"
+		"org.gnome.Epiphany"
+		"org.gnome.FileRoller"
+		"org.gnome.Geary"
+		"org.gnome.Loupe"
+		"org.gnome.Maps"
+		"org.gnome.Music"
+		"org.gnome.NetworkDisplays"
+		"org.gnome.Snapshot"
+		"org.gnome.SoundRecorder"
 		)
 
 	install_flathub_apps "${apps[@]}"
@@ -106,6 +90,8 @@ function install_native_system_apps() {
 		"openssl"								# OpenSSL
 		"sshfs" 								# SSHFS
 		"tldr" 									# TLDR 
+		"libgda"
+		"libgda-sqlite"
 		)
 
 	install_native_apps "${packages[@]}"
@@ -132,18 +118,6 @@ function install_insync() {
 		echo "$line" | sudo tee -a /etc/yum.repos.d/insync.repo
 	done
 	sudo yum install insync -y
-}
-
-# Installs Microsoft Edge browser. 
-	# Adds all the necessary keys and repositories. 
-	# Source: https://www.linuxcapable.com/how-to-install-microsoft-edge-on-fedora-34-35/
-function install_microsoft_edge() { 
-	title "Installing Microsoft Edge"
-
-	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-	sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-	package=("microsoft-edge-stable")
-	install_native_apps "${package[@]}"
 }
 
 "$@"
