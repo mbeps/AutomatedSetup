@@ -33,7 +33,10 @@ function firefox_gnome_theme() {
 function restore_themes() { 
 	title "Importing Themes"
 
-	unzip "./resources/themes/"* -d "$HOME/.themes/"
+	mkdir "$HOME/.themes"
+	unzip "./resources/themes/themes.zip" -d "$HOME/.themes/"
+
+	mkdir "$HOME/.icons"
 }
 
 "$@"
