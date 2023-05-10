@@ -21,27 +21,6 @@ function apply_theme_to_native_apps() {
 	gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 }
 
-# Applies theme to legacy Flatpak apps. 
-	# Native app themes are sepparate from Flatpak apps. 
-	# Source: https://itsfoss.com/flatpak-app-apply-theme/
-function apply_theme_to_flatpaks() { 
-	title "Applying Themes to Unsupported Flatpak Apps"
-	
-	apps=(
-		"org.gnome.eog" 						# Image Viewer
-		"org.gnome.Totem" 						# Videos
-		"org.gnome.Boxes" 						# Gnome Boxes - Virtualisation Tool
-		"org.gnome.Maps" 						# Maps
-		"org.gnome.Connections" 				# Connection - Remote Connection Tool
-		"org.gnome.FileRoller" 					# File Roller - Archive Manager
-		"com.github.tchx84.Flatseal" 			# Flatseal - Flatpak Permission Manager
-		)
-
-	for app in "${apps[@]}"; do
-		sudo flatpak override $app --env=GTK_THEME=adw-gtk3-dark
-	done
-}
-
 # Applies Gnome theme to Firefox. 
 	# Source: https://github.com/rafaelmardojai/firefox-gnome-theme
 function firefox_gnome_theme() { 
