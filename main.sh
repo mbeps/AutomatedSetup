@@ -57,8 +57,6 @@ function automated_dev() {
 	install_setup_git
 	install_jdk
 	install_java_maven
-	install_postgres
-	# install_mysql
 	install_python_pip
 	install_python_poetry
 	install_pyenv

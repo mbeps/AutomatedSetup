@@ -50,30 +50,6 @@ function install_java_maven() {
 	install_native_apps "${package[@]}"
 }
 
-# Installs PostgreSQL database. 
-	# Database will not be accessible via third-party Database Management Systems (DBMS). 
-	# On `/var/lib/pgsql/data/pg_hba.conf`, edit `host all all 127.0.0.1/32 ident` to `host all all 127.0.0.1/32 md5`
-	# Source: https://docs.fedoraproject.org/en-US/quick-docs/postgresql/
-function install_postgres() { 
-	title "Installing PostgreSQL"
-
-	package=("postgresql-server" "postgresql-contrib")
-	install_native_apps "${package[@]}"
-
-	sudo systemctl enable postgresql
-	sudo postgresql-setup --initdb --unit postgresql
-	sudo systemctl start postgresql
-}
-
-# Installs MySQL database
-	# Source_ https://docs.fedoraproject.org/en-US/quick-docs/installing-mysql-mariadb/
-function install_mysql() { 
-	title "Installing MySQL"
-
-	package=("community-mysql-server")
-	install_native_apps "${package[@]}"
-}
-
 # Installs Pip package manager for Python. 
 	# Source: https://www.osradar.com/install-pip-fedora-34/
 function install_python_pip() {
