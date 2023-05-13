@@ -130,8 +130,17 @@ function install_node() {
 function install_docker() {
 	title "Installing Docker"
 
-	curl -fsSL https://get.docker.com -o get-docker.sh
-	sudo sh get-docker.sh
+	# Install Docker
+	sudo dnf -y install dnf-plugins-core
+	sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+	sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+	sudo systemctl start docker
+
+	# Non-Root config
+	sudo dnf install -y fuse-overlayfs
+	sudo dnf install -y iptables
+	dockerd-rootless-setuptool.sh install
+
 }
 
 # Installs FlatHub apps required for development. 
