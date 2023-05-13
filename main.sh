@@ -55,6 +55,8 @@ function automated_dev() {
 	install_developer_tools
 	restore_terminal
 	install_setup_git
+	install_jdk
+	install_java_maven
 	install_postgres
 	# install_mysql
 	install_python_pip
