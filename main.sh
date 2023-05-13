@@ -52,10 +52,11 @@ function automated_normal() {
 function automated_dev() { 
 	automated_normal
 
+	install_developer_tools
 	restore_terminal
 	install_setup_git
-	install_postgres
-	# install_mysql
+	install_jdk
+	install_java_maven
 	install_python_pip
 	install_python_poetry
 	install_pyenv

@@ -14,6 +14,13 @@ function install_setup_git() {
 	git config --global core.autocrlf input
 }
 
+# Installs the recommended development packages. 
+function install_developer_tools() { 
+	title "Installing Developer Tools"
+	
+	sudo dnf -y groupinstall "Development Tools"
+}
+
 # Configures SSK key for GitHub.
 	# Source: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 function configure_git_ssh() { 
@@ -40,30 +47,6 @@ function install_java_maven() {
 	title "Installing Maven Project Manager for Java"
 
 	package=("maven")
-	install_native_apps "${package[@]}"
-}
-
-# Installs PostgreSQL database. 
-	# Database will not be accessible via third-party Database Management Systems (DBMS). 
-	# On `/var/lib/pgsql/data/pg_hba.conf`, edit `host all all 127.0.0.1/32 ident` to `host all all 127.0.0.1/32 md5`
-	# Source: https://docs.fedoraproject.org/en-US/quick-docs/postgresql/
-function install_postgres() { 
-	title "Installing PostgreSQL"
-
-	package=("postgresql-server" "postgresql-contrib")
-	install_native_apps "${package[@]}"
-
-	sudo systemctl enable postgresql
-	sudo postgresql-setup --initdb --unit postgresql
-	sudo systemctl start postgresql
-}
-
-# Installs MySQL database
-	# Source_ https://docs.fedoraproject.org/en-US/quick-docs/installing-mysql-mariadb/
-function install_mysql() { 
-	title "Installing MySQL"
-
-	package=("community-mysql-server")
 	install_native_apps "${package[@]}"
 }
 
@@ -131,8 +114,17 @@ function install_node() {
 function install_docker() {
 	title "Installing Docker"
 
-	curl -fsSL https://get.docker.com -o get-docker.sh
-	sudo sh get-docker.sh
+	# Install Docker
+	sudo dnf -y install dnf-plugins-core
+	sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+	sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+	sudo systemctl start docker
+
+	# Non-Root config
+	sudo dnf install -y fuse-overlayfs
+	sudo dnf install -y iptables
+	dockerd-rootless-setuptool.sh install
+
 }
 
 # Installs FlatHub apps required for development. 
@@ -140,7 +132,7 @@ function install_flathub_apps_development() {
 	title "Installing Development Flathub Apps"
 	
 	apps=(
-		"io.dbeaver.DBeaverCommunity" 			# DBeaver - Database App
+		"io.beekeeperstudio.Studio"		# Beeker - Databases
 		"rest.insomnia.Insomnia" 				# Insomnia - API Tool
 		"org.gnome.gitg" 						# Git GUI
 		"org.gnome.Boxes"						# Boxes - Virtual Machines
