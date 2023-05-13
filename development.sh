@@ -131,7 +131,7 @@ function install_flathub_apps_development() {
 	title "Installing Development Flathub Apps"
 	
 	apps=(
-		"io.dbeaver.DBeaverCommunity" 			# DBeaver - Database App
+		"io.beekeeperstudio.Studio"		# Beeker - Databases
 		"rest.insomnia.Insomnia" 				# Insomnia - API Tool
 		"org.gnome.gitg" 						# Git GUI
 		"org.gnome.Boxes"						# Boxes - Virtual Machines
