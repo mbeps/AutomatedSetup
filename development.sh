@@ -14,6 +14,13 @@ function install_setup_git() {
 	git config --global core.autocrlf input
 }
 
+# Installs the recommended development packages. 
+function install_developer_tools() { 
+	title "Installing Developer Tools"
+	
+	sudo dnf -y groupinstall "Development Tools"
+}
+
 # Configures SSK key for GitHub.
 	# Source: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 function configure_git_ssh() { 

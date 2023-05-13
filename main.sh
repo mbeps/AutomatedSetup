@@ -52,6 +52,7 @@ function automated_normal() {
 function automated_dev() { 
 	automated_normal
 
+	install_developer_tools
 	restore_terminal
 	install_setup_git
 	install_postgres
