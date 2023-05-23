@@ -35,8 +35,14 @@ function restore_themes() {
 
 	mkdir "$HOME/.themes"
 	unzip "./resources/themes/themes.zip" -d "$HOME/.themes/"
+}
+
+# Restores the ArcMenu icons. 
+function restore_svg_icons() { 
+	title "Importing Icons"
 
 	mkdir "$HOME/.icons"
+	unzip "./resources/themes/icons.zip" -d "$HOME/.icons/"
 }
 
 "$@"
