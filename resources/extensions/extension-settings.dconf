@@ -97,7 +97,7 @@ date-menu-show-system-levels=false
 date-menu-show-user=false
 date-menu-show-weather=false
 date-menu-tweaks=true
-dynamic-panel=true
+dynamic-panel=false
 media-player=false
 media-player-controls-position=2
 media-player-cover-height=70
@@ -139,7 +139,7 @@ quick-settings-show-system-levels=false
 quick-settings-show-vpn=true
 quick-settings-show-wifi=true
 quick-settings-show-wired=false
-quick-settings-style=3
+quick-settings-style=2
 quick-settings-tweaks=true
 quick-toggles=false
 quick-toggles-style=1
@@ -242,7 +242,8 @@ show-mounts=false
 show-trash=false
 
 [dash-to-dock]
-apply-custom-theme=true
+animate-show-apps=true
+apply-custom-theme=false
 autohide=true
 background-opacity=1.0
 click-action='previews'
@@ -252,6 +253,7 @@ dash-max-icon-size=38
 dock-position='BOTTOM'
 extend-height=false
 height-fraction=0.90000000000000002
+hide-tooltip=false
 intellihide-mode='ALL_WINDOWS'
 isolate-monitors=false
 middle-click-action='launch'
@@ -261,15 +263,20 @@ preferred-monitor-by-connector='eDP-1'
 preview-size-scale=0.10000000000000001
 running-indicator-style='DOTS'
 scroll-action='switch-workspace'
+scroll-to-focused-application=false
 shift-click-action='cycle-windows'
 shift-middle-click-action='launch'
+show-apps-always-in-the-edge=false
 show-apps-at-top=true
 show-favorites=true
 show-mounts=false
+show-mounts-only-mounted=false
 show-running=true
 show-show-apps-button=true
 show-trash=false
+show-windows-preview=false
 transparency-mode='DEFAULT'
+workspace-agnostic-urgent-windows=false
 
 [dash-to-panel]
 animate-appicon-hover=true
@@ -427,7 +434,7 @@ resize-desktop=false
 show-statusbar-icon=false
 
 [just-perfection]
-activities-button-icon-path='file:///home/maruf/.local/share/gnome-shell/extensions/arcmenu@arcmenu.com/media/icons/menu_button_icons/icons/icon-start-box-symbolic.svg'
+activities-button-icon-path='file:///home/maruf/Customisations/Icons/icons/menu_button_icons/icons/icon-start-box-symbolic.svg'
 activities-button-label=false
 animation=4
 app-menu=false
@@ -548,7 +555,7 @@ volume-mixer-use-regex=true
 
 [rounded-window-corners]
 black-list=['com.github.donadigo.appeditor', 'microsoft-edge']
-border-color=(0.17666666209697723, 0.17666666209697723, 0.17666666209697723, 1.0)
+border-color=(0.75, 0.24999998509883881, 0.24999998509883881, 0.0)
 border-width=1
 custom-rounded-corner-settings=@a{sv} {}
 focused-shadow={'vertical_offset': 4, 'horizontal_offset': 0, 'blur_offset': 28, 'spread_radius': 4, 'opacity': 60}
@@ -645,7 +652,7 @@ debugging-show-tiled-rects=@as []
 default-move-mode=0
 dynamic-keybinding-behaviour=0
 import-layout-examples=false
-last-version-installed=40
+last-version-installed=41
 overridden-settings={'org.gnome.mutter.edge-tiling': <false>}
 restore-window=['<Super>Down']
 search-popup-layout=@as []
