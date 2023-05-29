@@ -53,7 +53,7 @@ function remove_preinstalled_flatpaks() {
 
 # Removes some preinstalled native apps in favour of Flatpak versions of the same apps. 
 function remove_native_system_apps() {
-	title "Remove Native System Apps for Flatpak Alternatives"
+	title "Remove Native System Apps"
 
 	packages=(
 		"gnome-boxes" 							# Gnome Boxes - Virtualisation Tool
@@ -65,7 +65,9 @@ function remove_native_system_apps() {
 		"gnome-maps" 							# Maps
 		"gnome-text-editor" 					# Text Editor
 		"gnome-weather" 						# Weather
-		"rhythmbox"								# Rhythmbox Music
+		"eog" 						# Weather
+		"totem" 
+		"rhythmbox"					
 		# LibreOffice
 		"libreoffice"
 		"libreoffice-calc" 
