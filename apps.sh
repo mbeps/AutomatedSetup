@@ -120,4 +120,17 @@ function install_insync() {
 	sudo yum install insync -y
 }
 
+# Installs Waydroid to be able to run Android apps. 
+	# Sets multiwindow to run multiple apps at once. 
+	# Source: https://docs.waydro.id/usage/install-on-desktops
+function install_waydroid() {
+	title "Installing Waydroind Android Support"
+
+	sudo dnf install waydroid -y
+	sudo systemctl enable --now waydroid-container
+
+	waydroid prop set persist.waydroid.multi_windows true # multiwindow
+	sudo systemctl restart waydroid-container
+}
+
 "$@"
