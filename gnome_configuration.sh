@@ -15,6 +15,7 @@ function gnome_customization() {
 	gsettings set org.gnome.shell.app-switcher current-workspace-only true		# Show apps from current workspace only
 	gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'			# Disable mouse acceleration
 	gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true 			# Enable tap to click on touchpad
+	gsettings set org.gnome.desktop.default-applications.terminal exec "flatpak run com.raggesilver.BlackBox" # Change default terminal
 }
 
 # Enables experimental support for fractional scaling. 

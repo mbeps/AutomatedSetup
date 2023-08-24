@@ -39,6 +39,7 @@ function install_flathub_apps() {
 		"org.gnome.NetworkDisplays"
 		"org.gnome.Snapshot"
 		"org.gnome.SoundRecorder"
+		"com.raggesilver.BlackBox"
 		)
 
 	install_flathub_apps "${apps[@]}"
@@ -68,6 +69,7 @@ function remove_native_system_apps() {
 		"eog" 						# Weather
 		"totem" 
 		"rhythmbox"					
+		"gnome-terminal"
 		# LibreOffice
 		"libreoffice"
 		"libreoffice-calc" 
@@ -131,6 +133,16 @@ function install_waydroid() {
 
 	waydroid prop set persist.waydroid.multi_windows true # multiwindow
 	sudo systemctl restart waydroid-container
+}
+
+# Allows opening BlackBox terminal in files. 
+function files_terminal() { 
+	title "Enable BlackBox for Files"
+
+	sudo dnf install nautilus-python -y
+	git clone https://github.com/ppvan/nautilus-open-in-blackbox.git
+	cd nautilus-open-in-blackbox
+	bash ./install.sh
 }
 
 "$@"
