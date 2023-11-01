@@ -2,6 +2,21 @@
 
 source "./dependencies.sh"
 
+# Installs FlatHub apps required for development. 
+function install_flathub_apps_dev() { 
+	title "Installing System Flathub Apps"
+	
+	apps=(
+		"rest.insomnia.Insomnia"
+		"com.mongodb.Compass"
+		"io.beekeeperstudio.Studio"
+		"io.github.cleomenezesjr.Escambo"
+		"me.iepure.devtoolbox"
+		)
+
+	install_flathub_apps "${apps[@]}"
+}
+
 # Installs Git version control system and sets up user configurations. 
 	# Sets up user name, email and end of line setting. 
 	# Source: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
@@ -130,20 +145,6 @@ function install_docker() {
 	sudo dnf install -y iptables
 	dockerd-rootless-setuptool.sh install
 
-}
-
-# Installs FlatHub apps required for development. 
-function install_flathub_apps_development() { 
-	title "Installing Development Flathub Apps"
-	
-	apps=(
-		"io.beekeeperstudio.Studio"		# Beeker - Databases
-		"rest.insomnia.Insomnia" 				# Insomnia - API Tool
-		"org.gnome.gitg" 						# Git GUI
-		"org.gnome.Boxes"						# Boxes - Virtual Machines
-		)
-
-	install_flathub_apps "${apps[@]}"
 }
 
 "$@"
