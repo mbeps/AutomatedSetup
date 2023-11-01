@@ -5,9 +5,9 @@ source "./dependencies.sh"
 # Installs all the extensions into `~/.local/share/gnome-shell/extensions/`
 	# Unzips th archive containing the extensions into the extensions folder. 
 function restore_extensions() {
-   title "Restoring Extensions"
+  title "Restoring Extensions"
 
-   unzip "./resources/extensions/extensions.zip" -d "$HOME/.local/share/gnome-shell/extensions/"
+  unzip "./resources/extensions/extensions.zip" -d "$HOME/.local/share/gnome-shell/extensions/"
 }
 
 # Backs up all the installed extensions from `~/.local/share/gnome-shell/extensions/`
