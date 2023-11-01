@@ -21,7 +21,8 @@ function automated_normal() {
 
 	remove_native_system_apps
 	install_native_system_apps
-	install_flathub_apps
+	install_flathub_apps_system
+	install_flathub_apps_non_system
 	remove_preinstalled_flatpaks
 	install_insync
 
@@ -52,6 +53,7 @@ function automated_normal() {
 function automated_dev() { 
 	automated_normal
 
+	install_flathub_apps_dev
 	install_developer_tools
 	restore_terminal
 	install_setup_git
@@ -64,7 +66,6 @@ function automated_dev() {
 	install_node
 	install_docker
 	install_jdk
-	install_flathub_apps_development
 	configure_git_ssh
 }
 

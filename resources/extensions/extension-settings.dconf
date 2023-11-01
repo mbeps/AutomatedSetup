@@ -219,6 +219,11 @@ style-components=2
 customize=false
 override-background=true
 
+[clipboard-history]
+display-mode=0
+history-size=100
+window-width-percentage=22
+
 [clipboard-indicator]
 confirm-clear=false
 display-mode=0
@@ -323,7 +328,7 @@ isolate-workspaces=true
 leave-timeout=100
 leftbox-padding=-1
 panel-anchors='{"0":"MIDDLE","1":"MIDDLE"}'
-panel-element-positions='{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"1":[{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
+panel-element-positions='{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"1":[{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
 panel-element-positions-monitors-sync=true
 panel-lengths='{"0":100,"1":100}'
 panel-sizes='{"0":52,"1":48}'
@@ -380,7 +385,7 @@ background-opacity=100
 show-overview=true
 
 [emoji-copy]
-recently-used=['😂', '😥', '😭', '❤️', '😍', '😊', '😒', '😘', '😩', '🤔', '☺️']
+recently-used=['😂', '😭', '😥', '❤️', '😍', '😊', '😒', '😘', '😩', '🤔', '☺️']
 
 [emoji-selector]
 always-show=true
@@ -592,7 +597,7 @@ stick=true
 [quick-settings-audio-panel]
 create-mixer-sliders=false
 media-control='move'
-merge-panel=false
+merge-panel=true
 move-master-volume=true
 
 [quick-settings-avatar]
@@ -606,7 +611,7 @@ datemenu-remove-media-control=false
 datemenu-remove-notifications=false
 input-always-show=false
 input-show-selected=false
-list-buttons='[{"name":"SystemItem","label":null,"visible":true},{"name":"OutputStreamSlider","label":null,"visible":true},{"name":"InputStreamSlider","label":null,"visible":false},{"name":"BrightnessItem","label":null,"visible":false},{"name":"NMWiredToggle","label":"Wired","visible":false},{"name":"NMWirelessToggle","label":"Wi-Fi","visible":true},{"name":"NMModemToggle","label":null,"visible":false},{"name":"NMBluetoothToggle","label":null,"visible":false},{"name":"NMVpnToggle","label":"VPN","visible":true},{"name":"BluetoothToggle","label":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","label":"Power Mode","visible":true},{"name":"NightLightToggle","label":"Night Light","visible":true},{"name":"DarkModeToggle","label":"Dark Style","visible":true},{"name":"RfkillToggle","label":"Airplane Mode","visible":true},{"name":"RotationToggle","label":"Auto Rotate","visible":true},{"name":"ServiceToggle","label":"GSConnect","visible":true},{"name":"BackgroundAppsToggle","label":"No Background Apps","visible":false},{"name":"DndQuickToggle","label":"Do Not Disturb","visible":true}]'
+list-buttons='[{"name":"SystemItem","label":null,"visible":true},{"name":"OutputStreamSlider","label":null,"visible":true},{"name":"InputStreamSlider","label":null,"visible":false},{"name":"BrightnessItem","label":null,"visible":false},{"name":"NMWiredToggle","label":"Wired","visible":true},{"name":"NMWirelessToggle","label":"Wi-Fi","visible":true},{"name":"NMModemToggle","label":null,"visible":true},{"name":"NMBluetoothToggle","label":null,"visible":false},{"name":"NMVpnToggle","label":"VPN","visible":true},{"name":"BluetoothToggle","label":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","label":"Power Mode","visible":true},{"name":"NightLightToggle","label":"Night Light","visible":true},{"name":"DarkModeToggle","label":"Dark Style","visible":true},{"name":"RfkillToggle","label":"Airplane Mode","visible":true},{"name":"RotationToggle","label":"Auto Rotate","visible":true},{"name":"ServiceToggle","label":"GSConnect","visible":true},{"name":"BackgroundAppsToggle","label":"No Background Apps","visible":false},{"name":"DndQuickToggle","label":"Do Not Disturb","visible":true}]'
 media-control-compact-mode=true
 media-control-enabled=false
 notifications-enabled=false
@@ -616,7 +621,7 @@ notifications-max-height=290
 notifications-position='bottom'
 notifications-use-native-controls=true
 output-show-selected=false
-user-removed-buttons=['DndQuickToogle', 'NMWiredToggle', 'NMModemToggle']
+user-removed-buttons=['DndQuickToogle', 'NMModemToggle', 'NMWiredToggle', 'RfkillToggle', 'DndQuickToggle']
 volume-mixer-check-description=true
 volume-mixer-enabled=false
 volume-mixer-filtered-apps=['/^.*speech-dispatcher.*$/', 'speech-dispatcher-dummy', 'speech-dispatcher-espeak-ng-mbrola']
@@ -626,7 +631,7 @@ volume-mixer-use-regex=true
 
 [quicksettings-audio-devices-renamer]
 input-names-map={'Digital Input (S/PDIF) – CalDigit Thunderbolt 3 Audio': 'Digital Input (S/PDIF) – CalDigit Thunderbolt 3 Audio', 'Microphone – CalDigit Thunderbolt 3 Audio': 'Microphone – CalDigit Thunderbolt 3 Audio', 'Internal Microphone – Built-in Audio': 'Internal Microphone – Built-in Audio', 'Handsfree – JBL Flip 3': 'Handsfree – JBL Flip 3', 'Handsfree – Surface Headphone 2': 'Handsfree – Surface Headphone 2'}
-output-names-map={'Digital Output (S/PDIF) – CalDigit Thunderbolt 3 Audio': 'Wired Headphones', 'Speakers – CalDigit Thunderbolt 3 Audio': 'WIred Speakers', 'HDMI / DisplayPort – Built-in Audio': 'Monitor', 'Speakers – Built-in Audio': 'Speakers', 'Handsfree – JBL Flip 3': 'Handsfree – JBL Flip 3', 'Speaker – JBL Flip 3': 'JBL Flip 3', 'Dummy Output': 'Dummy Output', 'Handsfree – Surface Headphone 2': 'Handsfree – Surface Headphone 2', 'Headphone – Surface Headphone 2': 'Headphone – Surface Headphone 2'}
+output-names-map={'Digital Output (S/PDIF) – CalDigit Thunderbolt 3 Audio': 'Wired Headphones', 'Speakers – CalDigit Thunderbolt 3 Audio': 'WIred Speakers', 'HDMI / DisplayPort – Built-in Audio': 'Monitor', 'Speakers – Built-in Audio': 'Speakers', 'Handsfree – JBL Flip 3': 'Handsfree – JBL Flip 3', 'Speaker – JBL Flip 3': 'JBL Flip 3', 'Dummy Output': 'Dummy Output', 'Handsfree – Surface Headphone 2': 'Handsfree – Surface Headphone 2', 'Headphone – Surface Headphone 2': 'Headphone – Surface Headphone 2', 'Network-Displays': 'Network-Displays'}
 
 [rounded-window-corners]
 black-list=['com.github.donadigo.appeditor', 'microsoft-edge']
@@ -724,32 +729,45 @@ activate-layout0=@as []
 activate-layout1=@as []
 activate-layout2=@as []
 activate-layout3=@as []
+active-window-hint=1
 active-window-hint-color='rgb(53,132,228)'
 auto-tile=@as []
 center-window=@as []
 debugging-free-rects=@as []
 debugging-show-tiled-rects=@as []
 default-move-mode=0
+dynamic-keybinding-behavior=2
 dynamic-keybinding-behaviour=0
 import-layout-examples=false
 last-version-installed=45
+maximize-with-gap=false
 overridden-settings={'org.gnome.mutter.edge-tiling': <false>}
 restore-window=['<Super>Down']
 search-popup-layout=@as []
+single-screen-gap=4
 tile-bottom-half=['<Super>KP_2']
+tile-bottom-half-ignore-ta=@as []
 tile-bottomleft-quarter=['<Super>KP_1']
+tile-bottomleft-quarter-ignore-ta=@as []
 tile-bottomright-quarter=['<Super>KP_3']
+tile-bottomright-quarter-ignore-ta=@as []
 tile-edit-mode=@as []
 tile-left-half=['<Super>Left', '<Super>KP_4']
+tile-left-half-ignore-ta=@as []
 tile-maximize=['<Super>Up', '<Super>KP_5']
 tile-maximize-horizontally=@as []
 tile-maximize-vertically=@as []
 tile-right-half=['<Super>Right', '<Super>KP_6']
+tile-right-half-ignore-ta=@as []
 tile-top-half=['<Super>KP_8']
+tile-top-half-ignore-ta=@as []
 tile-topleft-quarter=['<Super>KP_7']
+tile-topleft-quarter-ignore-ta=@as []
 tile-topright-quarter=['<Super>KP_9']
+tile-topright-quarter-ignore-ta=@as []
 toggle-always-on-top=@as []
 toggle-tiling-popup=@as []
+window-gap=4
 
 [unlock-dialog-background]
 picture-uri='/run/user/1000/gvfs/google-drive:host=gmail.com,user=bepary71/0ADT7Iiwm3NkNUk9PVA/1iaTkotyHrt21SWj4xy14CBJ4KVefplXa/1iaid3GAEyrY9IG8p6_7c8UHa7sfDsd4c/1XxZ2xuLxLISDiBTfPJ6ltSwJLrnfKyLl/13JtDkctOEROujTfbIXoSvAjgBOLWQG7r'

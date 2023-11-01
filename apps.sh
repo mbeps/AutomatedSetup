@@ -4,46 +4,82 @@ source "./dependencies.sh"
 
 # Installs Flatpak apps (from FlatHub) which were not part of the system. 
 	# Extra apps which were not preinstalled. 
-function install_flathub_apps() { 
+function install_flathub_apps_system() { 
+	title "Installing System Flathub Apps"
+	
+	apps=(
+		"com.github.neithern.g4music"
+		"com.github.rafostar.Clapper"
+		"io.github.vikdevelop.SaveDesktop"
+		"io.missioncenter.MissionCenter"
+		"com.raggesilver.BlackBox"
+		"net.nokyan.Resources"
+		"org.gnome.Calculator"
+		"org.gnome.Calendar"
+		"org.gnome.Contacts"
+		"org.gnome.Evince"
+		"org.gnome.FileRoller"
+		"org.gnome.Geary"
+		"org.gnome.Loupe"
+		"org.gnome.Snapshot"
+		"org.gnome.TextEditor"
+		"org.gnome.Weather"
+		"org.gnome.clocks"
+		"org.gnome.SimpleScan"
+		"org.gnome.Maps"
+		"io.github.hakandundar34coding.system-monitoring-center"
+		"org.gnome.SoundRecorder"
+		)
+
+	install_flathub_apps "${apps[@]}"
+}
+
+# Installs Flatpak apps (from FlatHub) which were not part of the system. 
+	# Extra apps which were not preinstalled. 
+function install_flathub_apps_non_system() { 
 	title "Installing Non-System Flathub Apps"
 	
 	apps=(
+		"app.drey.EarTag"
+		"ca.andyholmes.Valent"
+		"com.bitwarden.desktop"
 		"com.github.alexhuntley.Plots"
 		"com.github.flxzt.rnote"
 		"com.github.johnfactotum.Foliate"
+		"com.github.joseexposito.touche"
 		"com.github.maoschanz.drawing"
-		"com.github.neithern.g4music"
-		"com.github.rafostar.Clapper"
 		"com.github.tchx84.Flatseal"
+		"com.github.wwmm.easyeffects"
 		"com.mattjakeman.ExtensionManager"
 		"com.microsoft.Edge"
 		"com.usebottles.bottles"
 		"de.haeckerfelix.Fragments"
 		"de.schmidhuberj.Flare"
 		"fr.free.Homebank"
+		"io.github.flattool.Warehouse"
 		"io.github.fsobolev.TimeSwitch"
-		"io.github.hakandundar34coding.system-monitoring-center"
 		"it.mijorus.smile"
 		"me.dusansimic.DynamicWallpaper"
-		"org.gnome.Calculator"
-		"org.gnome.Calendar"
-		"org.gnome.Cheese"
+		"org.gnome.Boxes"
 		"org.gnome.Connections"
-		"org.gnome.Contacts"
 		"org.gnome.Epiphany"
-		"org.gnome.FileRoller"
-		"org.gnome.Geary"
-		"org.gnome.Loupe"
-		"org.gnome.Maps"
-		"org.gnome.Music"
 		"org.gnome.NetworkDisplays"
-		"org.gnome.Snapshot"
-		"org.gnome.SoundRecorder"
-		"com.raggesilver.BlackBox"
+		"org.gnome.Todo"
+		"org.gnome.baobab"
+		"org.gnome.gitg"
+		"org.libreoffice.LibreOffice"
+		"org.localsend.localsend_app"
+		"org.nickvision.money"
+		"org.nickvision.tubeconverter"
+		"org.onlyoffice.desktopeditors"
+		"org.pulseaudio.pavucontrol"
+		"pm.mirko.Atoms"
 		)
 
 	install_flathub_apps "${apps[@]}"
 }
+
+
 
 # Removing preinstalled Flatpak apps. 
 function remove_preinstalled_flatpaks() { 
