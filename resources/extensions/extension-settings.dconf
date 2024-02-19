@@ -220,8 +220,11 @@ customize=false
 override-background=true
 
 [clipboard-history]
+clear-history=['<Super>BackSpace']
 display-mode=0
 history-size=100
+toggle-menu=['<Super>v']
+topbar-preview-size=11
 window-width-percentage=22
 
 [clipboard-indicator]
@@ -307,7 +310,7 @@ animate-appicon-hover-animation-type='SIMPLE'
 animate-appicon-hover-animation-zoom={'SIMPLE': 1.1000000000000001, 'RIPPLE': 1.25, 'PLANK': 2.0}
 appicon-margin=4
 appicon-padding=8
-available-monitors=[1, 0, 2]
+available-monitors=[0, 1, 2]
 click-action='TOGGLE-SHOWPREVIEW'
 dot-color-dominant=false
 dot-color-override=false
@@ -338,7 +341,7 @@ peek-mode-opacity=40
 preview-custom-opacity=80
 preview-middle-click-close=true
 preview-use-custom-opacity=false
-primary-monitor=1
+primary-monitor=0
 progress-show-count=true
 show-appmenu=false
 show-apps-icon-file=''
@@ -387,7 +390,7 @@ background-opacity=100
 show-overview=true
 
 [emoji-copy]
-recently-used=['🤡', '💀', '😂', '🤔', '😭', '😥', '❤️', '😍', '😊', '😒', '😘']
+recently-used=['😂', '🤡', '💀', '🤔', '😭', '😥', '❤️', '😍', '😊', '😒', '😘']
 
 [emoji-selector]
 always-show=true
@@ -459,7 +462,7 @@ pinch-4-finger-gesture='NONE'
 history-size=uint32 50
 
 [gsconnect]
-devices=['945b88e9933d8ef2', '728f9afd_e3cc_4477_a07a_070d51305a66', '4861220b_ad88_403c_8551_771dda6e220b']
+devices=['945b88e9933d8ef2', '728f9afd_e3cc_4477_a07a_070d51305a66']
 enabled=true
 id='f3c8920f-922f-4aa0-bb8f-0619f158cbca'
 name='Maruf-Fedora-PC'
@@ -495,7 +498,7 @@ type='phone'
 custom-battery-notification-value=uint32 80
 
 [gsconnect/device/728f9afd_e3cc_4477_a07a_070d51305a66/plugin/notification]
-applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Evolution Alarm Notify":{"iconName":"appointment-soon","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Denaro":{"iconName":"org.nickvision.money","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Valent":{"iconName":"ca.andyholmes.Valent","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true},"Mail":{"iconName":"org.gnome.Geary","enabled":true},"Terminal":{"iconName":"com.raggesilver.BlackBox","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Archive Manager":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Microsoft Edge":{"iconName":"file:///run/user/1000/app/com.microsoft.Edge/.com.microsoft.Edge.ltoPWZ","enabled":true}}'
+applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Evolution Alarm Notify":{"iconName":"appointment-soon","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Denaro":{"iconName":"org.nickvision.money","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Valent":{"iconName":"ca.andyholmes.Valent","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true},"Mail":{"iconName":"org.gnome.Geary","enabled":true},"Terminal":{"iconName":"com.raggesilver.BlackBox","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Archive Manager":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Microsoft Edge":{"iconName":"file:///run/user/1000/app/com.microsoft.Edge/.com.microsoft.Edge.ltoPWZ","enabled":true},"Extensions":{"iconName":"dialog-information-symbolic","enabled":true}}'
 
 [gsconnect/device/728f9afd_e3cc_4477_a07a_070d51305a66/plugin/share]
 receive-directory='/home/maruf/Downloads'
@@ -539,7 +542,7 @@ receive-content=true
 send-content=true
 
 [gsconnect/device/945b88e9933d8ef2/plugin/notification]
-applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Evolution Alarm Notify":{"iconName":"appointment-soon","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":false},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Geary":{"iconName":"org.gnome.Geary","enabled":true},"Colour":{"iconName":"org.gnome.Settings-color-symbolic","enabled":false},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Archive Manager":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Terminal":{"iconName":"org.gnome.Terminal","enabled":true},"Mail":{"iconName":"org.gnome.Geary","enabled":true},"Insync":{"iconName":"insync","enabled":true},"Timeshift":{"iconName":"timeshift","enabled":true},"Characters":{"iconName":"org.gnome.Characters","enabled":true},"notify-send":{"iconName":"","enabled":true},"Snapdrop":{"iconName":"file:///home/maruf/.local/share/xdg-desktop-portal/icons/160x160/org.gnome.Epiphany.WebApp_74b6f78d56abcf9c3c081c0f8c96ddbd33ab86eb.png","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true},"Tube Converter":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":false},"Web":{"iconName":"system-run-symbolic","enabled":true},"Tagger":{"iconName":"org.nickvision.tagger","enabled":true},"balena-etcher":{"iconName":"","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Emojis":{"iconName":"dialog-information","enabled":true},"Denaro":{"iconName":"org.nickvision.money","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Valent":{"iconName":"ca.andyholmes.Valent","enabled":true},"Microsoft Edge":{"iconName":"file:///run/user/1000/app/com.microsoft.Edge/.com.microsoft.Edge.ltoPWZ","enabled":true}}'
+applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Evolution Alarm Notify":{"iconName":"appointment-soon","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":false},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Geary":{"iconName":"org.gnome.Geary","enabled":true},"Colour":{"iconName":"org.gnome.Settings-color-symbolic","enabled":false},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Archive Manager":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Terminal":{"iconName":"org.gnome.Terminal","enabled":true},"Mail":{"iconName":"org.gnome.Geary","enabled":true},"Insync":{"iconName":"insync","enabled":true},"Timeshift":{"iconName":"timeshift","enabled":true},"Characters":{"iconName":"org.gnome.Characters","enabled":true},"notify-send":{"iconName":"","enabled":true},"Snapdrop":{"iconName":"file:///home/maruf/.local/share/xdg-desktop-portal/icons/160x160/org.gnome.Epiphany.WebApp_74b6f78d56abcf9c3c081c0f8c96ddbd33ab86eb.png","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true},"Tube Converter":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":false},"Web":{"iconName":"system-run-symbolic","enabled":true},"Tagger":{"iconName":"org.nickvision.tagger","enabled":true},"balena-etcher":{"iconName":"","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Emojis":{"iconName":"dialog-information","enabled":true},"Denaro":{"iconName":"org.nickvision.money","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Valent":{"iconName":"ca.andyholmes.Valent","enabled":true},"Microsoft Edge":{"iconName":"file:///run/user/1000/app/com.microsoft.Edge/.com.microsoft.Edge.ltoPWZ","enabled":true},"Extensions":{"iconName":"dialog-information-symbolic","enabled":true}}'
 send-notifications=true
 
 [gsconnect/device/945b88e9933d8ef2/plugin/share]
@@ -653,6 +656,11 @@ sunset=3.0166666666666666
 time-source='nightlight'
 transition=true
 
+[notification-banner-reloaded]
+anchor-horizontal=1
+anchor-vertical=1
+animation-direction=1
+
 [osd-volume-number]
 adapt-panel-menu=true
 icon-position='left'
@@ -670,7 +678,8 @@ open-links-in-browser=false
 paste-on-select=true
 play-audio-on-copy=false
 send-notification-on-copy=false
-sync-primary=true
+session-only-mode=true
+sync-primary=false
 window-background-color='rgb(15,16,16)'
 window-height=320
 
@@ -888,7 +897,7 @@ tile-topright-quarter=['<Super>KP_9']
 tile-topright-quarter-ignore-ta=@as []
 toggle-always-on-top=@as []
 toggle-tiling-popup=@as []
-window-gap=2
+window-gap=4
 
 [touchx]
 lastoskon=true

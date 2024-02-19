@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source "./apps.sh"
 source "./dependencies.sh"
 source "./development.sh"
@@ -7,11 +9,12 @@ source "./gnome_configuration.sh"
 source "./keyboard_shortcuts.sh"
 source "./miscellaneous.sh"
 source "./package_management.sh"
-source "./theme.sh" 
+source "./theme.sh"
 source "./terminal_configuration.sh"
 source "./extensions.sh"
 
 function automated_normal() {
+	cd "$HOME/Downloads"
 	optimise_dnf
 	update_upgrade
 	enable_rpm_fusion
@@ -48,9 +51,11 @@ function automated_normal() {
 	apply_theme_to_native_apps
 	firefox_gnome_theme
 	restore_themes
+	install_marble_shell_theme
+	restore_svg_icons
 }
 
-function automated_dev() { 
+function automated_dev() {
 	automated_normal
 
 	install_flathub_apps_dev
@@ -87,6 +92,5 @@ function automated_wsl_dev() {
 	install_flathub_apps_development
 	configure_git_ssh
 }
-
 
 "$@"
