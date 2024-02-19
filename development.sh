@@ -80,8 +80,7 @@ function install_python_pip() {
 function install_python_poetry() {
 	title "Installing Poetry Project Manager for Python"
 
-	curl -sSL https://install.python-poetry.org | python3 -
-	poetry config virtualenvs.prefer-active-python true
+	pipx install poetry -y
 }
 
 # Installs PyEnv for Python version management.

@@ -123,13 +123,14 @@ function remove_native_system_apps() {
 # Flatpak versions not available.
 function install_native_system_apps() {
 	packages=(
-		"gnome-tweaks" # Gnome Tweaks
-		"gnome-usage"  # Gnome Usage
-		"openssl"      # OpenSSL
-		"sshfs"        # SSHFS
-		"tldr"         # TLDR
-		"libgda"
-		"libgda-sqlite"
+		"gnome-tweaks"  # Gnome Tweaks
+		"gnome-usage"   # Gnome Usage
+		"openssl"       # OpenSSL
+		"sshfs"         # SSHFS
+		"tldr"          # TLDR
+		"libgda"        # Libgda
+		"libgda-sqlite" # Libgda SQLite
+		"pipx"          # Pipx
 	)
 
 	install_native_apps "${packages[@]}"
