@@ -29,7 +29,7 @@ function enable_favourite_extensions() {
 	title "Enabling Favourite Extensions"
 
 	extensions=(
-		"arcmenu@arcmenu.com",
+		"arcmenu@arcmenu.com"
 		"bluetooth-quick-connect@bjarosze.gmail.com"
 		"dash-to-dock@micxgx.gmail.com"
 		"emoji-selector@maestroschan.fr"
