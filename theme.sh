@@ -39,6 +39,22 @@ function restore_themes() {
 	unzip "./resources/themes/themes.zip" -d "$HOME/.themes/"
 }
 
+# Installs Marble Shell Theme.
+# Source: https://github.com/imarkoff/Marble-shell-theme
+function install_marble_shell_theme() {
+	title "Installing Marble Shell Theme"
+
+	cd "$HOME/Downloads" || exit
+	git clone https://github.com/imarkoff/Marble-shell-theme.git
+	cd Marble-shell-theme
+
+	# User theme
+	python install.py -a --filled --panel_no_pill
+
+	# GDM theme
+	python install.py -a --filled --panel_no_pill --gdm --gray
+}
+
 # Restores the ArcMenu icons.
 function restore_svg_icons() {
 	title "Importing Icons"

@@ -14,6 +14,7 @@ source "./terminal_configuration.sh"
 source "./extensions.sh"
 
 function automated_normal() {
+	cd "$HOME/Downloads"
 	optimise_dnf
 	update_upgrade
 	enable_rpm_fusion
@@ -50,6 +51,8 @@ function automated_normal() {
 	apply_theme_to_native_apps
 	firefox_gnome_theme
 	restore_themes
+	install_marble_shell_theme
+	restore_svg_icons
 }
 
 function automated_dev() {
