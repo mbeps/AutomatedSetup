@@ -1,12 +1,14 @@
+#!/bin/bash
+
 # Contains functions to install various apps from various sources.
 
 source "./dependencies.sh"
 
-# Installs Flatpak apps (from FlatHub) which were not part of the system. 
-	# Extra apps which were not preinstalled. 
-function install_flathub_apps_system() { 
+# Installs Flatpak apps (from FlatHub) which were not part of the system.
+# Extra apps which were not preinstalled.
+function install_flathub_apps_system() {
 	title "Installing System Flathub Apps"
-	
+
 	apps=(
 		"com.github.neithern.g4music"
 		"com.github.rafostar.Clapper"
@@ -29,16 +31,16 @@ function install_flathub_apps_system() {
 		"org.gnome.Maps"
 		"io.github.hakandundar34coding.system-monitoring-center"
 		"org.gnome.SoundRecorder"
-		)
+	)
 
 	install_flathub_apps "${apps[@]}"
 }
 
-# Installs Flatpak apps (from FlatHub) which were not part of the system. 
-	# Extra apps which were not preinstalled. 
-function install_flathub_apps_non_system() { 
+# Installs Flatpak apps (from FlatHub) which were not part of the system.
+# Extra apps which were not preinstalled.
+function install_flathub_apps_non_system() {
 	title "Installing Non-System Flathub Apps"
-	
+
 	apps=(
 		"app.drey.EarTag"
 		"ca.andyholmes.Valent"
@@ -74,71 +76,69 @@ function install_flathub_apps_non_system() {
 		"org.onlyoffice.desktopeditors"
 		"org.pulseaudio.pavucontrol"
 		"pm.mirko.Atoms"
-		)
+	)
 
 	install_flathub_apps "${apps[@]}"
 }
 
-
-
-# Removing preinstalled Flatpak apps. 
-function remove_preinstalled_flatpaks() { 
+# Removing preinstalled Flatpak apps.
+function remove_preinstalled_flatpaks() {
 	title "Removing Preinstalled Flatpak"
 
 	flatpak remove org.fedoraproject.MediaWriter -y
 }
 
-# Removes some preinstalled native apps in favour of Flatpak versions of the same apps. 
+# Removes some preinstalled native apps in favour of Flatpak versions of the same apps.
 function remove_native_system_apps() {
 	title "Remove Native System Apps"
 
 	packages=(
-		"gnome-boxes" 							# Gnome Boxes - Virtualisation Tool
-		"gnome-calculator" 						# Calculator
-		"gnome-calendar" 						# Calendar
-		"gnome-clocks" 							# Clocks
-		"gnome-connections" 					# Connection - Remote Connection Tool
-		"gnome-contacts" 						# Contacts
-		"gnome-maps" 							# Maps
-		"gnome-text-editor" 					# Text Editor
-		"gnome-weather" 						# Weather
-		"eog" 						# Weather
-		"totem" 
-		"rhythmbox"					
+		"gnome-boxes"       # Gnome Boxes - Virtualisation Tool
+		"gnome-calculator"  # Calculator
+		"gnome-calendar"    # Calendar
+		"gnome-clocks"      # Clocks
+		"gnome-connections" # Connection - Remote Connection Tool
+		"gnome-contacts"    # Contacts
+		"gnome-maps"        # Maps
+		"gnome-text-editor" # Text Editor
+		"gnome-weather"     # Weather
+		"eog"               # Weather
+		"totem"
+		"rhythmbox"
 		"gnome-terminal"
 		# LibreOffice
 		"libreoffice"
-		"libreoffice-calc" 
+		"libreoffice-calc"
 		"libreoffice-core"
 		"libreoffice-draw"
 		"libreoffice-writer"
 		"libreoffice-impress"
-		)
+	)
 
 	remove_native_apps "${packages[@]}"
 	sudo dnf autoremove -y
 }
 
-# Installs some native apps that were not part of the system. 
-	# Flatpak versions not available. 
+# Installs some native apps that were not part of the system.
+# Flatpak versions not available.
 function install_native_system_apps() {
 	packages=(
-		"gnome-tweaks" 							# Gnome Tweaks
-		"gnome-usage" 							# Gnome Usage
-		"openssl"								# OpenSSL
-		"sshfs" 								# SSHFS
-		"tldr" 									# TLDR 
+		"gnome-tweaks" # Gnome Tweaks
+		"gnome-usage"  # Gnome Usage
+		"openssl"      # OpenSSL
+		"sshfs"        # SSHFS
+		"tldr"         # TLDR
 		"libgda"
 		"libgda-sqlite"
-		)
+	)
 
 	install_native_apps "${packages[@]}"
 }
 
-# Installs InSync for syncing Google Drive with main file system. 
-	# Adds all the necessary keys and repositories. 
-	# Source: https://www.insynchq.com/downloads
-function install_insync() { 
+# Installs InSync for syncing Google Drive with main file system.
+# Adds all the necessary keys and repositories.
+# Source: https://www.insynchq.com/downloads
+function install_insync() {
 	title "Installing InSync"
 
 	sudo rpm --import https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
@@ -158,9 +158,9 @@ function install_insync() {
 	sudo yum install insync -y
 }
 
-# Installs Waydroid to be able to run Android apps. 
-	# Sets multiwindow to run multiple apps at once. 
-	# Source: https://docs.waydro.id/usage/install-on-desktops
+# Installs Waydroid to be able to run Android apps.
+# Sets multiwindow to run multiple apps at once.
+# Source: https://docs.waydro.id/usage/install-on-desktops
 function install_waydroid() {
 	title "Installing Waydroind Android Support"
 
@@ -171,8 +171,8 @@ function install_waydroid() {
 	sudo systemctl restart waydroid-container
 }
 
-# Allows opening BlackBox terminal in files. 
-function files_terminal() { 
+# Allows opening BlackBox terminal in files.
+function files_terminal() {
 	title "Enable BlackBox for Files"
 
 	sudo dnf install nautilus-python -y

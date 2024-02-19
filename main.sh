@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source "./apps.sh"
 source "./dependencies.sh"
 source "./development.sh"
@@ -7,7 +9,7 @@ source "./gnome_configuration.sh"
 source "./keyboard_shortcuts.sh"
 source "./miscellaneous.sh"
 source "./package_management.sh"
-source "./theme.sh" 
+source "./theme.sh"
 source "./terminal_configuration.sh"
 source "./extensions.sh"
 
@@ -50,7 +52,7 @@ function automated_normal() {
 	restore_themes
 }
 
-function automated_dev() { 
+function automated_dev() {
 	automated_normal
 
 	install_flathub_apps_dev
@@ -87,6 +89,5 @@ function automated_wsl_dev() {
 	install_flathub_apps_development
 	configure_git_ssh
 }
-
 
 "$@"

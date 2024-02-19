@@ -1,8 +1,10 @@
-# Contains functions for package manegement for RPM and Flatpak. 
+#!/bin/bash
+
+# Contains functions for package manegement for RPM and Flatpak.
 
 source "./dependencies.sh"
 
-# Updates and upgrades packages in the system. 
+# Updates and upgrades packages in the system.
 function update_upgrade() {
 	title "Update & Upgrade"
 
@@ -10,19 +12,19 @@ function update_upgrade() {
 	sudo dnf upgrade -y
 }
 
-# Opmisises DNF package manager performance. 
-	# Increases the number of parallel downloads. 
-function optimise_dnf() { 
+# Opmisises DNF package manager performance.
+# Increases the number of parallel downloads.
+function optimise_dnf() {
 	title "Opmise DNF"
 
 	echo 'max_parallel_downloads=20' | sudo tee -a /etc/dnf/dnf.conf # Max download
 }
 
-# Enables RPM Fusion repositories for added packages and apps. 
-	# Enables free (Open Source) catalogue. 
-	# Enables non-free (Closed Source / Proprietary) catalogue. 
-	# Source: https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/
-function enable_rpm_fusion() { 
+# Enables RPM Fusion repositories for added packages and apps.
+# Enables free (Open Source) catalogue.
+# Enables non-free (Closed Source / Proprietary) catalogue.
+# Source: https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/
+function enable_rpm_fusion() {
 	title "Enable RPM Fusion Respositories"
 
 	sudo dnf install \
@@ -34,9 +36,9 @@ function enable_rpm_fusion() {
 	sudo dnf groupupdate core -y # Make apps visible on Gnome Store
 }
 
-# Enables FlatHub repositories for Flatpaks for added apps. 
-	# Source: https://flatpak.org/setup/Fedora
-function enable_flathub() { 
+# Enables FlatHub repositories for Flatpaks for added apps.
+# Source: https://flatpak.org/setup/Fedora
+function enable_flathub() {
 	title "Enable FlatHub"
 
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
