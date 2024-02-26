@@ -54,9 +54,7 @@ function configure_git_ssh() {
 function install_jdk() {
 	title "Instaling Java Development Environment"
 
-	sudo rpm --import https://yum.corretto.aws/corretto.key
-	sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
-	sudo yum install -y java-17-amazon-corretto-devel
+	sudo dnf install java-21-openjdk-devel -y
 }
 
 # Installs Maven project manager for Java.
