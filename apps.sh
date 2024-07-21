@@ -63,6 +63,7 @@ function install_flathub_apps_non_system() {
 		"org.nickvision.tubeconverter"
 		"org.onlyoffice.desktopeditors"
 		"org.pulseaudio.pavucontrol"
+		"age.codeberg.libre_menu_editor.LibreMenuEditor"
 	)
 
 	install_flathub_apps "${apps[@]}"
