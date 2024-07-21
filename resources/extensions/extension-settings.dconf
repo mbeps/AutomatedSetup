@@ -1,3 +1,6 @@
+[Bluetooth-Battery-Meter]
+paired-supported-device-list=['{"path":"/org/bluez/hci0/dev_F0_1D_BC_FA_00_10","icon":"audio-headphones","alias":"Surface Headphone 2","paired":true,"battery-enabled":true,"indicator-enabled":true}', '{"path":"/org/bluez/hci0/dev_F4_4E_FD_5E_96_F8","icon":"audio-headset","alias":"Tronsmart Element Force+","paired":true,"battery-enabled":true,"indicator-enabled":true}']
+
 [SettingsCenter]
 items='Advanced Settings;gnome-tweaks.desktop;0;gnome-tweaks|Desktop Config Editor;dconf-editor.desktop;0;dconf-editor|Gnome Config Editor;gconf-editor.desktop;0;gconf-editor|Session Properties;session-properties.desktop;0;gnome-session-properties|Extensions Preferences;gnome-shell-extension-prefs.desktop;0;gnome-shell-extension-prefs|Passwords and Keys;seahorse.desktop;0;seahorse|NVidia Settings;nvidia-settings.desktop;0;nvidia-settings|Windows Layout;layouts-windows;0;'
 label-menu='Layouts'
@@ -195,29 +198,51 @@ horizontalmode=true
 devices=['{"name":"BM30X mouse","isConnected":true,"isPaired":true,"mac":"DC:2C:26:AC:9E:E8","isDefault":false,"defaultIcon":"input-mouse"}', '{"name":"JBL Flip 3","isConnected":true,"isPaired":true,"mac":"FC:A8:9A:F2:BB:79","isDefault":false,"defaultIcon":"audio-card"}', '{"name":"Surface Headphone 2","isConnected":true,"isPaired":true,"mac":"F0:1D:BC:FA:00:10","isDefault":false,"defaultIcon":"audio-headphones","active":true}']
 
 [blur-my-shell]
-color-and-noise=true
 hacks-level=0
+settings-version=2
 
 [blur-my-shell/appfolder]
 blur=false
+brightness=0.59999999999999998
+sigma=30
 
 [blur-my-shell/applications]
 blur=false
 blur-on-overview=false
-customize=false
+brightness=0.59999999999999998
 enable-all=false
 opacity=240
+sigma=30
 
 [blur-my-shell/dash-to-dock]
-blur=false
+blur=true
+brightness=0.59999999999999998
 override-background=true
+pipeline='pipeline_default_rounded'
+sigma=30
+static-blur=true
+style-dash-to-dock=0
+unblur-in-overview=true
+
+[blur-my-shell/lockscreen]
+pipeline='pipeline_default'
 
 [blur-my-shell/overview]
+pipeline='pipeline_default'
 style-components=2
 
 [blur-my-shell/panel]
-customize=false
+brightness=0.59999999999999998
 override-background=true
+pipeline='pipeline_default'
+sigma=30
+
+[blur-my-shell/screenshot]
+pipeline='pipeline_default'
+
+[blur-my-shell/window-list]
+brightness=0.59999999999999998
+sigma=30
 
 [clipboard-history]
 clear-history=['<Super>BackSpace']
@@ -285,19 +310,28 @@ show-mounts=false
 show-trash=false
 
 [dash-to-dock]
+animation-time=0.15000000000000002
 apply-custom-theme=true
 background-opacity=1.0
 click-action='focus-or-previews'
 dash-max-icon-size=42
+dock-fixed=false
 dock-position='BOTTOM'
 height-fraction=0.90000000000000002
+hide-tooltip=false
+intellihide-mode='FOCUS_APPLICATION_WINDOWS'
+multi-monitor=false
 preferred-monitor=-2
-preferred-monitor-by-connector='DP-2'
+preferred-monitor-by-connector='eDP-1'
+pressure-threshold=0.0
 preview-size-scale=0.10000000000000001
+require-pressure-to-show=true
 running-indicator-style='DOTS'
 scroll-action='switch-workspace'
+show-apps-always-in-the-edge=true
 show-apps-at-top=true
 show-mounts=false
+show-mounts-only-mounted=false
 show-trash=false
 transparency-mode='FIXED'
 
@@ -310,7 +344,7 @@ animate-appicon-hover-animation-type='SIMPLE'
 animate-appicon-hover-animation-zoom={'SIMPLE': 1.1000000000000001, 'RIPPLE': 1.25, 'PLANK': 2.0}
 appicon-margin=4
 appicon-padding=8
-available-monitors=[0]
+available-monitors=[0, 1, 2]
 click-action='TOGGLE-SHOWPREVIEW'
 dot-color-dominant=false
 dot-color-override=false
@@ -332,7 +366,7 @@ leave-timeout=100
 leftbox-padding=-1
 multi-monitors=true
 panel-anchors='{"0":"MIDDLE","1":"MIDDLE","2":"MIDDLE"}'
-panel-element-positions='{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"2":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
+panel-element-positions='{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"2":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
 panel-element-positions-monitors-sync=true
 panel-lengths='{"0":100,"1":100,"2":100}'
 panel-sizes='{"0":48,"1":48,"2":48}'
@@ -390,7 +424,8 @@ background-opacity=100
 show-overview=true
 
 [emoji-copy]
-recently-used=['🤡', '😂', '😭', '😥', '🤯', '💀', '🤔', '❤️', '😍', '😊', '😒']
+recently-used=['😂', '🤣', '🥲', '🫠', '🤡', '😐', '😃', '💀', '😭', '😥', '😆']
+skin-tone=3
 
 [emoji-selector]
 always-show=true
@@ -487,7 +522,7 @@ type='phone'
 [gsconnect/device/728f9afd_e3cc_4477_a07a_070d51305a66]
 certificate-pem='-----BEGIN CERTIFICATE-----\nMIIBkjCCATmgAwIBAgIBATAKBggqhkjOPQQDBDBTMS0wKwYDVQQDDCQ3MjhmOWFm\nZF9lM2NjXzQ0NzdfYTA3YV8wNzBkNTEzMDVhNjYxFDASBgNVBAsMC0tERSBDb25u\nZWN0MQwwCgYDVQQKDANLREUwHhcNMjIxMTE4MDAwMDAwWhcNMzIxMTE4MDAwMDAw\nWjBTMS0wKwYDVQQDDCQ3MjhmOWFmZF9lM2NjXzQ0NzdfYTA3YV8wNzBkNTEzMDVh\nNjYxFDASBgNVBAsMC0tERSBDb25uZWN0MQwwCgYDVQQKDANLREUwWTATBgcqhkjO\nPQIBBggqhkjOPQMBBwNCAARCZ1gZsYBl6Qkfi/eIF0UnAmmUI1aggvJjliIZDD0Z\nhgSsVYP019Se3033NzqUVVfJbs7RyoRCkckAGeTkhu56MAoGCCqGSM49BAMEA0cA\nMEQCIQDTZbkhoq5P/FC7dE9tvXDzuQsUUNYp1RknYYeMLfyj9wIfPnpax0WdEd0W\nlzTP233+TF+3d+puxlenGb50L3yNTg==\n-----END CERTIFICATE-----\n'
 incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
-last-connection='lan://192.168.3.124:1716'
+last-connection='lan://192.168.5.179:1716'
 name='Pixel 8 Pro'
 outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
 paired=true
@@ -496,12 +531,17 @@ type='phone'
 
 [gsconnect/device/728f9afd_e3cc_4477_a07a_070d51305a66/plugin/battery]
 custom-battery-notification-value=uint32 80
+send-statistics=true
 
 [gsconnect/device/728f9afd_e3cc_4477_a07a_070d51305a66/plugin/notification]
-applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Evolution Alarm Notify":{"iconName":"appointment-soon","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Denaro":{"iconName":"org.nickvision.money","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Valent":{"iconName":"ca.andyholmes.Valent","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true},"Mail":{"iconName":"org.gnome.Geary","enabled":true},"Terminal":{"iconName":"com.raggesilver.BlackBox","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Archive Manager":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Microsoft Edge":{"iconName":"file:///run/user/1000/app/com.microsoft.Edge/.com.microsoft.Edge.ltoPWZ","enabled":true},"Extensions":{"iconName":"dialog-information-symbolic","enabled":true},"Google Chrome":{"iconName":"file:///run/user/1000/app/com.google.Chrome/.com.google.Chrome.5uyjTw","enabled":true},"Insync":{"iconName":"insync","enabled":true},"balena-etcher":{"iconName":"","enabled":true},"Date & Time Settings":{"iconName":"preferences-system-time-symbolic","enabled":true}}'
+applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Evolution Alarm Notify":{"iconName":"appointment-soon","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Denaro":{"iconName":"org.nickvision.money","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Valent":{"iconName":"ca.andyholmes.Valent","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true},"Mail":{"iconName":"org.gnome.Geary","enabled":true},"Terminal":{"iconName":"com.raggesilver.BlackBox","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Archive Manager":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Microsoft Edge":{"iconName":"file:///run/user/1000/app/com.microsoft.Edge/.com.microsoft.Edge.ltoPWZ","enabled":true},"Extensions":{"iconName":"dialog-information-symbolic","enabled":true},"Google Chrome":{"iconName":"file:///run/user/1000/app/com.google.Chrome/.com.google.Chrome.5uyjTw","enabled":true},"Insync":{"iconName":"insync","enabled":true},"balena-etcher":{"iconName":"","enabled":true},"Date & Time Settings":{"iconName":"preferences-system-time-symbolic","enabled":true},"Events and Tasks Reminders":{"iconName":"org.gnome.Evolution-alarm-notify","enabled":true},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Email":{"iconName":"org.gnome.Geary","enabled":true},"Colour":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"File Roller":{"iconName":"org.gnome.FileRoller","enabled":true},"gnome-settings-daemon":{"iconName":"dialog-warning-symbolic","enabled":true}}'
 
 [gsconnect/device/728f9afd_e3cc_4477_a07a_070d51305a66/plugin/share]
 receive-directory='/home/maruf/Downloads'
+
+[gsconnect/device/728f9afd_e3cc_4477_a07a_070d51305a66/plugin/telephony]
+ringing-pause=true
+talking-volume='nothing'
 
 [gsconnect/device/75aef515c3d514dd]
 incoming-capabilities=['kdeconnect.battery', 'kdeconnect.battery.request', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report.request', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.photo.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
@@ -542,7 +582,7 @@ receive-content=true
 send-content=true
 
 [gsconnect/device/945b88e9933d8ef2/plugin/notification]
-applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Evolution Alarm Notify":{"iconName":"appointment-soon","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":false},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Geary":{"iconName":"org.gnome.Geary","enabled":true},"Colour":{"iconName":"org.gnome.Settings-color-symbolic","enabled":false},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Archive Manager":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Terminal":{"iconName":"org.gnome.Terminal","enabled":true},"Mail":{"iconName":"org.gnome.Geary","enabled":true},"Insync":{"iconName":"insync","enabled":true},"Timeshift":{"iconName":"timeshift","enabled":true},"Characters":{"iconName":"org.gnome.Characters","enabled":true},"notify-send":{"iconName":"","enabled":true},"Snapdrop":{"iconName":"file:///home/maruf/.local/share/xdg-desktop-portal/icons/160x160/org.gnome.Epiphany.WebApp_74b6f78d56abcf9c3c081c0f8c96ddbd33ab86eb.png","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true},"Tube Converter":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":false},"Web":{"iconName":"system-run-symbolic","enabled":true},"Tagger":{"iconName":"org.nickvision.tagger","enabled":true},"balena-etcher":{"iconName":"","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Emojis":{"iconName":"dialog-information","enabled":true},"Denaro":{"iconName":"org.nickvision.money","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Valent":{"iconName":"ca.andyholmes.Valent","enabled":true},"Microsoft Edge":{"iconName":"file:///run/user/1000/app/com.microsoft.Edge/.com.microsoft.Edge.ltoPWZ","enabled":true},"Extensions":{"iconName":"dialog-information-symbolic","enabled":true},"Google Chrome":{"iconName":"file:///run/user/1000/app/com.google.Chrome/.com.google.Chrome.5uyjTw","enabled":true},"Date & Time Settings":{"iconName":"preferences-system-time-symbolic","enabled":true}}'
+applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Evolution Alarm Notify":{"iconName":"appointment-soon","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":false},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Geary":{"iconName":"org.gnome.Geary","enabled":true},"Colour":{"iconName":"org.gnome.Settings-color-symbolic","enabled":false},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Archive Manager":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Terminal":{"iconName":"org.gnome.Terminal","enabled":true},"Mail":{"iconName":"org.gnome.Geary","enabled":true},"Insync":{"iconName":"insync","enabled":true},"Timeshift":{"iconName":"timeshift","enabled":true},"Characters":{"iconName":"org.gnome.Characters","enabled":true},"notify-send":{"iconName":"","enabled":true},"Snapdrop":{"iconName":"file:///home/maruf/.local/share/xdg-desktop-portal/icons/160x160/org.gnome.Epiphany.WebApp_74b6f78d56abcf9c3c081c0f8c96ddbd33ab86eb.png","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true},"Tube Converter":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":false},"Web":{"iconName":"system-run-symbolic","enabled":true},"Tagger":{"iconName":"org.nickvision.tagger","enabled":true},"balena-etcher":{"iconName":"","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Emojis":{"iconName":"dialog-information","enabled":true},"Denaro":{"iconName":"org.nickvision.money","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Valent":{"iconName":"ca.andyholmes.Valent","enabled":true},"Microsoft Edge":{"iconName":"file:///run/user/1000/app/com.microsoft.Edge/.com.microsoft.Edge.ltoPWZ","enabled":true},"Extensions":{"iconName":"dialog-information-symbolic","enabled":true},"Google Chrome":{"iconName":"file:///run/user/1000/app/com.google.Chrome/.com.google.Chrome.5uyjTw","enabled":true},"Date & Time Settings":{"iconName":"preferences-system-time-symbolic","enabled":true},"Events and Tasks Reminders":{"iconName":"org.gnome.Evolution-alarm-notify","enabled":true},"Email":{"iconName":"org.gnome.Geary","enabled":true},"File Roller":{"iconName":"org.gnome.FileRoller","enabled":true},"gnome-settings-daemon":{"iconName":"dialog-warning-symbolic","enabled":true}}'
 send-notifications=true
 
 [gsconnect/device/945b88e9933d8ef2/plugin/share]
@@ -579,12 +619,21 @@ outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdecon
 supported-plugins=['battery', 'clipboard', 'connectivity_report', 'contacts', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'presenter', 'runcommand', 'sftp', 'share', 'sms', 'systemvolume', 'telephony']
 type='phone'
 
+[gsconnect/device/f7fd5680_3903_40f3_8a30_b6355ae4acd8/plugin/battery]
+custom-battery-notification-value=uint32 80
+
+[gsconnect/device/f7fd5680_3903_40f3_8a30_b6355ae4acd8/plugin/notification]
+applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Events and Tasks Reminders":{"iconName":"org.gnome.Evolution-alarm-notify","enabled":true},"Time Switch":{"iconName":"io.github.fsobolev.TimeSwitch","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Email":{"iconName":"org.gnome.Geary","enabled":true},"Terminal":{"iconName":"com.raggesilver.BlackBox","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Colour":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"File Roller":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true}}'
+
+[gsconnect/device/f7fd5680_3903_40f3_8a30_b6355ae4acd8/plugin/share]
+receive-directory='/home/maruf/Downloads'
+
 [gsconnect/messaging]
 window-maximized=false
 window-size=(897, 561)
 
 [gsconnect/preferences]
-window-maximized=false
+window-maximized=true
 window-size=(768, 390)
 
 [gtile]
@@ -642,7 +691,9 @@ available-indicators=['tiling-assistant@leleat-on-github', 'EmojisMenu', 'clipbo
 show-indicator=false
 
 [nightthemeswitcher/commands]
-enabled=false
+enabled=true
+sunrise="gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3' && gsettings set org.gnome.desktop.interface color-scheme 'default'\n\tdconf write /org/gnome/shell/extensions/user-theme/name \"'Marble-gray-light'\""
+sunset="gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'\n\tdconf write /org/gnome/shell/extensions/user-theme/name \"'Marble-gray-dark'\""
 
 [nightthemeswitcher/gtk-variants]
 day='adw-gtk3'
@@ -740,7 +791,7 @@ datemenu-remove-media-control=false
 datemenu-remove-notifications=false
 input-always-show=false
 input-show-selected=false
-list-buttons='[]'
+list-buttons='[{"name":"SystemItem","title":null,"visible":true},{"name":"OutputStreamSlider","title":null,"visible":true},{"name":"InputStreamSlider","title":null,"visible":false},{"name":"BrightnessItem","title":null,"visible":true},{"name":"NMWiredToggle","title":"Wired","visible":true},{"name":"NMWirelessToggle","title":"Wi-Fi","visible":true},{"name":"NMModemToggle","title":null,"visible":false},{"name":"NMBluetoothToggle","title":null,"visible":false},{"name":"NMVpnToggle","title":"VPN","visible":true},{"name":"BluetoothToggle","title":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","title":"Power Mode","visible":true},{"name":"NightLightToggle","title":"Night Light","visible":true},{"name":"DarkModeToggle","title":"Dark Style","visible":true},{"name":"KeyboardBrightnessToggle","title":"Keyboard","visible":true},{"name":"RfkillToggle","title":"Aeroplane Mode","visible":true},{"name":"RotationToggle","title":"Auto Rotate","visible":true},{"name":"ServiceToggle","title":"GSConnect","visible":true},{"name":"DndQuickToggle","title":"Do Not Disturb","visible":true},{"name":"BackgroundAppsToggle","title":"No Background Apps","visible":false}]'
 media-control-compact-mode=true
 media-control-enabled=false
 notifications-enabled=false
@@ -759,8 +810,13 @@ volume-mixer-show-description=false
 volume-mixer-use-regex=true
 
 [quicksettings-audio-devices-renamer]
-input-names-map={'Digital Input (S/PDIF) – CalDigit Thunderbolt 3 Audio': 'Digital Input (S/PDIF) – CalDigit Thunderbolt 3 Audio', 'Microphone – CalDigit Thunderbolt 3 Audio': 'Microphone – CalDigit Thunderbolt 3 Audio', 'Internal Microphone – Built-in Audio': 'Internal Microphone – Built-in Audio', 'Handsfree – JBL Flip 3': 'Handsfree – JBL Flip 3', 'Handsfree – Surface Headphone 2': 'Handsfree – Surface Headphone 2', 'Digital Input (S/PDIF) – USB Audio': 'Digital Input (S/PDIF) – USB Audio', 'Microphone – USB Audio': 'Microphone – USB Audio', 'Digital Input (S/PDIF) – Logitech Webcam C925e': 'Digital Input (S/PDIF) – Logitech Webcam C925e', 'Microphone – Logitech Webcam C925e': 'Microphone – Logitech Webcam C925e', 'Analog Input – Plantronics Savi 7xx-M': 'Analog Input – Plantronics Savi 7xx-M', 'Analog Input – Poly Blackwire 3310 Series': 'Analog Input – Poly Blackwire 3310 Series'}
-output-names-map={'Digital Output (S/PDIF) – CalDigit Thunderbolt 3 Audio': 'Wired Headphones', 'Speakers – CalDigit Thunderbolt 3 Audio': 'WIred Speakers', 'HDMI / DisplayPort – Built-in Audio': 'Monitor', 'Speakers – Built-in Audio': 'Speakers', 'Handsfree – JBL Flip 3': 'Handsfree – JBL Flip 3', 'Speaker – JBL Flip 3': 'JBL Flip 3', 'Dummy Output': 'Dummy Output', 'Handsfree – Surface Headphone 2': 'Handsfree – Surface Headphone 2', 'Headphone – Surface Headphone 2': 'Headphone – Surface Headphone 2', 'Network-Displays': 'Network-Displays', 'Digital Output (S/PDIF) – USB Audio': 'Digital Output (S/PDIF) – USB Audio', 'Analog Output – USB Audio': 'Analog Output – USB Audio', 'Analog Output – Plantronics Savi 7xx-M': 'Analog Output – Plantronics Savi 7xx-M', 'HDMI / DisplayPort 2 – Built-in Audio': 'HDMI / DisplayPort 2 – Built-in Audio', 'Analog Output – Poly Blackwire 3310 Series': 'Analog Output – Poly Blackwire 3310 Series'}
+input-names-map={'Digital Input (S/PDIF) – CalDigit Thunderbolt 3 Audio': 'Digital Input (S/PDIF) – CalDigit Thunderbolt 3 Audio', 'Microphone – CalDigit Thunderbolt 3 Audio': 'Microphone – CalDigit Thunderbolt 3 Audio', 'Internal Microphone – Built-in Audio': 'Internal Microphone – Built-in Audio', 'Handsfree – JBL Flip 3': 'Handsfree – JBL Flip 3', 'Handsfree – Surface Headphone 2': 'Handsfree – Surface Headphone 2', 'Digital Input (S/PDIF) – USB Audio': 'Digital Input (S/PDIF) – USB Audio', 'Microphone – USB Audio': 'Microphone – USB Audio', 'Digital Input (S/PDIF) – Logitech Webcam C925e': 'Digital Input (S/PDIF) – Logitech Webcam C925e', 'Microphone – Logitech Webcam C925e': 'Microphone – Logitech Webcam C925e', 'Analog Input – Plantronics Savi 7xx-M': 'Analog Input – Plantronics Savi 7xx-M', 'Analog Input – Poly Blackwire 3310 Series': 'Analog Input – Poly Blackwire 3310 Series', 'JBL Flip 3': 'JBL Flip 3'}
+output-names-map={'Digital Output (S/PDIF) – CalDigit Thunderbolt 3 Audio': 'Wired Headphones', 'Speakers – CalDigit Thunderbolt 3 Audio': 'WIred Speakers', 'HDMI / DisplayPort – Built-in Audio': 'Monitor', 'Speakers – Built-in Audio': 'Speakers', 'Handsfree – JBL Flip 3': 'Handsfree – JBL Flip 3', 'Speaker – JBL Flip 3': 'JBL Flip 3', 'Dummy Output': 'Dummy Output', 'Handsfree – Surface Headphone 2': 'Handsfree – Surface Headphone 2', 'Headphone – Surface Headphone 2': 'Headphone – Surface Headphone 2', 'Network-Displays': 'Network-Displays', 'Digital Output (S/PDIF) – USB Audio': 'Digital Output (S/PDIF) – USB Audio', 'Analog Output – USB Audio': 'Analog Output – USB Audio', 'Analog Output – Plantronics Savi 7xx-M': 'Analog Output – Plantronics Savi 7xx-M', 'HDMI / DisplayPort 2 – Built-in Audio': 'HDMI / DisplayPort 2 – Built-in Audio', 'Analog Output – Poly Blackwire 3310 Series': 'Analog Output – Poly Blackwire 3310 Series', 'HDMI / DisplayPort 3 – Built-in Audio': 'HDMI / DisplayPort 3 – Built-in Audio'}
+
+[rounded-window-corners-reborn]
+custom-rounded-corner-settings=@a{sv} {}
+global-rounded-corner-settings={'padding': <{'left': <uint32 1>, 'right': <uint32 1>, 'top': <uint32 1>, 'bottom': <uint32 1>}>, 'keep_rounded_corners': <{'maximized': <false>, 'fullscreen': <false>}>, 'border_radius': <uint32 12>, 'smoothing': <uint32 0>}
+settings-version=uint32 5
 
 [rounded-window-corners]
 black-list=['com.github.donadigo.appeditor', 'microsoft-edge']
@@ -783,7 +839,9 @@ blur-brightness=0.59999999999999998
 blur-sigma=30.0
 border-radius=3.0
 entry-font-size=1
-monitor-count=1
+monitor-count=3
+popup-at-cursor-monitor=true
+preferred-monitor=0
 scale-height=0.20000000000000001
 scale-width=0.20000000000000001
 show-panel-icon=true
@@ -864,6 +922,7 @@ activate-layout0=@as []
 activate-layout1=@as []
 activate-layout2=@as []
 activate-layout3=@as []
+activate-layout4=@as []
 active-window-hint=1
 active-window-hint-color='rgb(53,132,228)'
 auto-tile=@as []
@@ -876,9 +935,9 @@ dynamic-keybinding-behaviour=0
 enable-advanced-experimental-features=true
 favorite-layouts=['-1', '-1', '-1']
 import-layout-examples=false
-last-version-installed=46
+last-version-installed=47
 maximize-with-gap=false
-overridden-settings={'org.gnome.mutter.edge-tiling': <false>}
+overridden-settings={'org.gnome.mutter.edge-tiling': <false>, 'org.gnome.desktop.wm.keybindings.maximize': <['<Super>Up']>, 'org.gnome.desktop.wm.keybindings.unmaximize': <['<Super>Down', '<Alt>F5']>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <['<Super>Left']>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <['<Super>Right']>}
 restore-window=['<Super>Down']
 screen-bottom-gap=2
 screen-left-gap=2
@@ -911,6 +970,18 @@ toggle-always-on-top=@as []
 toggle-tiling-popup=@as []
 window-gap=4
 
+[tilingshell]
+active-screen-edges=false
+enable-snap-assist=true
+inner-gaps=uint32 4
+last-version-name-installed='11.1'
+layouts-json='[{"id":"Layout 1","tiles":[{"x":0,"y":0,"width":0.22,"height":0.5,"groups":[1,2]},{"x":0,"y":0.5,"width":0.22,"height":0.5,"groups":[1,2]},{"x":0.22,"y":0,"width":0.56,"height":1,"groups":[2,3]},{"x":0.78,"y":0,"width":0.22,"height":0.5,"groups":[3,4]},{"x":0.78,"y":0.5,"width":0.22,"height":0.5,"groups":[3,4]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.22,"height":1,"groups":[1]},{"x":0.22,"y":0,"width":0.56,"height":1,"groups":[1,2]},{"x":0.78,"y":0,"width":0.22,"height":1,"groups":[2]}]},{"id":"34243361","tiles":[{"x":0,"y":0,"width":0.273828125,"height":0.4985632183908046,"groups":[1,4]},{"x":0.273828125,"y":0,"width":0.487890625,"height":0.5,"groups":[2,5,1]},{"x":0.76171875,"y":0,"width":0.23828125000000033,"height":0.5021551724137931,"groups":[3,2]},{"x":0.76171875,"y":0.5021551724137931,"width":0.23828125000000033,"height":0.49784482758620685,"groups":[3,2]},{"x":0,"y":0.4985632183908046,"width":0.273828125,"height":0.5014367816091954,"groups":[4,1]},{"x":0.273828125,"y":0.5,"width":0.487890625,"height":0.5,"groups":[5,2,1]}]},{"id":"8904628","tiles":[{"x":0,"y":0,"width":1,"height":0.3333333333333333,"groups":[1]},{"x":0,"y":0.3333333333333333,"width":1,"height":0.3333333333333333,"groups":[1,2]},{"x":0,"y":0.6666666666666666,"width":1,"height":0.3333333333333334,"groups":[2]}]}]'
+outer-gaps=uint32 2
+overridden-settings='{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"@as []","toggle-tiled-left":"@as []"},"org.gnome.desktop.wm.keybindings":{"maximize":"@as []","unmaximize":"@as []"}}'
+selected-layouts=['Layout 2', 'Layout 2', 'Layout 2']
+show-indicator=false
+top-edge-maximize=true
+
 [touchx]
 lastoskon=true
 oskbtn=true
@@ -927,6 +998,19 @@ fixed-widths=true
 hot-sensors=['_memory_usage_', '_processor_usage_', '__temperature_avg__']
 position-in-panel=0
 show-battery=true
+
+[wiggle]
+check-interval=125
+
+[window-thumbnails]
+create-tmb-shortcut=['<Super>t']
+minimize-to-tmb-shortcut=['']
+remove-all-tmb-shortcut=['']
+remove-last-tmb-shortcut=['']
+schema-migrated=true
+switch-source-next-shortcut=['']
+switch-source-prev-shortcut=['']
+toggle-visibility-shortcut=['']
 
 [windowgestures]
 swipe3-down=1
