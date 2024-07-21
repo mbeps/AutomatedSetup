@@ -11,16 +11,16 @@ function install_flathub_apps_system() {
 
 	apps=(
 		"com.github.neithern.g4music"
+		"org.gnome.Decibels"
 		"com.github.rafostar.Clapper"
-		"io.github.vikdevelop.SaveDesktop"
 		"io.missioncenter.MissionCenter"
-		"com.raggesilver.BlackBox"
 		"net.nokyan.Resources"
+		"com.raggesilver.BlackBox"
 		"org.gnome.Calculator"
 		"org.gnome.Calendar"
 		"org.gnome.Contacts"
-		"org.gnome.Evince"
 		"org.gnome.FileRoller"
+		"org.gnome.Papers"
 		"org.gnome.Geary"
 		"org.gnome.Loupe"
 		"org.gnome.Snapshot"
@@ -29,8 +29,8 @@ function install_flathub_apps_system() {
 		"org.gnome.clocks"
 		"org.gnome.SimpleScan"
 		"org.gnome.Maps"
-		"io.github.hakandundar34coding.system-monitoring-center"
 		"org.gnome.SoundRecorder"
+		"io.github.amit9838.mousam"
 	)
 
 	install_flathub_apps "${apps[@]}"
@@ -43,39 +43,27 @@ function install_flathub_apps_non_system() {
 
 	apps=(
 		"app.drey.EarTag"
-		"ca.andyholmes.Valent"
 		"com.bitwarden.desktop"
 		"com.github.alexhuntley.Plots"
 		"com.github.flxzt.rnote"
-		"com.github.johnfactotum.Foliate"
-		"com.github.joseexposito.touche"
 		"com.github.maoschanz.drawing"
 		"com.github.tchx84.Flatseal"
 		"com.github.wwmm.easyeffects"
 		"com.mattjakeman.ExtensionManager"
-		"com.microsoft.Edge"
-		"com.usebottles.bottles"
-		"de.haeckerfelix.Fragments"
 		"de.schmidhuberj.Flare"
 		"fr.free.Homebank"
-		"io.github.flattool.Warehouse"
-		"io.github.fsobolev.TimeSwitch"
 		"it.mijorus.smile"
 		"me.dusansimic.DynamicWallpaper"
 		"org.gnome.Boxes"
 		"org.gnome.Connections"
-		"org.gnome.Epiphany"
 		"org.gnome.NetworkDisplays"
 		"org.gnome.Todo"
 		"org.gnome.baobab"
 		"org.gnome.gitg"
-		"org.libreoffice.LibreOffice"
-		"org.localsend.localsend_app"
-		"org.nickvision.money"
 		"org.nickvision.tubeconverter"
 		"org.onlyoffice.desktopeditors"
 		"org.pulseaudio.pavucontrol"
-		"pm.mirko.Atoms"
+		"age.codeberg.libre_menu_editor.LibreMenuEditor"
 	)
 
 	install_flathub_apps "${apps[@]}"
@@ -103,9 +91,9 @@ function remove_native_system_apps() {
 		"gnome-text-editor" # Text Editor
 		"gnome-weather"     # Weather
 		"eog"               # Weather
-		"totem"
-		"rhythmbox"
-		"gnome-terminal"
+		"totem"             # Videos
+		"rhythmbox"         # Music
+		"gnome-terminal"    # Terminal
 		# LibreOffice
 		"libreoffice"
 		"libreoffice-calc"
@@ -116,21 +104,20 @@ function remove_native_system_apps() {
 	)
 
 	remove_native_apps "${packages[@]}"
-	sudo dnf autoremove -y
 }
 
 # Installs some native apps that were not part of the system.
 # Flatpak versions not available.
 function install_native_system_apps() {
 	packages=(
-		"gnome-tweaks"  # Gnome Tweaks
-		"gnome-usage"   # Gnome Usage
-		"openssl"       # OpenSSL
-		"sshfs"         # SSHFS
-		"tldr"          # TLDR
-		"libgda"        # Libgda
-		"libgda-sqlite" # Libgda SQLite
-		"pipx"          # Pipx
+		"gnome-tweaks"     # Gnome Tweaks
+		"gnome-usage"      # Gnome Usage
+		"openssl"          # OpenSSL
+		"sshfs"            # SSHFS
+		"tldr"             # TLDR
+		"libgda"           # Libgda
+		"libgda-sqlite"    # Libgda SQLite
+		"pipx"             # Pipx
 	)
 
 	install_native_apps "${packages[@]}"
@@ -180,6 +167,8 @@ function files_terminal() {
 	git clone https://github.com/ppvan/nautilus-open-in-blackbox.git
 	cd nautilus-open-in-blackbox
 	bash ./install.sh
+	cd ..
+	rm -rf nautilus-open-in-blackbox
 }
 
 "$@"

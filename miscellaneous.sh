@@ -23,6 +23,7 @@ function set_bash() {
 function set_user_folder_directory() {
 	title "Set User Folder Directory"
 
+	base_directory="/home/maruf/Remote/Google Drive"
 	locations=(
 		"DOCUMENTS"
 		"MUSIC"
@@ -30,10 +31,10 @@ function set_user_folder_directory() {
 		"VIDEOS"
 	)
 	directories=(
-		"/home/maruf/Google Drive/Documents"
-		"/home/maruf/Google Drive/Music"
-		"/home/maruf/Google Drive/Photos"
-		"/home/maruf/Google Drive/Videos"
+		"$base_directory/Documents"
+		"$base_directory/Music"
+		"$base_directory/Photos"
+		"$base_directory/Videos"
 	)
 	arrayLength=${#locations[@]}
 
@@ -57,8 +58,7 @@ function create_required_directories() {
 	title "Creating All Required Directories"
 
 	mkdir ~/Development
-	mkdir "$HOME/Remotes/Royal Holloway Linux Server"
-	mkdir Wallpapers
+	mkdir ~/Wallpapers
 }
 
 # Adds templates for file types in the right click menu

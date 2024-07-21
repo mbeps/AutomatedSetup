@@ -33,7 +33,7 @@ function automated_normal() {
 	restore_extension_configuration
 	enable_favourite_extensions
 
-	install_cascadia_code_font
+	install_fonts
 	# install_windows_fonts
 
 	gnome_customization
