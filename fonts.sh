@@ -5,10 +5,10 @@
 source "./dependencies.sh"
 
 # Install Cascadia Code Font from RPM repository.
-function install_cascadia_code_font() {
+function install_fonts() {
 	title "Installing Cascadia Code Font"
 
-	package=("cascadia-fonts-all")
+	package=("cascadia-fonts-all" "rsms-inter-fonts")
 	install_native_apps "${package[@]}"
 }
 

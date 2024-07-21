@@ -118,7 +118,6 @@ function install_native_system_apps() {
 		"libgda"           # Libgda
 		"libgda-sqlite"    # Libgda SQLite
 		"pipx"             # Pipx
-		"rsms-inter-fonts" # Inter Font
 	)
 
 	install_native_apps "${packages[@]}"
