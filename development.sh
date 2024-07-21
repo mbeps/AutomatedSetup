@@ -9,11 +9,12 @@ function install_flathub_apps_dev() {
 	title "Installing System Flathub Apps"
 
 	apps=(
-		"rest.insomnia.Insomnia"
 		"com.mongodb.Compass"
 		"io.beekeeperstudio.Studio"
 		"io.github.cleomenezesjr.Escambo"
 		"me.iepure.devtoolbox"
+		"com.github.marhkb.Pods"
+		"io.github.limads.Queries"
 	)
 
 	install_flathub_apps "${apps[@]}"
@@ -87,6 +88,7 @@ function install_python_poetry() {
 function install_pyenv() {
 	title "Installing PyEnv for Python"
 
+	# Required dependencies
 	sudo dnf install -y \
 		gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel \
 		openssl-devel xz xz-devel libffi-devel findutils \
@@ -142,7 +144,6 @@ function install_docker() {
 	sudo dnf install -y fuse-overlayfs
 	sudo dnf install -y iptables
 	dockerd-rootless-setuptool.sh install
-
 }
 
 "$@"
