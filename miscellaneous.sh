@@ -13,7 +13,9 @@ function set_bash() {
 	rm "$HOME/.bashrc"                          # remove old `.bashrc` file
 	cp "./resources/Bash/.bashrc" "$HOME"       # Add new `.bashrc` file and aliases file
 	cp "./resources/Bash/.bash_aliases" "$HOME" # Add new `.bashrc` file and aliases file
-	cp "./resources/scripts/.scripts" "$HOME"   # Add new `.bashrc` file and aliases file
+
+	mkdir -p "$HOME/.scripts"
+	cp "./resources/scripts/.scripts/update.sh" "$HOME/.scripts"
 }
 
 # Sets custom user folders.
@@ -66,5 +68,6 @@ function add_templates() {
 	title "Adding File Templates"
 	cp "./resources/Templates/"* "$HOME/Templates"
 }
+
 
 "$@"

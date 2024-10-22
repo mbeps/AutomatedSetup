@@ -63,4 +63,30 @@ function restore_svg_icons() {
 	unzip "./resources/themes/icons.zip" -d "$HOME/.icons/"
 }
 
+# Sets up the Theme Monitor script and systemd service
+# The script monitors the current theme and changes it to the specified theme if it changes.
+function setup_theme_monitor_service() {
+    title "Setting up Theme Monitor Service"
+
+    # Create necessary directories if they don't exist
+    mkdir -p "$HOME/.scripts"
+    mkdir -p "$HOME/.config/systemd/user"
+
+    # Copy the theme_monitor.sh script to ~/.scripts
+    cp "./resources/scripts/.scripts/theme_monitor.sh" "$HOME/.scripts/"
+
+    # Make the script executable
+    chmod +x "$HOME/.scripts/theme_monitor.sh"
+
+    # Copy the systemd service file to the appropriate location
+    cp "./resources/systemd/theme-monitor.service" "$HOME/.config/systemd/user/"
+
+    # Reload the systemd user daemon
+    systemctl --user daemon-reload
+
+    # Enable and restart the theme-monitor service
+    systemctl --user enable theme-monitor.service
+    systemctl --user restart theme-monitor.service
+}
+
 "$@"
