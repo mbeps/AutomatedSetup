@@ -1,0 +1,10 @@
+[Unit]
+Description=Auto-switch Pano Background Color based on GNOME Color Scheme
+After=graphical.target
+
+[Service]
+ExecStart=/home/maruf/.scripts/pano_color_scheme.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
