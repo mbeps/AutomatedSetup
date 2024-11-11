@@ -53,6 +53,9 @@ function automated_normal() {
 	restore_themes
 	install_marble_shell_theme
 	restore_svg_icons
+
+	setup_theme_monitor_service
+	setup_pano_color_scheme_service
 }
 
 function automated_dev() {

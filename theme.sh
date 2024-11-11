@@ -89,4 +89,28 @@ function setup_theme_monitor_service() {
     systemctl --user restart theme-monitor.service
 }
 
+function setup_pano_color_scheme_service() {
+    title "Setting up Pano Theme Service"
+
+    # Create necessary directories if they don't exist
+    mkdir -p "$HOME/.scripts"
+    mkdir -p "$HOME/.config/systemd/user"
+
+    # Copy the pano_color_scheme.sh script to ~/.scripts
+    cp "./resources/scripts/.scripts/pano_color_scheme.sh" "$HOME/.scripts/"
+
+    # Make the script executable
+    chmod +x "$HOME/.scripts/pano_color_scheme.sh"
+
+    # Copy the systemd service file to the appropriate location
+    cp "./resources/systemd/pano-color-scheme.service" "$HOME/.config/systemd/user/"
+
+    # Reload the systemd user daemon
+    systemctl --user daemon-reload
+
+    # Enable and restart the pano-color-scheme service
+    systemctl --user enable pano-color-scheme.service
+    systemctl --user restart pano-color-scheme.service
+}
+
 "$@"
