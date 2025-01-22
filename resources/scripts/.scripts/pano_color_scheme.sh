@@ -71,15 +71,22 @@ current_accent=$(gsettings get org.gnome.desktop.interface accent-color)
 apply_pano_background "$current_scheme"
 apply_pano_accent_color
 
-# Monitor for changes in color scheme and accent color
-gsettings monitor org.gnome.desktop.interface color-scheme | while read -r line; do
-    # Update background color based on color scheme
-    current_scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
-    apply_pano_background "$current_scheme"
-done &
+# Use a trap to handle process cleanup
+trap 'kill $(jobs -p)' EXIT
 
-gsettings monitor org.gnome.desktop.interface accent-color | while read -r line; do
-    # Update accent color and hovered item border color
-    apply_pano_accent_color
-done &
+# Start monitors in background but wait for them
+{
+    gsettings monitor org.gnome.desktop.interface color-scheme | while read -r line; do
+        current_scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+        apply_pano_background "$current_scheme"
+    done
+} &
 
+{
+    gsettings monitor org.gnome.desktop.interface accent-color | while read -r line; do
+        apply_pano_accent_color
+    done
+} &
+
+# Keep the script running
+wait
