@@ -1,8 +1,10 @@
 [Bluetooth-Battery-Meter]
-paired-supported-device-list=['{"path":"/org/bluez/hci0/dev_F0_1D_BC_FA_00_10","icon":"audio-headphones","alias":"Surface Headphone 2","paired":true,"battery-enabled":true,"indicator-enabled":true}', '{"path":"/org/bluez/hci0/dev_F4_4E_FD_5E_96_F8","icon":"audio-headset","alias":"Tronsmart Element Force+","paired":true,"battery-enabled":true,"indicator-enabled":true}', "{\"path\":\"/org/bluez/hci0/dev_D4_3A_2C_5D_AE_0A\",\"icon\":\"phone-google-nexus-one\",\"alias\":\"Maruf's Phone\",\"paired\":true,\"battery-enabled\":true,\"indicator-enabled\":true}", '{"path":"/org/bluez/hci0/dev_FE_94_FA_CF_D1_DD","icon":"input-keyboard","alias":"Microsoft Bluetooth Keyboard","paired":false,"battery-enabled":true,"indicator-enabled":true}', '{"path":"/org/bluez/hci0/dev_D1_00_D1_C8_DB_73","icon":"input-mouse","alias":"Rapoo BT Mouse","paired":true,"battery-enabled":true,"indicator-enabled":true}']
+enable-battery-level-text=true
+paired-supported-device-list=['{"path":"/org/bluez/hci0/dev_F0_1D_BC_FA_00_10","icon":"audio-headphones","alias":"Surface Headphone 2","paired":true,"battery-enabled":true,"indicator-enabled":true}', '{"path":"/org/bluez/hci0/dev_F4_4E_FD_5E_96_F8","icon":"audio-headset","alias":"Tronsmart Element Force+","paired":true,"battery-enabled":true,"indicator-enabled":true}', '{"path":"/org/bluez/hci0/dev_D4_3A_2C_5D_AE_0A","icon":"phone-google-nexus-one","alias":"Maruf Phone","paired":true,"battery-enabled":true,"indicator-enabled":true}', '{"path":"/org/bluez/hci0/dev_FE_94_FA_CF_D1_DD","icon":"input-keyboard","alias":"Microsoft Bluetooth Keyboard","paired":false,"battery-enabled":true,"indicator-enabled":true}', '{"path":"/org/bluez/hci0/dev_D1_00_D1_C8_DB_73","icon":"input-mouse","alias":"Rapoo BT Mouse","paired":true,"battery-enabled":true,"indicator-enabled":true}']
+swap-icon-text=false
 
 [SettingsCenter]
-items='Advanced Settings;gnome-tweaks.desktop;0;gnome-tweaks|Desktop Config Editor;dconf-editor.desktop;0;dconf-editor|Gnome Config Editor;gconf-editor.desktop;0;gconf-editor|Session Properties;session-properties.desktop;0;gnome-session-properties|Extensions Preferences;gnome-shell-extension-prefs.desktop;0;gnome-shell-extension-prefs|Passwords and Keys;seahorse.desktop;0;seahorse|NVidia Settings;nvidia-settings.desktop;0;nvidia-settings|Windows Layout;layouts-windows;0;'
+items='Emojis;it.mijorus.smile.desktop;1;it.mijorus.smile|Advanced Settings;gnome-tweaks.desktop;0;gnome-tweaks|Desktop Config Editor;dconf-editor.desktop;0;dconf-editor|Gnome Config Editor;gconf-editor.desktop;0;gconf-editor|Session Properties;session-properties.desktop;0;gnome-session-properties|Extensions Preferences;gnome-shell-extension-prefs.desktop;0;gnome-shell-extension-prefs|Passwords and Keys;seahorse.desktop;0;seahorse|NVidia Settings;nvidia-settings.desktop;0;nvidia-settings|Windows Layout;layouts-windows;0;'
 label-menu='Layouts'
 
 [activate_gnome]
@@ -19,8 +21,9 @@ app-icon-position='Bottom'
 do-not-show-app-icon-when-fullscreen=false
 hide-background=false
 hide-icon-for-video-player=false
-show-app-icon=true
-window-active-size-inc=10
+show-app-icon=false
+window-active-size-inc=15
+window-title-position='Bottom'
 
 [arcmenu]
 application-shortcuts-list=[['Settings', '', 'org.gnome.Settings.desktop']]
@@ -198,57 +201,56 @@ horizontalmode=true
 devices=['{"name":"BM30X mouse","isConnected":true,"isPaired":true,"mac":"DC:2C:26:AC:9E:E8","isDefault":false,"defaultIcon":"input-mouse"}', '{"name":"JBL Flip 3","isConnected":true,"isPaired":true,"mac":"FC:A8:9A:F2:BB:79","isDefault":false,"defaultIcon":"audio-card"}', '{"name":"Surface Headphone 2","isConnected":true,"isPaired":true,"mac":"F0:1D:BC:FA:00:10","isDefault":false,"defaultIcon":"audio-headphones","active":true}']
 
 [blur-my-shell]
-hacks-level=0
-pipelines={'pipeline_default': {'name': <'Default'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_000000000000'>, 'params': <{'radius': <30>, 'brightness': <0.59999999999999998>}>}>]>}}
+hacks-level=1
+pipelines={'pipeline_default': {'name': <'Default'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_000000000000'>, 'params': <{'radius': <30>, 'brightness': <0.59999999999999998>}>}>]>}, 'pipeline_default_rounded': {'name': <'Default rounded'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_000000000001'>, 'params': <{'radius': <30>, 'brightness': <0.59999999999999998>}>}>, <{'type': <'corner'>, 'id': <'effect_000000000002'>, 'params': <{'radius': <24>}>}>]>}, 'pipeline_72936459056897': {'name': <'New pipeline'>, 'effects': <@av []>}}
 settings-version=2
 
 [blur-my-shell/appfolder]
 blur=false
-brightness=0.59999999999999998
-sigma=30
-
-[blur-my-shell/applications]
-blur=false
-blur-on-overview=false
-brightness=0.59999999999999998
-enable-all=false
-opacity=240
-sigma=30
+brightness=1.0
 
 [blur-my-shell/coverflow-alt-tab]
 pipeline='pipeline_default'
 
 [blur-my-shell/dash-to-dock]
-blur=true
-brightness=0.59999999999999998
-override-background=true
-pipeline='pipeline_default'
+brightness=1.0
+override-background=false
+pipeline='pipeline_default_rounded'
 sigma=30
 static-blur=false
 style-dash-to-dock=0
-unblur-in-overview=false
+unblur-in-overview=true
+
+[blur-my-shell/dash-to-panel]
+blur-original-panel=false
 
 [blur-my-shell/lockscreen]
 pipeline='pipeline_default'
 
 [blur-my-shell/overview]
+blur=false
 pipeline='pipeline_default'
-style-components=2
+style-components=3
 
 [blur-my-shell/panel]
-brightness=0.59999999999999998
-override-background=true
-override-background-dynamically=true
+blur=false
 pipeline='pipeline_default'
-sigma=30
-unblur-in-overview=false
+static-blur=true
 
 [blur-my-shell/screenshot]
 pipeline='pipeline_default'
 
 [blur-my-shell/window-list]
-brightness=0.59999999999999998
-sigma=30
+blur=false
+brightness=1.0
+
+[caffeine]
+enable-fullscreen=true
+indicator-position-max=5
+restore-state=false
+show-indicator='never'
+toggle-state=false
+user-enabled=false
 
 [clipboard-history]
 clear-history=['<Super>BackSpace']
@@ -320,11 +322,12 @@ always-center-icons=true
 animation-time=0.10000000000000002
 apply-custom-theme=false
 autohide-in-fullscreen=false
-background-opacity=0.0
+background-opacity=1.0
 click-action='focus-or-previews'
 custom-theme-shrink=false
+customize-alphas=true
 dance-urgent-applications=true
-dash-max-icon-size=37
+dash-max-icon-size=38
 disable-overview-on-startup=false
 dock-fixed=true
 dock-position='BOTTOM'
@@ -337,11 +340,13 @@ icon-size-fixed=false
 intellihide=true
 intellihide-mode='ALL_WINDOWS'
 isolate-monitors=true
+max-alpha=1.0
+min-alpha=0.20000000000000001
 multi-monitor=true
 preferred-monitor=-2
-preferred-monitor-by-connector='DP-1'
+preferred-monitor-by-connector='eDP-1'
 pressure-threshold=0.0
-preview-size-scale=0.29999999999999999
+preview-size-scale=0.0
 require-pressure-to-show=true
 running-indicator-style='DOTS'
 scroll-action='cycle-windows'
@@ -453,8 +458,12 @@ last-config-index=uint32 0
 cursor-theme-dark='Adwaita'
 cursor-theme-light='Adwaita'
 gtk3-theme-dark='adw-gtk3-dark'
-gtk3-theme-light='Adwaita'
+gtk3-theme-light='adw-gtk3'
 icon-theme-dark='Adwaita'
+optimize-darklight-switch-transition=false
+
+[do-not-disturb-while-screen-sharing-or-recording]
+is-wayland=true
 
 [dock-from-dash]
 always-show=false
@@ -462,7 +471,7 @@ background-opacity=100
 show-overview=true
 
 [emoji-copy]
-recently-used=['🤣', '🤡', '😂', '🫠', '🥲', '💀', '😭', '😚', '😰', '😮', '😃']
+recently-used=['🤡', '😂', '😭', '🫠', '😔', '😒', '🤣', '💀', '🥲', '😃', '😰']
 skin-tone=3
 
 [emoji-selector]
@@ -536,11 +545,28 @@ pinch-4-finger-gesture='NONE'
 history-size=uint32 50
 
 [gsconnect]
-devices=['d319e6fb_5920_4119_a8ff_ffaeb0d7cd88', '6212f5ad_1a45_46fa_af33_712ba605dd2d']
+devices=['6212f5ad_1a45_46fa_af33_712ba605dd2d']
+discoverable=false
 enabled=true
 id='f3c8920f-922f-4aa0-bb8f-0619f158cbca'
 name='Maruf-Fedora-PC'
 show-indicators=false
+
+[gsconnect/device/091ad340_3eed_4cb7_be11_3933fccd69fe]
+incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
+last-connection='lan://10.206.137.227:1716'
+name='OnePlus 11 5G'
+outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
+supported-plugins=['battery', 'clipboard', 'connectivity_report', 'contacts', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'presenter', 'runcommand', 'sftp', 'share', 'sms', 'systemvolume', 'telephony']
+type='phone'
+
+[gsconnect/device/0b26dcd6_880d_4ac9_9c9f_9c1ec0217b8d]
+incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
+last-connection='lan://10.206.139.97:1716'
+name='Galaxy S24 Ultra'
+outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
+supported-plugins=['battery', 'clipboard', 'connectivity_report', 'contacts', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'presenter', 'runcommand', 'sftp', 'share', 'sms', 'systemvolume', 'telephony']
+type='phone'
 
 [gsconnect/device/4861220b_ad88_403c_8551_771dda6e220b]
 incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
@@ -561,7 +587,7 @@ type='phone'
 [gsconnect/device/6212f5ad_1a45_46fa_af33_712ba605dd2d]
 certificate-pem='-----BEGIN CERTIFICATE-----\nMIIBkzCCATmgAwIBAgIBATAKBggqhkjOPQQDBDBTMS0wKwYDVQQDDCQ2MjEyZjVh\nZF8xYTQ1XzQ2ZmFfYWYzM183MTJiYTYwNWRkMmQxFDASBgNVBAsMC0tERSBDb25u\nZWN0MQwwCgYDVQQKDANLREUwHhcNMjMxMDIwMjMwMDAwWhcNMzQxMDIwMjMwMDAw\nWjBTMS0wKwYDVQQDDCQ2MjEyZjVhZF8xYTQ1XzQ2ZmFfYWYzM183MTJiYTYwNWRk\nMmQxFDASBgNVBAsMC0tERSBDb25uZWN0MQwwCgYDVQQKDANLREUwWTATBgcqhkjO\nPQIBBggqhkjOPQMBBwNCAASN2+n/qQjmlv/XQPyw17zkHI1tRy686Ht03VINqAHn\nNunfw+qPGwKRwjtxFb/gqNE+qrXdw2mJaPhJtMZIVuNqMAoGCCqGSM49BAMEA0gA\nMEUCICE5anzDS7DZneIPBILRiGsappH5JUtskfI4of+F/3rCAiEApiE1guyTce33\nmI4Y9lOWNtZKHOQyj++T9TGJHSJ4gZ8=\n-----END CERTIFICATE-----\n'
 incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
-last-connection='lan://192.168.5.214:1716'
+last-connection='lan://192.168.5.213:1716'
 name='Pixel 8 Pro'
 outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
 paired=true
@@ -572,7 +598,7 @@ type='phone'
 custom-battery-notification-value=uint32 80
 
 [gsconnect/device/6212f5ad_1a45_46fa_af33_712ba605dd2d/plugin/notification]
-applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Events and Tasks Reminders":{"iconName":"org.gnome.Evolution-alarm-notify","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Email":{"iconName":"org.gnome.Geary","enabled":true},"Terminal":{"iconName":"com.raggesilver.BlackBox","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Colour":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"File Roller":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true}}'
+applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Events and Tasks Reminders":{"iconName":"org.gnome.Evolution-alarm-notify","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Email":{"iconName":"org.gnome.Geary","enabled":true},"Terminal":{"iconName":"com.raggesilver.BlackBox","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Colour":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"File Roller":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Firefox":{"iconName":"","enabled":true},"Online Accounts":{"iconName":"dialog-warning","enabled":true}}'
 
 [gsconnect/device/6212f5ad_1a45_46fa_af33_712ba605dd2d/plugin/share]
 receive-directory='/home/maruf/Downloads'
@@ -653,6 +679,22 @@ talking-microphone=false
 talking-pause=true
 talking-volume='nothing'
 
+[gsconnect/device/_e80672a9_3bb4_49e7_bedc_7734acfa78bc_]
+incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.lock', 'kdeconnect.lock.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony', 'kdeconnect.telephony.request_mute', 'kdeconnect.virtualmonitor', 'kdeconnect.virtualmonitor.request']
+last-connection='lan://10.206.139.211:1716'
+name='device-207.home'
+outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.lock', 'kdeconnect.lock.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.runcommand.request', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony', 'kdeconnect.telephony.request_mute', 'kdeconnect.virtualmonitor', 'kdeconnect.virtualmonitor.request']
+supported-plugins=['battery', 'clipboard', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'runcommand', 'share', 'systemvolume', 'telephony']
+type='desktop'
+
+[gsconnect/device/_f1018df6_5296_4e6b_a0a9_cc605bc8e2bb_]
+incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.lock', 'kdeconnect.lock.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony', 'kdeconnect.telephony.request_mute', 'kdeconnect.virtualmonitor', 'kdeconnect.virtualmonitor.request']
+last-connection='lan://10.206.137.127:1716'
+name='framework'
+outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.lock', 'kdeconnect.lock.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.runcommand.request', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony', 'kdeconnect.telephony.request_mute', 'kdeconnect.virtualmonitor', 'kdeconnect.virtualmonitor.request']
+supported-plugins=['battery', 'clipboard', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'runcommand', 'share', 'systemvolume', 'telephony']
+type='desktop'
+
 [gsconnect/device/a262cc3d6c6b0fe7]
 incoming-capabilities=['kdeconnect.battery', 'kdeconnect.battery.request', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report.request', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.photo.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
 last-connection='lan://192.168.5.193:1716'
@@ -670,13 +712,20 @@ outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.clipboard', 'kdeconnect
 supported-plugins=['battery', 'clipboard', 'connectivity_report', 'contacts', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'presenter', 'runcommand', 'sftp', 'share']
 type='convertible'
 
+[gsconnect/device/cc905a2f_29ce_4ed5_bbb7_44fd2ae82313]
+incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
+last-connection='lan://10.206.138.3:1716'
+name='Galaxy S24'
+outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
+supported-plugins=['battery', 'clipboard', 'connectivity_report', 'contacts', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'presenter', 'runcommand', 'sftp', 'share', 'sms', 'systemvolume', 'telephony']
+type='phone'
+
 [gsconnect/device/d319e6fb_5920_4119_a8ff_ffaeb0d7cd88]
-certificate-pem='-----BEGIN CERTIFICATE-----\nMIIBlDCCATmgAwIBAgIBATAKBggqhkjOPQQDBDBTMS0wKwYDVQQDDCRkMzE5ZTZm\nYl81OTIwXzQxMTlfYThmZl9mZmFlYjBkN2NkODgxFDASBgNVBAsMC0tERSBDb25u\nZWN0MQwwCgYDVQQKDANLREUwHhcNMjMxMDA1MjMwMDAwWhcNMzQxMDA1MjMwMDAw\nWjBTMS0wKwYDVQQDDCRkMzE5ZTZmYl81OTIwXzQxMTlfYThmZl9mZmFlYjBkN2Nk\nODgxFDASBgNVBAsMC0tERSBDb25uZWN0MQwwCgYDVQQKDANLREUwWTATBgcqhkjO\nPQIBBggqhkjOPQMBBwNCAASSdT4D0+5rHj1LVVZBntIx78+zrb3wnufwtcGKtB5u\nNjxJr0f8+jjgDTjvx0KiAciXjK1EZwIHyH46ZjMqSBQYMAoGCCqGSM49BAMEA0kA\nMEYCIQDBTVQcmSm2L76raZL0EKObqM1eSHGlAevUdZzqPYQNjAIhANSQSDeHUhkZ\nqstUN7bywt7bh8IuB4AZ44XMRyNV8l08\n-----END CERTIFICATE-----\n'
 incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
 last-connection='lan://192.168.5.178:1716'
 name='Pixel 8 Pro'
 outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
-paired=true
+paired=false
 supported-plugins=['battery', 'clipboard', 'connectivity_report', 'contacts', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'presenter', 'runcommand', 'sftp', 'share', 'sms', 'systemvolume', 'telephony']
 type='phone'
 
@@ -761,6 +810,11 @@ workspace-switcher-should-show=true
 workspaces-in-app-grid=true
 world-clock=false
 
+[launcher]
+path='/home/maruf/.scripts/Launcher'
+shebang-icon=false
+strip=true
+
 [libpanel]
 layout=[['gnome@main', 'quick-settings-audio-panel@rayzeq.github.io/main']]
 
@@ -807,11 +861,12 @@ icon-position='left'
 number-position='right'
 
 [pano]
-active-item-border-color='rgb(40,92,175)'
+active-item-border-color='rgb(111,131,150)'
 global-shortcut=['<Super>v']
-history-length=20
-hovered-item-border-color='rgb(53,132,228)'
+history-length=100
+hovered-item-border-color='rgb(111,131,150)'
 incognito-shortcut=['<Alt><Super>v']
+incognito-window-background-color='rgb(192,97,203)'
 is-in-incognito=false
 keep-search-entry=false
 open-links-in-browser=false
@@ -845,7 +900,7 @@ header-bg-color='rgb(53,53,53)'
 metadata-bg-color='rgb(54,54,54)'
 
 [pano/text-item]
-body-bg-color='rgb(54,54,54)'
+body-bg-color='rgb(48,48,48)'
 body-color='rgb(255,255,255)'
 body-font-family='Cascadia Code PL'
 body-font-size=14
@@ -856,13 +911,22 @@ header-bg-color='rgb(53,53,53)'
 stick=true
 
 [quick-settings-audio-panel]
+applications-volume-sliders-filters=['speech-dispatcher-dummy']
+create-applications-volume-sliders=true
 create-mixer-sliders=true
+create-mpris-controllers=true
+create-perdevice-volume-sliders=true
 create-sink-mixer=true
 filters=['speech-dispatcher-dummy']
 ignore-css=false
 media-control='move'
 merge-panel=true
+move-input-volume-slider=false
 move-master-volume=false
+move-output-volume-slider=false
+mpris-controllers-are-moved=true
+panel-type='merged-panel'
+version=2
 
 [quick-settings-avatar]
 avatar-nobackground=false
@@ -873,13 +937,29 @@ avatar-username=false
 
 [quick-settings-tweaks]
 datemenu-fix-weather-widget=false
+datemenu-hide-left-box=false
+datemenu-hide-media-control=true
+datemenu-hide-notifications=false
 datemenu-remove-media-control=false
 datemenu-remove-notifications=false
 input-always-show=false
 input-show-selected=false
-list-buttons='[{"name":"SystemItem","title":null,"visible":true},{"name":"OutputStreamSlider","title":null,"visible":true},{"name":"InputStreamSlider","title":null,"visible":false},{"name":"BrightnessItem","title":null,"visible":true},{"name":"NMWiredToggle","title":"Wired","visible":true},{"name":"NMWirelessToggle","title":"Wi-Fi","visible":true},{"name":"NMModemToggle","title":null,"visible":false},{"name":"NMBluetoothToggle","title":"Tether","visible":true},{"name":"NMVpnToggle","title":"VPN","visible":true},{"name":"BluetoothToggle","title":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","title":"Power Mode","visible":true},{"name":"NightLightToggle","title":"Night Light","visible":true},{"name":"DarkModeToggle","title":"Dark Style","visible":true},{"name":"KeyboardBrightnessToggle","title":"Keyboard","visible":true},{"name":"RfkillToggle","title":"Aeroplane Mode","visible":true},{"name":"RotationToggle","title":"Auto Rotate","visible":true},{"name":"ManualOrientationMenuToggle","title":"Rotate","visible":true},{"name":"ServiceToggle","title":"GSConnect","visible":true},{"name":"DndQuickToggle","title":"Do Not Disturb","visible":true},{"name":"BackgroundAppsToggle","title":"1 Background App","visible":true},{"name":"MediaSection","title":null,"visible":false}]'
+list-buttons='[{"name":"SystemItem","title":null,"visible":true},{"name":"OutputStreamSlider","title":null,"visible":true},{"name":"InputStreamSlider","title":null,"visible":false},{"name":"BrightnessItem","title":null,"visible":true},{"name":"NMWiredToggle","title":"Wired","visible":true},{"name":"NMWirelessToggle","title":"Wi-Fi","visible":true},{"name":"NMModemToggle","title":null,"visible":false},{"name":"NMBluetoothToggle","title":"Tether","visible":true},{"name":"NMVpnToggle","title":"VPN","visible":true},{"name":"BluetoothToggle","title":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","title":"Power Mode","visible":true},{"name":"NightLightToggle","title":"Night Light","visible":true},{"name":"DarkModeToggle","title":"Dark Style","visible":true},{"name":"KeyboardBrightnessToggle","title":"Keyboard","visible":true},{"name":"RfkillToggle","title":"Aeroplane Mode","visible":true},{"name":"RotationToggle","title":"Auto Rotate","visible":true},{"name":"ManualOrientationMenuToggle","title":"Rotate","visible":true},{"name":"CaffeineToggle","title":"Caffeine","visible":true},{"name":"ServiceToggle","title":"GSConnect","visible":true},{"name":"DndQuickToggle","title":"Do Not Disturb","visible":true},{"name":"BackgroundAppsToggle","title":"1 Background App","visible":true},{"name":"MediaSection","title":null,"visible":false}]'
+media-compact=true
 media-control-compact-mode=false
 media-control-enabled=true
+media-gradient-enabled=true
+media-progress-handle-radius=5
+media-progress-style='default'
+menu-animation-background-blur-radius=2
+menu-animation-background-opacity=255
+menu-animation-background-scale-x=1000
+menu-animation-background-scale-y=1000
+menu-animation-close-duration=200
+menu-animation-enabled=true
+menu-animation-grid-content-opacity=100
+menu-animation-open-duration=200
+notifications-compact=false
 notifications-enabled=false
 notifications-hide-when-no-notifications=false
 notifications-integrated=false
@@ -887,20 +967,26 @@ notifications-max-height=290
 notifications-position='bottom'
 notifications-use-native-controls=true
 output-show-selected=false
+overlay-menu-animate-style='flyout'
+overlay-menu-enabled=true
+overlay-menu-width=420
+toggles-layout-enabled=false
+toggles-layout-order=[{'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMWirelessToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'BluetoothToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMBluetoothToggle'>>}, {'hide': <<false>>, 'titleRegex': <<''>>, 'constructorName': <<''>>, 'friendlyName': <<'My item #1'>>, 'gtypeName': <<''>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMWiredToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMModemToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMVpnToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'PowerProfilesToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NightLightToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'DarkModeToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'KeyboardBrightnessToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'RfkillToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'RotationToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'DndQuickToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'UnsafeQuickToggle'>>}, {'nonOrdered': <<true>>, 'hide': <<false>>}]
 user-removed-buttons=['DndQuickToogle', 'NMModemToggle', 'NMWiredToggle', 'DndQuickToggle', 'RfkillToggle']
 volume-mixer-check-description=true
-volume-mixer-enabled=false
+volume-mixer-enabled=true
 volume-mixer-filtered-apps=['/^.*speech-dispatcher.*$/', 'speech-dispatcher-dummy', 'speech-dispatcher-espeak-ng-mbrola']
 volume-mixer-position='bottom'
 volume-mixer-show-description=true
 volume-mixer-use-regex=true
+weather-enabled=false
 
 [quicksettings-audio-devices-renamer]
 input-names-map={'Digital Input (S/PDIF) – CalDigit Thunderbolt 3 Audio': 'Digital Input (S/PDIF) – CalDigit Thunderbolt 3 Audio', 'Microphone – CalDigit Thunderbolt 3 Audio': 'Microphone – CalDigit Thunderbolt 3 Audio', 'Internal Microphone – Built-in Audio': 'Internal Microphone – Built-in Audio', 'Handsfree – JBL Flip 3': 'Handsfree – JBL Flip 3', 'Handsfree – Surface Headphone 2': 'Handsfree – Surface Headphone 2', 'Digital Input (S/PDIF) – USB Audio': 'Digital Input (S/PDIF) – USB Audio', 'Microphone – USB Audio': 'Microphone – USB Audio', 'Digital Input (S/PDIF) – Logitech Webcam C925e': 'Digital Input (S/PDIF) – Logitech Webcam C925e', 'Microphone – Logitech Webcam C925e': 'Microphone – Logitech Webcam C925e', 'Analog Input – Plantronics Savi 7xx-M': 'Analog Input – Plantronics Savi 7xx-M', 'Analog Input – Poly Blackwire 3310 Series': 'Analog Input – Poly Blackwire 3310 Series', 'JBL Flip 3': 'JBL Flip 3'}
 output-names-map={'Digital Output (S/PDIF) – CalDigit Thunderbolt 3 Audio': 'Wired Headphones', 'Speakers – CalDigit Thunderbolt 3 Audio': 'WIred Speakers', 'HDMI / DisplayPort – Built-in Audio': 'Monitor', 'Speakers – Built-in Audio': 'Speakers', 'Handsfree – JBL Flip 3': 'Handsfree – JBL Flip 3', 'Speaker – JBL Flip 3': 'JBL Flip 3', 'Dummy Output': 'Dummy Output', 'Handsfree – Surface Headphone 2': 'Handsfree – Surface Headphone 2', 'Headphone – Surface Headphone 2': 'Headphone – Surface Headphone 2', 'Network-Displays': 'Network-Displays', 'Digital Output (S/PDIF) – USB Audio': 'Digital Output (S/PDIF) – USB Audio', 'Analog Output – USB Audio': 'Analog Output – USB Audio', 'Analog Output – Plantronics Savi 7xx-M': 'Analog Output – Plantronics Savi 7xx-M', 'HDMI / DisplayPort 2 – Built-in Audio': 'HDMI / DisplayPort 2 – Built-in Audio', 'Analog Output – Poly Blackwire 3310 Series': 'Analog Output – Poly Blackwire 3310 Series', 'HDMI / DisplayPort 3 – Built-in Audio': 'HDMI / DisplayPort 3 – Built-in Audio'}
 
 [rounded-window-corners-reborn]
-settings-version=uint32 6
+settings-version=uint32 7
 
 [rounded-window-corners]
 black-list=['com.github.donadigo.appeditor', 'microsoft-edge']
@@ -919,17 +1005,18 @@ flip-rotation-direction=false
 manual-flip=true
 
 [search-light]
+animation-speed=100.0
 background-color=(0.18666666746139526, 0.18666666746139526, 0.18666666746139526, 1.0)
 blur-brightness=0.59999999999999998
 blur-sigma=30.0
 border-radius=3.0
 entry-font-size=1
-monitor-count=3
+monitor-count=1
 popup-at-cursor-monitor=true
 preferred-monitor=0
 scale-height=0.20000000000000001
 scale-width=0.20000000000000001
-show-panel-icon=true
+show-panel-icon=false
 
 [shell-configurator]
 appgrid-columns=8
@@ -1019,10 +1106,14 @@ dynamic-keybinding-behavior=2
 dynamic-keybinding-behaviour=0
 enable-advanced-experimental-features=true
 favorite-layouts=['-1', '-1', '-1']
+focus-hint=0
+focus-hint-color='rgb(66,66,66)'
+focus-hint-outline-border-radius=0
+focus-hint-outline-size=0
 import-layout-examples=false
-last-version-installed=48
+last-version-installed=50
 maximize-with-gap=false
-overridden-settings={'org.gnome.mutter.edge-tiling': <false>, 'org.gnome.desktop.wm.keybindings.maximize': <['<Super>Up']>, 'org.gnome.desktop.wm.keybindings.unmaximize': <['<Super>Down', '<Alt>F5']>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <['<Super>Left']>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <['<Super>Right']>}
+overridden-settings={'org.gnome.mutter.edge-tiling': <true>, 'org.gnome.desktop.wm.keybindings.maximize': <['<Super>Up']>, 'org.gnome.desktop.wm.keybindings.unmaximize': <['<Super>Down', '<Alt>F5']>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <['<Super>Left']>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <['<Super>Right']>}
 restore-window=['<Super>Down']
 screen-bottom-gap=2
 screen-left-gap=2
@@ -1057,18 +1148,27 @@ window-gap=4
 
 [tilingshell]
 active-screen-edges=false
+enable-screen-edges-windows-suggestions=true
+enable-smart-window-border-radius=true
 enable-snap-assist=true
+enable-span-multiple-tiles=false
 enable-tiling-system=false
-inner-gaps=uint32 4
-last-version-name-installed='13.1'
+enable-tiling-system-windows-suggestions=true
+enable-window-border=false
+inner-gaps=uint32 0
+last-version-name-installed='16.2'
 layouts-json='[{"id":"Layout 1","tiles":[{"x":0,"y":0,"width":0.22,"height":0.5,"groups":[1,2]},{"x":0,"y":0.5,"width":0.22,"height":0.5,"groups":[1,2]},{"x":0.22,"y":0,"width":0.56,"height":1,"groups":[2,3]},{"x":0.78,"y":0,"width":0.22,"height":0.5,"groups":[3,4]},{"x":0.78,"y":0.5,"width":0.22,"height":0.5,"groups":[3,4]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.22,"height":1,"groups":[1]},{"x":0.22,"y":0,"width":0.56,"height":1,"groups":[1,2]},{"x":0.78,"y":0,"width":0.22,"height":1,"groups":[2]}]},{"id":"34243361","tiles":[{"x":0,"y":0,"width":0.273828125,"height":0.4985632183908046,"groups":[1,4]},{"x":0.273828125,"y":0,"width":0.487890625,"height":0.5,"groups":[2,5,1]},{"x":0.76171875,"y":0,"width":0.23828125000000033,"height":0.5021551724137931,"groups":[3,2]},{"x":0.76171875,"y":0.5021551724137931,"width":0.23828125000000033,"height":0.49784482758620685,"groups":[3,2]},{"x":0,"y":0.4985632183908046,"width":0.273828125,"height":0.5014367816091954,"groups":[4,1]},{"x":0.273828125,"y":0.5,"width":0.487890625,"height":0.5,"groups":[5,2,1]}]},{"id":"8904628","tiles":[{"x":0,"y":0,"width":1,"height":0.3333333333333333,"groups":[1]},{"x":0,"y":0.3333333333333333,"width":1,"height":0.3333333333333333,"groups":[1,2]},{"x":0,"y":0.6666666666666666,"width":1,"height":0.3333333333333334,"groups":[2]}]},{"id":"7503301","tiles":[{"x":0,"y":0,"width":0.501171875,"height":1,"groups":[1]},{"x":0.501171875,"y":0,"width":0.49882812499999996,"height":1,"groups":[1]}]},{"id":"7562633","tiles":[{"x":0,"y":0,"width":1,"height":0.4985632183908046,"groups":[1]},{"x":0,"y":0.4985632183908046,"width":1,"height":0.5014367816091954,"groups":[1]}]}]'
-outer-gaps=uint32 2
+outer-gaps=uint32 0
 overridden-settings='{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"@as []","toggle-tiled-left":"@as []"},"org.gnome.desktop.wm.keybindings":{"maximize":"@as []","unmaximize":"@as []"}}'
 override-window-menu=true
-selected-layouts=['Layout 2', 'Layout 1', 'Layout 1']
+resize-complementing-windows=false
+selected-layouts=[['Layout 1', 'Layout 1', 'Layout 1'], ['Layout 1', 'Layout 1', 'Layout 1']]
 show-indicator=false
-snap-assistant-threshold=58
-top-edge-maximize=true
+snap-assistant-threshold=56
+tiling-system-activation-key=['2']
+tiling-system-deactivation-key=['-1']
+top-edge-maximize=false
+window-border-width=uint32 2
 
 [touchx]
 lastoskon=true
@@ -1079,7 +1179,9 @@ picture-uri='/run/user/1000/gvfs/google-drive:host=gmail.com,user=bepary71/0ADT7
 picture-uri-dark='/run/user/1000/gvfs/google-drive:host=gmail.com,user=bepary71/0ADT7Iiwm3NkNUk9PVA/1iaTkotyHrt21SWj4xy14CBJ4KVefplXa/1iaid3GAEyrY9IG8p6_7c8UHa7sfDsd4c/1XxZ2xuLxLISDiBTfPJ6ltSwJLrnfKyLl/13JtDkctOEROujTfbIXoSvAjgBOLWQG7r'
 
 [user-theme-x]
-x-color='prefer-light'
+name='Marble-gray-dark'
+x-autoswitch=false
+x-color='default'
 x-color-night='prefer-dark'
 x-gtk='adw-gtk3'
 x-gtk-night='adw-gtk3-dark'
@@ -1088,7 +1190,7 @@ x-shell-night='Marble-gray-dark'
 x-wallpaper=false
 
 [user-theme]
-name='Marble-gray-dark'
+name=''
 
 [vitals]
 fixed-widths=true
@@ -1098,8 +1200,10 @@ show-battery=true
 
 [wiggle]
 check-interval=80
-cursor-size=105
-distance-threshold=90
+cursor-size=132
+distance-threshold=34
+hide-cursor=true
+unmagnify-delay=0
 
 [window-thumbnails]
 create-tmb-shortcut=['<Super>t']
