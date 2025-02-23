@@ -1,0 +1,73 @@
+[/]
+active-item-border-color='rgb(111,131,150)'
+global-shortcut=['<Super>v']
+history-length=100
+hovered-item-border-color='rgb(111,131,150)'
+incognito-shortcut=['<Alt><Super>v']
+incognito-window-background-color='rgb(192,97,203)'
+is-in-incognito=false
+keep-search-entry=false
+open-links-in-browser=false
+paste-on-select=true
+play-audio-on-copy=false
+send-notification-on-copy=false
+session-only-mode=true
+sync-primary=false
+window-background-color='rgb(242,242,242)'
+window-height=320
+
+[code-item]
+body-bg-color='rgb(228,228,228)'
+body-font-family='Cascadia Code PL'
+body-font-size=12
+header-bg-color='rgb(228,228,228)'
+header-color='rgb(48,48,48)'
+
+[color-item]
+header-bg-color='rgb(228,228,228)'
+header-color='rgb(48,48,48)'
+metadata-bg-color='rgb(228,228,228)'
+metadata-color='rgb(48,48,48)'
+metadata-font-family='Inter Variable'
+metadata-font-size=16
+
+[emoji-item]
+header-color='rgb(106,106,106)'
+
+[file-item]
+body-bg-color='rgb(228,228,228)'
+body-color='rgb(48,48,48)'
+body-font-family='Inter Variable'
+body-font-size=13
+header-bg-color='rgb(228,228,228)'
+header-color='rgb(53,53,53)'
+
+[image-item]
+body-bg-color='rgb(228,228,228)'
+header-bg-color='rgb(228,228,228)'
+header-color='rgb(53,53,53)'
+metadata-bg-color='rgb(228,228,228)'
+metadata-color='rgb(48,48,48)'
+metadata-font-family='Inter Variable'
+metadata-font-size=12
+
+[link-item]
+metadata-bg-color='rgb(242,242,242)'
+metadata-description-color='rgb(106,106,106)'
+metadata-description-font-family='Inter Variable'
+metadata-description-font-size=12
+metadata-link-color='rgb(54,54,54)'
+metadata-link-font-family='Inter Variable'
+metadata-link-font-size=10
+metadata-title-color='rgb(54,54,54)'
+metadata-title-font-family='Inter Variable'
+metadata-title-font-size=13
+
+[text-item]
+body-bg-color='rgb(228,228,228)'
+body-color='rgb(106,106,106)'
+body-font-family='Inter Variable'
+body-font-size=14
+char-length=600
+header-bg-color='rgb(228,228,228)'
+header-color='rgb(53,53,53)'
