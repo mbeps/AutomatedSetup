@@ -6,10 +6,10 @@ apply_pano_background() {
 
     if [ "$color_scheme" == "'prefer-dark'" ]; then
         # Apply dark background color
-        dconf write /org/gnome/shell/extensions/pano/window-background-color "'rgb(36,36,36)'"
+        dconf load /org/gnome/shell/extensions/pano/ <./.scripts/Pano/pano-dark.dconf
     else
         # Apply light background color
-        dconf write /org/gnome/shell/extensions/pano/window-background-color "'rgb(242,242,242)'"
+        dconf load /org/gnome/shell/extensions/pano/ <./.scripts/Pano/pano-light.dconf
     fi
 }
 
@@ -90,3 +90,4 @@ trap 'kill $(jobs -p)' EXIT
 
 # Keep the script running
 wait
+
