@@ -9,12 +9,8 @@ function install_flathub_apps_dev() {
 	title "Installing System Flathub Apps"
 
 	apps=(
-		"com.mongodb.Compass"
-		"io.beekeeperstudio.Studio"
-		"io.github.cleomenezesjr.Escambo"
 		"me.iepure.devtoolbox"
 		"com.github.marhkb.Pods"
-		"io.github.limads.Queries"
 	)
 
 	install_flathub_apps "${apps[@]}"

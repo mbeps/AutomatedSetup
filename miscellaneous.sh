@@ -25,7 +25,7 @@ function set_bash() {
 function set_user_folder_directory() {
 	title "Set User Folder Directory"
 
-	base_directory="/home/maruf/Remote/Google Drive"
+	base_directory="/home/maruf/Google Drive"
 	locations=(
 		"DOCUMENTS"
 		"MUSIC"
