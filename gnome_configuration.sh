@@ -41,7 +41,6 @@ function backup_general_configuration() {
 # Restores general Gnome configurations from dconf files.
 function restore_general_configuration() {
 	cat ./resources/general-gnome-settings/draggable-border-width | dconf load /org/gnome/mutter/draggable-border-width/
-	cat ./resources/general-gnome-settings/terminal | dconf load /org/gnome/terminal/legacy/
 	cat ./resources/general-gnome-settings/gnome-software | dconf load /org/gnome/software/
 }
 
