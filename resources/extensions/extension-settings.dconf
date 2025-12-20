@@ -16,6 +16,33 @@ size-l2=16.0
 text-l1='Activate Fedora'
 text-l2='Go to Settings to activate Fedora.'
 
+[all-in-one-clipboard]
+always-show-main-tab=true
+always-show-tab-bar=true
+clear-recents-trigger=''
+clipboard-image-preview-size=248
+default-tab='Clipboard'
+emoji-recents-max-items=30
+enable-auto-paste=true
+enable-clipboard-tab=true
+enable-emoji-tab=true
+enable-gif-tab=false
+enable-kaomoji-tab=false
+enable-recently-used-tab=false
+enable-recents-tab=false
+enable-symbols-tab=true
+gif-provider='none'
+gif-recents-max-items=20
+hide-panel-icon=true
+kaomoji-recents-max-items=20
+remember-last-tab=false
+shortcut-open-clipboard=['<Super>v']
+shortcut-open-emoji=['<Super>comma']
+shortcut-open-gif=@as []
+shortcut-open-symbols=['<Super>slash']
+symbols-recents-max-items=20
+tab-order=['Clipboard', 'Emoji', 'Symbols', 'GIF', 'Kaomoji', 'Recently Used']
+
 [always-show-titles-in-overview]
 always-show-window-closebuttons=true
 app-icon-position='Bottom'
@@ -46,16 +73,17 @@ menu-item-active-fg-color='rgb(255,255,255)'
 menu-item-grid-icon-size='Default'
 menu-item-hover-bg-color='rgb(21,83,158)'
 menu-item-hover-fg-color='rgb(255,255,255)'
-menu-layout='Tognee'
+menu-layout='Eleven'
 menu-separator-color='rgba(255,255,255,0.1)'
 menu-width-adjustment=0
 pinned-app-list=@as []
 power-options=[(0, true), (1, true), (2, true), (3, true), (4, true), (5, false), (6, false)]
 prefs-visible-page=0
-recently-installed-apps=['kdiskmark.desktop', 'io.bassi.Amberol.desktop', 'org.standardnotes.standardnotes.desktop', 'net.cozic.joplin_desktop.desktop', 'org.gnome.GTG.desktop', 'sa.sy.bluerecorder.desktop', 'com.raggesilver.BlackBox.desktop', 'com.github.xournalpp.xournalpp.desktop', 'io.github.mpobaschnig.Vaults.desktop', 'io.github.mhogomchungu.sirikali.desktop', 'appeditor-local-application-1.desktop', 'docker-desktop.desktop', 'msedge-efglnfabphcjfpmnghoignilgaoiodjn-Default.desktop', 'org.gnome.gedit.desktop', 'FFPWA-01GC7S041D4B3NR22RPT7VEVBE.desktop', 'info.febvre.Komikku.desktop', 'pavucontrol.desktop', 'com.github.wwmm.easyeffects.desktop', 'calf.desktop', 'org.gnome.Firmware.desktop', 'msedge-magkoliahgffibhgfkmoealggombgknl-Default.desktop', 'msedge-fcbmdinajlimphljamjnaooegpbilimf-Profile_1.desktop', 'msedge-efmjfjelnicpmdcmfikempdhlmainjcb-Default.desktop', 'com.wps.Office.wps.desktop', 'com.wps.Office.wpp.desktop', 'com.wps.Office.et.desktop', 'com.wps.Office.pdf.desktop', 'com.wps.Office.prometheus.desktop', 'com.google.Chrome.desktop', 'microsoft-edge-dev.desktop', 'eu.ithz.umftpd.desktop', 'com.github.finefindus.eyedropper.desktop', 'me.kozec.syncthingtk.desktop', 'org.gnome.Loupe.desktop', 'io.github.hakandundar34coding.system-monitoring-center.desktop', 'com.microsoft.Edge.desktop', 'com.microsoft.Edge.flextop.msedge-efnknobmfbljejjlbiibkdcpafofgimm-Default.desktop', 'com.microsoft.Edge.flextop.msedge-aghbiahbpaijignceidepookljebhfak-Default.desktop', 'com.microsoft.Edge.flextop.msedge-ibkfjbiboacldhldklbndmdcokjocaae-Default.desktop', 'com.microsoft.Edge.flextop.msedge-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop', 'com.microsoft.Edge.flextop.msedge-pbikbfgpbphmpkkebddpdgppimbnfcfa-Default.desktop', 'com.microsoft.Edge.flextop.msedge-agimnkijcaahngcdmfeangaknmldooml-Default.desktop', 'com.microsoft.Edge.flextop.msedge-ncmjhecbjeaamljdfahankockkkdmedg-Default.desktop', 'com.microsoft.Edge.flextop.msedge-lgnggepjiihbfdbedefdhcffnmhcahbm-Default.desktop', 'com.microsoft.Edge.flextop.msedge-abdndmcckigaeepaljhpcngbfdkbiggb-Default.desktop', 'com.microsoft.Edge.flextop.msedge-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop', 'com.microsoft.Edge.flextop.msedge-fjpeaicnionajpipomepndgbcpchdmlb-Default.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.Cheese.desktop', 'fr.handbrake.ghb.desktop', 'org.gnome.Epiphany.WebApp_74b6f78d56abcf9c3c081c0f8c96ddbd33ab86eb.desktop', 'org.gnome.Epiphany.WebApp_b336fc558722224b7ffe98607055d55f0fe52450.desktop', 'org.gnome.Epiphany.WebApp_49fa9fd831096c82ab950bc7aa0a0a7ef8a10998.desktop', 'org.gnome.Epiphany.WebApp_495265260f5b6d5b9ea08470124be963c86f8b47.desktop', 'org.gnome.Epiphany.WebApp_07c2964c41f409a224efb389f282268e4928b85f.desktop', 'org.gnome.Epiphany.WebApp_bf8a95746755ce8e15a98395e4ee4e24ad7e7fea.desktop', 'org.gnome.Epiphany.WebApp_08d5a76a136bb6520ac225679f4bc834761a5676.desktop', 'org.gnome.Epiphany.WebApp_5721bbef40b22bbdb2e6a062b096d9b48735c2ff.desktop', 'org.gnome.Epiphany.WebApp_4af26436ae9d5ae30cca7399e35ef0d8eacccbc8.desktop', 'org.gnome.Epiphany.WebApp_5392c950bdde4be7e5f5b8fdc6a1ca5f21e905cf.desktop', 'org.gnome.Epiphany.WebApp_91a9190c96b33dcaa906811b407473f53d5f9028.desktop']
+recently-installed-apps=['kdiskmark.desktop', 'io.bassi.Amberol.desktop', 'org.standardnotes.standardnotes.desktop', 'net.cozic.joplin_desktop.desktop', 'org.gnome.GTG.desktop', 'sa.sy.bluerecorder.desktop', 'com.raggesilver.BlackBox.desktop', 'com.github.xournalpp.xournalpp.desktop', 'io.github.mpobaschnig.Vaults.desktop', 'io.github.mhogomchungu.sirikali.desktop', 'appeditor-local-application-1.desktop', 'docker-desktop.desktop', 'msedge-efglnfabphcjfpmnghoignilgaoiodjn-Default.desktop', 'org.gnome.gedit.desktop', 'FFPWA-01GC7S041D4B3NR22RPT7VEVBE.desktop', 'info.febvre.Komikku.desktop', 'pavucontrol.desktop', 'calf.desktop', 'org.gnome.Firmware.desktop', 'msedge-magkoliahgffibhgfkmoealggombgknl-Default.desktop', 'msedge-fcbmdinajlimphljamjnaooegpbilimf-Profile_1.desktop', 'msedge-efmjfjelnicpmdcmfikempdhlmainjcb-Default.desktop', 'com.wps.Office.wps.desktop', 'com.wps.Office.wpp.desktop', 'com.wps.Office.et.desktop', 'com.wps.Office.pdf.desktop', 'com.wps.Office.prometheus.desktop', 'com.google.Chrome.desktop', 'microsoft-edge-dev.desktop', 'eu.ithz.umftpd.desktop', 'com.github.finefindus.eyedropper.desktop', 'me.kozec.syncthingtk.desktop', 'io.github.hakandundar34coding.system-monitoring-center.desktop', 'com.microsoft.Edge.desktop', 'com.microsoft.Edge.flextop.msedge-efnknobmfbljejjlbiibkdcpafofgimm-Default.desktop', 'com.microsoft.Edge.flextop.msedge-aghbiahbpaijignceidepookljebhfak-Default.desktop', 'com.microsoft.Edge.flextop.msedge-ibkfjbiboacldhldklbndmdcokjocaae-Default.desktop', 'com.microsoft.Edge.flextop.msedge-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop', 'com.microsoft.Edge.flextop.msedge-pbikbfgpbphmpkkebddpdgppimbnfcfa-Default.desktop', 'com.microsoft.Edge.flextop.msedge-agimnkijcaahngcdmfeangaknmldooml-Default.desktop', 'com.microsoft.Edge.flextop.msedge-ncmjhecbjeaamljdfahankockkkdmedg-Default.desktop', 'com.microsoft.Edge.flextop.msedge-lgnggepjiihbfdbedefdhcffnmhcahbm-Default.desktop', 'com.microsoft.Edge.flextop.msedge-abdndmcckigaeepaljhpcngbfdkbiggb-Default.desktop', 'com.microsoft.Edge.flextop.msedge-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop', 'com.microsoft.Edge.flextop.msedge-fjpeaicnionajpipomepndgbcpchdmlb-Default.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.Cheese.desktop', 'fr.handbrake.ghb.desktop', 'org.gnome.Epiphany.WebApp_74b6f78d56abcf9c3c081c0f8c96ddbd33ab86eb.desktop', 'org.gnome.Epiphany.WebApp_b336fc558722224b7ffe98607055d55f0fe52450.desktop', 'org.gnome.Epiphany.WebApp_49fa9fd831096c82ab950bc7aa0a0a7ef8a10998.desktop', 'org.gnome.Epiphany.WebApp_495265260f5b6d5b9ea08470124be963c86f8b47.desktop', 'org.gnome.Epiphany.WebApp_07c2964c41f409a224efb389f282268e4928b85f.desktop', 'org.gnome.Epiphany.WebApp_bf8a95746755ce8e15a98395e4ee4e24ad7e7fea.desktop', 'org.gnome.Epiphany.WebApp_08d5a76a136bb6520ac225679f4bc834761a5676.desktop', 'org.gnome.Epiphany.WebApp_5721bbef40b22bbdb2e6a062b096d9b48735c2ff.desktop', 'org.gnome.Epiphany.WebApp_4af26436ae9d5ae30cca7399e35ef0d8eacccbc8.desktop', 'org.gnome.Epiphany.WebApp_5392c950bdde4be7e5f5b8fdc6a1ca5f21e905cf.desktop', 'org.gnome.Epiphany.WebApp_91a9190c96b33dcaa906811b407473f53d5f9028.desktop']
 right-panel-width=350
 search-entry-border-radius=(true, 25)
 show-activities-button=true
+update-notifier-project-version=66
 
 [avatar]
 avatar-shadow=false
@@ -240,11 +268,13 @@ unblur-in-overview=true
 pipeline='pipeline_default'
 
 [caffeine]
+countdown-timer=0
 enable-fullscreen=true
 indicator-position-max=4
 restore-state=false
 show-indicator='never'
 toggle-state=true
+user-enabled=true
 
 [clipboard-history]
 cache-only-favorites=true
@@ -271,6 +301,16 @@ accent-color='default'
 theme-flatpak=true
 theme-gtk3=true
 theme-shell=true
+
+[custom-command-toggle]
+checkexitcode1-setting=true
+entryrow1-setting='gnome-extensions disable dash-to-dock@micxgx.gmail.com && gnome-extensions enable touchup@mityax'
+entryrow2-setting='gnome-extensions enable dash-to-dock@micxgx.gmail.com && gnome-extensions disable touchup@mityax'
+entryrow3-setting='Tablet'
+entryrow4-setting='input-tablet-symbolic'
+initialtogglestate1-setting=1
+numbuttons-setting=1
+togglestate1-setting=false
 
 [custom-hot-corners-extended/misc]
 show-osd-monitor-indexes=true
@@ -573,6 +613,7 @@ devices=['14149de6_ca0c_4df0_95b8_2e7585f17558']
 discoverable=true
 enabled=true
 id='f3c8920f-922f-4aa0-bb8f-0619f158cbca'
+missing-openssl=false
 name='Maruf-Fedora-PC'
 show-indicators=false
 
@@ -594,10 +635,10 @@ type='phone'
 
 [gsconnect/device/14149de6_ca0c_4df0_95b8_2e7585f17558]
 certificate-pem='-----BEGIN CERTIFICATE-----\nMIIBkjCCATmgAwIBAgIBATAKBggqhkjOPQQDBDBTMS0wKwYDVQQDDCQxNDE0OWRl\nNl9jYTBjXzRkZjBfOTViOF8yZTc1ODVmMTc1NTgxFDASBgNVBAsMC0tERSBDb25u\nZWN0MQwwCgYDVQQKDANLREUwHhcNMjQwMzAzMDAwMDAwWhcNMzUwMzAzMDAwMDAw\nWjBTMS0wKwYDVQQDDCQxNDE0OWRlNl9jYTBjXzRkZjBfOTViOF8yZTc1ODVmMTc1\nNTgxFDASBgNVBAsMC0tERSBDb25uZWN0MQwwCgYDVQQKDANLREUwWTATBgcqhkjO\nPQIBBggqhkjOPQMBBwNCAATYym28IwRbYy8cWgNy0Z3D55kBm4/ApFgsb6O1OwgS\n1oWSQKIczwP05vvKYwVYu565aD+q+4LXc8VRj0bOdnUIMAoGCCqGSM49BAMEA0cA\nMEQCIB8OHs5LBhO2uUroQOrscuYPq21d2UodkFr+pSdWKK1rAiBTmpwrg9v9liv4\naD5fHmlwgMFXo5sqIT/OScBr8jK7AQ==\n-----END CERTIFICATE-----\n'
-incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
+incoming-capabilities=['kdeconnect.battery', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request_mute']
 last-connection='lan://192.168.5.213:1716'
 name='Pixel 8 Pro'
-outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
+outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
 paired=true
 supported-plugins=['battery', 'clipboard', 'connectivity_report', 'contacts', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'presenter', 'runcommand', 'sftp', 'share', 'sms', 'systemvolume', 'telephony']
 type='phone'
@@ -606,7 +647,7 @@ type='phone'
 custom-battery-notification-value=uint32 80
 
 [gsconnect/device/14149de6_ca0c_4df0_95b8_2e7585f17558/plugin/notification]
-applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Events and Tasks Reminders":{"iconName":"org.gnome.Evolution-alarm-notify","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Geary":{"iconName":"org.gnome.Geary","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Colour Management":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"File Roller":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Terminal":{"iconName":"app.devsuite.Ptyxis-symbolic","enabled":true},"Email":{"iconName":"org.gnome.Geary","enabled":true},"Online Accounts":{"iconName":"dialog-warning","enabled":true},"Date & Time Settings":{"iconName":"","enabled":true},"Brave":{"iconName":"file:///tmp/.org.chromium.Chromium.GWDPST/logo.png","enabled":true},"Smile":{"iconName":"dialog-information","enabled":true},"Fragments":{"iconName":"folder-download-symbolic","enabled":true}}'
+applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Events and Tasks Reminders":{"iconName":"org.gnome.Evolution-alarm-notify","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Signal":{"iconName":"de.schmidhuberj.Flare","enabled":true},"Disk Usage Analyser":{"iconName":"org.gnome.baobab","enabled":true},"Geary":{"iconName":"org.gnome.Geary","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Parabolic":{"iconName":"org.nickvision.tubeconverter","enabled":true},"Colour Management":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"File Roller":{"iconName":"org.gnome.FileRoller","enabled":true},"Problem Reporting":{"iconName":"abrt","enabled":true},"Terminal":{"iconName":"app.devsuite.Ptyxis-symbolic","enabled":true},"Email":{"iconName":"org.gnome.Geary","enabled":true},"Online Accounts":{"iconName":"dialog-warning","enabled":true},"Date & Time Settings":{"iconName":"","enabled":true},"Brave":{"iconName":"file:///tmp/.org.chromium.Chromium.GWDPST/logo.png","enabled":true},"Smile":{"iconName":"dialog-information","enabled":true},"Fragments":{"iconName":"folder-download-symbolic","enabled":true},"Firefox":{"iconName":"","enabled":true},"Authenticator":{"iconName":"com.belmoussaoui.Authenticator","enabled":true},"Characters":{"iconName":"org.gnome.Characters","enabled":true},"Quick Share":{"iconName":"io.github.nozwock.Packet","enabled":true},"notify-send":{"iconName":"","enabled":true},"Alpaca":{"iconName":"document-save-symbolic","enabled":true},"Insync":{"iconName":"insync","enabled":true},"Code":{"iconName":"","enabled":true},"Beeper":{"iconName":"","enabled":true},"Impression":{"iconName":"io.gitlab.adhami3310.Impression","enabled":true},"balenaEtcher":{"iconName":"","enabled":true},"Varia":{"iconName":"io.github.giantpinkrobots.varia","enabled":true},"Surfshark":{"iconName":"com.surfshark.Surfshark","enabled":true}}'
 
 [gsconnect/device/14149de6_ca0c_4df0_95b8_2e7585f17558/plugin/share]
 receive-directory='/home/maruf/Downloads'
@@ -1049,6 +1090,7 @@ datemenu-hide-media-control=true
 datemenu-hide-notifications=false
 datemenu-remove-media-control=false
 datemenu-remove-notifications=false
+debug-show-layout-border=false
 dnd-quick-toggle-enabled=false
 dnd-quick-toggle-indicator-position='date-menu'
 input-always-show=false
@@ -1066,13 +1108,14 @@ menu-animation-background-opacity=255
 menu-animation-background-scale-x=1000
 menu-animation-background-scale-y=1000
 menu-animation-close-duration=200
-menu-animation-enabled=false
+menu-animation-enabled=true
 menu-animation-grid-content-opacity=100
 menu-animation-open-duration=200
 notifications-compact=false
 notifications-enabled=false
 notifications-hide-when-no-notifications=false
 notifications-integrated=false
+notifications-left-of-quick-settings=true
 notifications-max-height=290
 notifications-position='bottom'
 notifications-use-native-controls=true
@@ -1080,6 +1123,8 @@ output-show-selected=false
 overlay-menu-animate-style='flyout'
 overlay-menu-enabled=true
 overlay-menu-width=500
+quick-settings-pagination-enabled=true
+quick-settings-pagination-rows=4
 system-items-layout-enabled=false
 toggles-layout-enabled=true
 toggles-layout-order=[{'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMWirelessToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'BluetoothToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMBluetoothToggle'>>}, {'hide': <<true>>, 'titleRegex': <<''>>, 'constructorName': <<''>>, 'friendlyName': <<'My item #1'>>, 'gtypeName': <<''>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMWiredToggle'>>}, {'hide': <<true>>, 'isSystem': <<true>>, 'constructorName': <<'NMModemToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMVpnToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'PowerProfilesToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NightLightToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'DarkModeToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'KeyboardBrightnessToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'RfkillToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'RotationToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'DndQuickToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'UnsafeQuickToggle'>>}, {'nonOrdered': <<true>>, 'hide': <<false>>}]
@@ -1128,11 +1173,12 @@ blur-brightness=0.59999999999999998
 blur-sigma=30.0
 border-radius=3.0
 entry-font-size=1
-monitor-count=1
+monitor-count=3
 popup-at-cursor-monitor=true
 preferred-monitor=0
 scale-height=0.20000000000000001
 scale-width=0.20000000000000001
+shortcut-search=['<Super>g']
 show-panel-icon=false
 
 [shell-configurator]
@@ -1229,16 +1275,15 @@ focus-hint-outline-border-radius=0
 focus-hint-outline-size=0
 horizontal-preview-area=10
 import-layout-examples=false
-last-version-installed=52
+last-version-installed=53
 maximize-with-gap=false
-overridden-settings={'org.gnome.mutter.edge-tiling': <false>, 'org.gnome.desktop.wm.keybindings.maximize': <['<Super>Up']>, 'org.gnome.desktop.wm.keybindings.unmaximize': <['<Super>Down', '<Alt>F5']>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <['<Super>Left']>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <['<Super>Right']>}
 restore-window=['<Super>Down']
 screen-bottom-gap=0
 screen-left-gap=0
 screen-right-gap=0
 screen-top-gap=0
 search-popup-layout=@as []
-show-layout-panel-indicator=true
+show-layout-panel-indicator=false
 single-screen-gap=2
 tile-bottom-half=['<Super>KP_2']
 tile-bottom-half-ignore-ta=@as []
@@ -1266,7 +1311,8 @@ vertical-preview-area=10
 window-gap=0
 
 [tilingshell]
-active-screen-edges=false
+active-screen-edges=true
+edge-snap-mode='granular'
 enable-autotiling=false
 enable-move-keybindings=false
 enable-screen-edges-windows-suggestions=true
@@ -1278,26 +1324,37 @@ enable-tiling-system=false
 enable-tiling-system-windows-suggestions=true
 enable-window-border=false
 inner-gaps=uint32 0
-last-version-name-installed='16.4'
-layouts-json='[{"id":"8904628","tiles":[{"x":0,"y":0,"width":1,"height":0.3333333333333333,"groups":[1]},{"x":0,"y":0.3333333333333333,"width":1,"height":0.3333333333333333,"groups":[1,2]},{"x":0,"y":0.6666666666666666,"width":1,"height":0.3333333333333334,"groups":[2]}]},{"id":"7503301","tiles":[{"x":0,"y":0,"width":0.501171875,"height":1,"groups":[1]},{"x":0.501171875,"y":0,"width":0.49882812499999996,"height":1,"groups":[1]}]},{"id":"7562633","tiles":[{"x":0,"y":0,"width":1,"height":0.4985632183908046,"groups":[1]},{"x":0,"y":0.4985632183908046,"width":1,"height":0.5014367816091954,"groups":[1]}]},{"id":"6286106","tiles":[{"x":0,"y":0,"width":0.25625,"height":1,"groups":[1]},{"x":0.25625,"y":0,"width":0.5054687499999999,"height":1,"groups":[2,1]},{"x":0.76171875,"y":0,"width":0.23828124999999994,"height":1,"groups":[2]}]}]'
+last-version-name-installed='17.0'
+layouts-json='[{"id":"8904628","tiles":[{"x":0,"y":0,"width":1,"height":0.3333333333333333,"groups":[1]},{"x":0,"y":0.3333333333333333,"width":1,"height":0.3333333333333333,"groups":[1,2]},{"x":0,"y":0.6666666666666666,"width":1,"height":0.3333333333333334,"groups":[2]}]},{"id":"7503301","tiles":[{"x":0,"y":0,"width":0.501171875,"height":1,"groups":[1]},{"x":0.501171875,"y":0,"width":0.49882812499999996,"height":1,"groups":[1]}]},{"id":"7562633","tiles":[{"x":0,"y":0,"width":1,"height":0.4985632183908046,"groups":[1]},{"x":0,"y":0.4985632183908046,"width":1,"height":0.5014367816091954,"groups":[1]}]},{"id":"6286106","tiles":[{"x":0,"y":0,"width":0.25625,"height":1,"groups":[1]},{"x":0.25625,"y":0,"width":0.5054687499999999,"height":1,"groups":[2,1]},{"x":0.76171875,"y":0,"width":0.23828124999999994,"height":1,"groups":[2]}]},{"id":"3929124","tiles":[{"x":0,"y":0,"width":0.500390625,"height":0.49700598802395207,"groups":[1,3]},{"x":0.500390625,"y":0,"width":0.4996093749999999,"height":0.4977544910179641,"groups":[2,1]},{"x":0.500390625,"y":0.4977544910179641,"width":0.4996093749999999,"height":0.5022455089820359,"groups":[2,1]},{"x":0,"y":0.49700598802395207,"width":0.500390625,"height":0.5029940119760479,"groups":[3,1]}]}]'
 outer-gaps=uint32 0
-overridden-settings='{}'
+overridden-settings='{"org.gnome.mutter":{"edge-tiling":"false"}}'
 override-window-menu=true
 quarter-tiling-threshold=uint32 20
-resize-complementing-windows=false
-selected-layouts=[['7503301', '8904628', '8904628'], ['7503301', '8904628', '8904628']]
-show-indicator=false
-snap-assistant-threshold=57
+resize-complementing-windows=true
+selected-layouts=[['7503301', '7562633', '7503301'], ['7503301', '7562633', '7503301'], ['7503301', '7562633', '7503301'], ['7503301', '7562633', '7503301']]
+show-indicator=true
+snap-assistant-animation-time=uint32 182
+snap-assistant-threshold=63
 tiling-system-activation-key=['2']
 tiling-system-deactivation-key=['-1']
-top-edge-maximize=true
-window-border-width=uint32 2
+top-edge-maximize=false
+window-border-width=uint32 1
 
 [touchpad-gesture-customization]
 allow-minimize-window=true
+horizontal-swipe-3-fingers-gesture='WINDOW_SWITCHING'
+horizontal-swipe-4-fingers-gesture='WORKSPACE_SWITCHING'
+pinch-3-finger-gesture='NONE'
+pinch-4-finger-gesture='NONE'
+vertical-swipe-3-fingers-gesture='OVERVIEW_NAVIGATION'
+vertical-swipe-4-fingers-gesture='WINDOW_MANIPULATION'
 
 [touchup]
 donations-installation-data='{"installedAt":1748124235740,"promptedForDonationAt":null}'
+navigation-bar-always-show-on-monitor='{"name":"AUO (0x00000000)","id":"AUO::0x462d::0x00000000"}'
+navigation-bar-enabled=false
+navigation-bar-gestures-reserve-space=false
+navigation-bar-mode='gestures'
 preferences-initial-page='default'
 
 [touchx]
