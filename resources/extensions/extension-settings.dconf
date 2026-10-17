@@ -272,13 +272,14 @@ unblur-in-overview=true
 pipeline='pipeline_default'
 
 [caffeine]
-countdown-timer=0
-enable-fullscreen=true
+cli-toggle=false
+countdown-timer=3600
+enable-fullscreen=false
 indicator-position-max=4
 restore-state=false
 show-indicator='never'
 toggle-state=true
-user-enabled=true
+user-enabled=false
 
 [clipboard-history]
 cache-only-favorites=true
@@ -950,6 +951,9 @@ dark-mode=true
 available-indicators=['tiling-assistant@leleat-on-github', 'EmojisMenu', 'clipboardIndicator', 'ArcMenu', '/org/gnome/Shell/Extensions/GSConnect/Device/945b88e9933d8ef2', 'vitalsMenu']
 show-indicator=false
 
+[my-extension]
+custom-mappings={'theme': 'nord', 'layout': 'grid'}
+
 [nightthemeswitcher/commands]
 enabled=true
 sunrise="gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3' && gsettings set org.gnome.desktop.interface color-scheme 'default'\n\tdconf write /org/gnome/shell/extensions/user-theme/name \"'Marble-gray-light'\""
@@ -1289,7 +1293,7 @@ focus-hint-outline-border-radius=0
 focus-hint-outline-size=0
 horizontal-preview-area=10
 import-layout-examples=false
-last-version-installed=54
+last-version-installed=55
 maximize-with-gap=false
 overridden-settings={'org.gnome.mutter.edge-tiling': <false>, 'org.gnome.desktop.wm.keybindings.maximize': <['<Super>Up']>, 'org.gnome.desktop.wm.keybindings.unmaximize': <['<Super>Down', '<Alt>F5']>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <['<Super>Left']>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <['<Super>Right']>}
 restore-window=['<Super>Down']
@@ -1298,7 +1302,7 @@ screen-left-gap=0
 screen-right-gap=0
 screen-top-gap=0
 search-popup-layout=@as []
-show-layout-panel-indicator=false
+show-layout-panel-indicator=true
 single-screen-gap=2
 tile-bottom-half=['<Super>KP_2']
 tile-bottom-half-ignore-ta=@as []
@@ -1326,9 +1330,11 @@ vertical-preview-area=10
 window-gap=0
 
 [tilingshell]
-active-screen-edges=false
+active-screen-edges=true
 cycle-layouts-backward=['<Shift>']
 edge-snap-mode='granular'
+edge-tiling-mode='granular'
+edge-tiling-offset=uint32 16
 enable-autotiling=false
 enable-move-keybindings=false
 enable-screen-edges-windows-suggestions=true
@@ -1343,9 +1349,9 @@ inner-gaps=uint32 0
 last-version-name-installed='17.0'
 layouts-json='[{"id":"8904628","tiles":[{"x":0,"y":0,"width":1,"height":0.3333333333333333,"groups":[1]},{"x":0,"y":0.3333333333333333,"width":1,"height":0.3333333333333333,"groups":[1,2]},{"x":0,"y":0.6666666666666666,"width":1,"height":0.3333333333333334,"groups":[2]}]},{"id":"7503301","tiles":[{"x":0,"y":0,"width":0.501171875,"height":1,"groups":[1]},{"x":0.501171875,"y":0,"width":0.49882812499999996,"height":1,"groups":[1]}]},{"id":"7562633","tiles":[{"x":0,"y":0,"width":1,"height":0.4985632183908046,"groups":[1]},{"x":0,"y":0.4985632183908046,"width":1,"height":0.5014367816091954,"groups":[1]}]},{"id":"6286106","tiles":[{"x":0,"y":0,"width":0.25625,"height":1,"groups":[1]},{"x":0.25625,"y":0,"width":0.5054687499999999,"height":1,"groups":[2,1]},{"x":0.76171875,"y":0,"width":0.23828124999999994,"height":1,"groups":[2]}]},{"id":"3929124","tiles":[{"x":0,"y":0,"width":0.500390625,"height":0.49700598802395207,"groups":[1,3]},{"x":0.500390625,"y":0,"width":0.4996093749999999,"height":0.4977544910179641,"groups":[2,1]},{"x":0.500390625,"y":0.4977544910179641,"width":0.4996093749999999,"height":0.5022455089820359,"groups":[2,1]},{"x":0,"y":0.49700598802395207,"width":0.500390625,"height":0.5029940119760479,"groups":[3,1]}]}]'
 outer-gaps=uint32 0
-overridden-settings='{}'
+overridden-settings='{"org.gnome.mutter":{"edge-tiling":"false"}}'
 override-window-menu=true
-quarter-tiling-threshold=uint32 20
+quarter-tiling-threshold=uint32 1
 resize-complementing-windows=true
 selected-layouts=[['7503301', '8904628', '8904628'], ['7503301', '8904628', '8904628']]
 show-indicator=false
@@ -1367,7 +1373,7 @@ vertical-swipe-3-fingers-gesture='OVERVIEW_NAVIGATION'
 vertical-swipe-4-fingers-gesture='WINDOW_MANIPULATION'
 
 [touchup]
-donations-installation-data='{"installedAt":1748124235740,"promptedForDonationAt":null}'
+donations-installation-data='{"installedAt":1748124235740,"promptedForDonationAt":1790328646909}'
 navigation-bar-always-show-on-monitor='{"name":"AUO (0x00000000)","id":"AUO::0x462d::0x00000000"}'
 navigation-bar-enabled=false
 navigation-bar-gestures-reserve-space=false
