@@ -899,6 +899,7 @@ window-spacing=2
 
 [gtk4-ding]
 icon-size='small'
+show-desktop-widgets=true
 show-home=false
 show-trash=false
 show-volumes=false
@@ -1148,12 +1149,18 @@ overlay-menu-enabled=true
 overlay-menu-width=500
 quick-settings-pagination-enabled=true
 quick-settings-pagination-rows=4
+submenu-mode='page'
 system-indicator-layout-enabled=false
 system-indicator-screen-sharing-indicator-use-accent=false
 system-items-layout-enabled=false
 system-items-layout-hide=false
 toggles-layout-enabled=true
 toggles-layout-order=[{'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMWirelessToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'BluetoothToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMBluetoothToggle'>>}, {'hide': <<true>>, 'titleRegex': <<''>>, 'constructorName': <<''>>, 'friendlyName': <<'My item #1'>>, 'gtypeName': <<''>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMWiredToggle'>>}, {'hide': <<true>>, 'isSystem': <<true>>, 'constructorName': <<'NMModemToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NMVpnToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'PowerProfilesToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'NightLightToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'DarkModeToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'KeyboardBrightnessToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'RfkillToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'RotationToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'DndQuickToggle'>>}, {'hide': <<false>>, 'isSystem': <<true>>, 'constructorName': <<'UnsafeQuickToggle'>>}, {'nonOrdered': <<true>>, 'hide': <<false>>}]
+toggles-pagination-enabled=true
+toggles-pagination-max-per-page=10
+toggles-pagination-orientation='horizontal'
+toggles-pagination-show-page-buttons=false
+toggles-pagination-wrap-around=false
 unsafe-quick-toggle-enabled=false
 unsafe-quick-toggle-last-state=false
 unsafe-quick-toggle-save-last-state=true
